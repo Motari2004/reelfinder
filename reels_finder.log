@@ -14,3 +14,9 @@
 2026-06-18 19:44:04,869 - INFO - Found 10 reels for 'kenya'
 2026-06-18 19:44:30,392 - INFO - Browser closed
 2026-06-18 19:44:30,393 - INFO - Scraper closed
+2026-06-18 20:50:15,333 - INFO - Browser initialized
+2026-06-18 20:50:15,333 - INFO - Scraper initialized
+2026-06-18 20:50:40,509 - INFO - Browser initialized
+2026-06-18 20:50:40,509 - INFO - Universal Reels Finder initialized
+2026-06-18 20:50:41,147 - INFO - Searching for: nature (type: auto)
+2026-06-18 20:50:48,675 - ERROR - Search error: Mouse.wheel: Connection closed while reading from the driver

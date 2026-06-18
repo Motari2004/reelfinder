@@ -74,3 +74,505 @@
 2026-06-18 19:51:31,065 - INFO - Scheduler stopped
 2026-06-18 19:51:31,439 - INFO - Browser closed
 2026-06-18 19:51:31,439 - INFO - Scraper closed
+2026-06-18 20:51:33,767 - INFO - Browser initialized
+2026-06-18 20:51:33,769 - INFO - Universal Reels Finder initialized
+2026-06-18 20:51:33,771 - INFO - Loaded 1 historical collections
+2026-06-18 20:51:33,771 - INFO - Today's collection already exists: 14 reels
+2026-06-18 20:51:33,776 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 20:51:33,777 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 20:51:33,778 - INFO - Added job "Daily Reel Collection" to job store "default"
+2026-06-18 20:51:33,778 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-18 20:51:33,778 - INFO - Scheduler started
+2026-06-18 20:51:33,779 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 20:53:19,015 - INFO - Scheduler has been shut down
+2026-06-18 20:53:19,016 - INFO - Scheduler stopped
+2026-06-18 20:53:24,553 - INFO - Browser initialized
+2026-06-18 20:53:24,553 - INFO - Universal Reels Finder initialized
+2026-06-18 20:53:24,567 - INFO - Loaded 5 topics from config
+2026-06-18 20:53:24,571 - INFO - Loaded 1 historical collections
+2026-06-18 20:53:24,571 - INFO - Today's collection already exists: 14 reels
+2026-06-18 20:53:24,576 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 20:53:24,577 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-18 20:53:24,577 - INFO - Scheduler started
+2026-06-18 20:53:24,578 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 20:53:50,720 - INFO - Running daily collection job...
+2026-06-18 20:53:50,726 - INFO - Starting daily reel collection...
+2026-06-18 20:53:50,727 - INFO - Collecting reels for: mafia
+2026-06-18 20:53:50,727 - INFO - Searching for: mafia
+2026-06-18 20:53:59,544 - INFO - Found 0 reels for 'mafia'
+2026-06-18 20:54:00,557 - INFO - Searching for: #mafia
+2026-06-18 20:54:05,657 - INFO - Found 0 reels for '#mafia'
+2026-06-18 20:54:06,657 - INFO - Searching for: mafia daily
+2026-06-18 20:54:11,789 - INFO - Found 0 reels for 'mafia daily'
+2026-06-18 20:54:12,805 - INFO - Collected 0 reels for mafia
+2026-06-18 20:54:12,806 - INFO - Collecting reels for: gangstars
+2026-06-18 20:54:12,806 - INFO - Searching for: gangstars
+2026-06-18 20:54:17,889 - INFO - Found 0 reels for 'gangstars'
+2026-06-18 20:54:18,888 - INFO - Searching for: #gangstars
+2026-06-18 20:54:23,988 - INFO - Found 0 reels for '#gangstars'
+2026-06-18 20:54:24,987 - INFO - Searching for: gangstars daily
+2026-06-18 20:54:32,019 - INFO - Found 0 reels for 'gangstars daily'
+2026-06-18 20:54:33,019 - INFO - Collected 0 reels for gangstars
+2026-06-18 20:54:33,020 - INFO - Collecting reels for: murphy
+2026-06-18 20:54:33,021 - INFO - Searching for: murphy
+2026-06-18 20:54:40,232 - INFO - Found 0 reels for 'murphy'
+2026-06-18 20:54:41,245 - INFO - Searching for: #murphy
+2026-06-18 20:54:46,352 - INFO - Found 0 reels for '#murphy'
+2026-06-18 20:54:47,364 - INFO - Searching for: murphy daily
+2026-06-18 20:54:52,535 - INFO - Found 0 reels for 'murphy daily'
+2026-06-18 20:54:53,542 - INFO - Collected 0 reels for murphy
+2026-06-18 20:54:53,542 - INFO - Collecting reels for: war
+2026-06-18 20:54:53,543 - INFO - Searching for: war
+2026-06-18 20:54:58,743 - INFO - Found 0 reels for 'war'
+2026-06-18 20:54:59,761 - INFO - Searching for: #war
+2026-06-18 20:55:04,893 - INFO - Found 0 reels for '#war'
+2026-06-18 20:55:05,901 - INFO - Searching for: war daily
+2026-06-18 20:55:11,004 - INFO - Found 0 reels for 'war daily'
+2026-06-18 20:55:12,006 - INFO - Collected 0 reels for war
+2026-06-18 20:55:12,006 - INFO - Collecting reels for: ninjas
+2026-06-18 20:55:12,007 - INFO - Searching for: ninjas
+2026-06-18 20:55:19,029 - INFO - Found 0 reels for 'ninjas'
+2026-06-18 20:55:20,028 - INFO - Searching for: #ninjas
+2026-06-18 20:55:27,710 - INFO - Found 0 reels for '#ninjas'
+2026-06-18 20:55:28,727 - INFO - Searching for: ninjas daily
+2026-06-18 20:55:35,778 - INFO - Found 0 reels for 'ninjas daily'
+2026-06-18 20:55:36,766 - INFO - Collected 0 reels for ninjas
+2026-06-18 20:55:36,770 - INFO - Daily collection complete: 0 total reels
+2026-06-18 20:55:36,771 - INFO - Daily collection completed: 0 reels
+2026-06-18 20:56:18,148 - INFO - Scheduler has been shut down
+2026-06-18 20:56:18,219 - INFO - Scheduler stopped
+2026-06-18 20:56:28,066 - INFO - Browser initialized
+2026-06-18 20:56:28,067 - INFO - Universal Reels Finder initialized
+2026-06-18 20:56:28,068 - INFO - Loaded 5 topics from config
+2026-06-18 20:56:28,185 - INFO - Loaded 2 historical collections
+2026-06-18 20:56:28,185 - INFO - Today's collection already exists: 14 reels
+2026-06-18 20:56:28,224 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 20:56:28,224 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-18 20:56:28,233 - INFO - Scheduler started
+2026-06-18 20:56:28,235 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 20:56:50,809 - INFO - Scheduler has been shut down
+2026-06-18 20:56:50,812 - INFO - Scheduler stopped
+2026-06-18 20:57:00,756 - INFO - Browser initialized
+2026-06-18 20:57:00,757 - INFO - Universal Reels Finder initialized
+2026-06-18 20:57:00,759 - INFO - Loaded 2 historical collections
+2026-06-18 20:57:00,760 - INFO - Today's collection already exists: 14 reels
+2026-06-18 20:57:00,772 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 20:57:00,773 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 20:57:00,775 - INFO - Added job "Daily Reel Collection" to job store "default"
+2026-06-18 20:57:00,775 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-18 20:57:00,775 - INFO - Scheduler started
+2026-06-18 20:57:00,777 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 21:01:33,201 - INFO - Scheduler has been shut down
+2026-06-18 21:01:33,201 - INFO - Scheduler stopped
+2026-06-18 21:01:40,151 - INFO - Browser initialized
+2026-06-18 21:01:40,151 - INFO - Universal Reels Finder initialized
+2026-06-18 21:01:40,154 - INFO - Loaded 5 topics from config
+2026-06-18 21:01:40,155 - INFO - Loaded 2 historical collections
+2026-06-18 21:01:40,155 - INFO - Today's collection already exists: 14 reels
+2026-06-18 21:01:40,165 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:01:40,166 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:01:40,169 - INFO - Added job "Daily Reel Collection" to job store "default"
+2026-06-18 21:01:40,170 - INFO - Added job "Daily Collection Backup" to job store "default"
+2026-06-18 21:01:40,170 - INFO - Scheduler started
+2026-06-18 21:01:40,172 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 21:02:06,210 - INFO - 🔴 Scheduler stopped via API (Kill Switch activated)
+2026-06-18 21:02:09,186 - INFO - 🟢 Scheduler started via API
+2026-06-18 21:02:13,903 - INFO - 🔄 Running daily collection job...
+2026-06-18 21:02:13,905 - INFO - Starting daily reel collection...
+2026-06-18 21:02:13,905 - INFO - Collecting reels for: mafia
+2026-06-18 21:02:13,905 - INFO - Searching for: mafia
+2026-06-18 21:02:26,890 - INFO - Found 0 reels for 'mafia'
+2026-06-18 21:02:27,891 - INFO - Searching for: #mafia
+2026-06-18 21:02:35,453 - INFO - Found 0 reels for '#mafia'
+2026-06-18 21:02:36,429 - INFO - Searching for: mafia daily
+2026-06-18 21:02:39,224 - INFO - Scheduler has been shut down
+2026-06-18 21:02:39,224 - INFO - Scheduler stopped
+2026-06-18 21:02:45,135 - INFO - Browser initialized
+2026-06-18 21:02:45,136 - INFO - Scraper initialized
+2026-06-18 21:02:45,152 - INFO - Loaded 0 historical collections
+2026-06-18 21:02:45,153 - INFO - No today collection — generating now...
+2026-06-18 21:02:45,153 - INFO - Running daily collection job...
+2026-06-18 21:02:45,153 - INFO - Starting daily reel collection...
+2026-06-18 21:02:45,154 - INFO - Collecting reels for: mafia
+2026-06-18 21:02:45,154 - INFO - Searching for: mafia
+2026-06-18 21:02:54,777 - INFO - Found 0 reels for 'mafia'
+2026-06-18 21:02:55,782 - INFO - Searching for: mafia
+2026-06-18 21:03:03,031 - INFO - Found 0 reels for '#mafia'
+2026-06-18 21:03:04,043 - INFO - Searching for: mafia daily
+2026-06-18 21:03:09,188 - INFO - Found 0 reels for 'mafia daily'
+2026-06-18 21:03:10,203 - INFO - Collected 0 reels for mafia
+2026-06-18 21:03:10,204 - INFO - Collecting reels for: gangstars
+2026-06-18 21:03:10,205 - INFO - Searching for: gangstars
+2026-06-18 21:03:17,291 - INFO - Found 0 reels for 'gangstars'
+2026-06-18 21:03:18,302 - INFO - Searching for: gangstars
+2026-06-18 21:03:24,036 - INFO - Found 0 reels for '#gangstars'
+2026-06-18 21:03:25,044 - INFO - Searching for: gangstars daily
+2026-06-18 21:03:30,182 - INFO - Found 0 reels for 'gangstars daily'
+2026-06-18 21:03:31,198 - INFO - Collected 0 reels for gangstars
+2026-06-18 21:03:31,198 - INFO - Collecting reels for: murphy
+2026-06-18 21:03:31,200 - INFO - Searching for: murphy
+2026-06-18 21:03:36,350 - INFO - Found 0 reels for 'murphy'
+2026-06-18 21:03:37,363 - INFO - Searching for: murphy
+2026-06-18 21:03:37,364 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 21:03:38,363 - INFO - Searching for: murphy daily
+2026-06-18 21:03:38,364 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 21:03:39,363 - INFO - Collected 0 reels for murphy
+2026-06-18 21:03:39,363 - INFO - Collecting reels for: war
+2026-06-18 21:03:39,364 - INFO - Searching for: war
+2026-06-18 21:03:39,364 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 21:03:40,363 - INFO - Searching for: war
+2026-06-18 21:03:40,364 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 21:03:41,380 - INFO - Searching for: war daily
+2026-06-18 21:03:41,380 - WARNING - socket.send() raised exception.
+2026-06-18 21:03:41,380 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 21:03:42,396 - INFO - Collected 0 reels for war
+2026-06-18 21:03:42,396 - INFO - Collecting reels for: ninjas
+2026-06-18 21:03:42,400 - INFO - Searching for: ninjas
+2026-06-18 21:03:42,400 - WARNING - socket.send() raised exception.
+2026-06-18 21:03:42,400 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 21:03:43,412 - INFO - Searching for: ninjas
+2026-06-18 21:03:43,413 - WARNING - socket.send() raised exception.
+2026-06-18 21:03:43,413 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 21:03:44,429 - INFO - Searching for: ninjas daily
+2026-06-18 21:03:44,430 - WARNING - socket.send() raised exception.
+2026-06-18 21:03:44,430 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 21:03:45,433 - INFO - Collected 0 reels for ninjas
+2026-06-18 21:03:45,433 - INFO - Daily collection complete: 0 total reels
+2026-06-18 21:03:45,436 - INFO - Daily collection done: 0 reels
+2026-06-18 21:03:45,436 - INFO -   mafia: 0 reels
+2026-06-18 21:03:45,436 - INFO -   gangstars: 0 reels
+2026-06-18 21:03:45,436 - INFO -   murphy: 0 reels
+2026-06-18 21:03:45,436 - INFO -   war: 0 reels
+2026-06-18 21:03:45,436 - INFO -   ninjas: 0 reels
+2026-06-18 21:03:45,444 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:03:45,446 - INFO - Added job "Daily Reel Collection" to job store "default"
+2026-06-18 21:03:45,446 - INFO - Scheduler started
+2026-06-18 21:03:45,449 - INFO - Scheduler started
+2026-06-18 21:03:45,452 - INFO - Scheduler has been shut down
+2026-06-18 21:03:45,452 - WARNING - socket.send() raised exception.
+2026-06-18 21:04:17,501 - INFO - Browser initialized
+2026-06-18 21:04:17,502 - INFO - Universal Reels Finder initialized
+2026-06-18 21:04:17,504 - INFO - Loaded 5 topics from config
+2026-06-18 21:04:17,520 - INFO - Loaded 1 historical collections
+2026-06-18 21:04:17,520 - INFO - Today's collection already exists: 0 reels
+2026-06-18 21:04:17,534 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:04:17,535 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:04:17,537 - INFO - Added job "Daily Reel Collection" to job store "default"
+2026-06-18 21:04:17,537 - INFO - Added job "Daily Collection Backup" to job store "default"
+2026-06-18 21:04:17,537 - INFO - Scheduler started
+2026-06-18 21:04:17,539 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 21:05:12,856 - INFO - Running daily collection job...
+2026-06-18 21:05:12,856 - INFO - Starting daily reel collection...
+2026-06-18 21:05:12,856 - INFO - Collecting reels for: mafia
+2026-06-18 21:05:12,856 - INFO - Searching for: mafia
+2026-06-18 21:05:23,114 - INFO - Found 10 reels for 'mafia'
+2026-06-18 21:05:24,120 - INFO - Searching for: #mafia
+2026-06-18 21:05:29,270 - INFO - Found 10 reels for '#mafia'
+2026-06-18 21:05:30,266 - INFO - Collected 5 reels for mafia
+2026-06-18 21:05:30,266 - INFO - Collecting reels for: gangstars
+2026-06-18 21:05:30,266 - INFO - Searching for: gangstars
+2026-06-18 21:05:35,428 - INFO - Found 10 reels for 'gangstars'
+2026-06-18 21:05:36,443 - INFO - Searching for: #gangstars
+2026-06-18 21:05:37,978 - INFO - Scheduler stopped via API (Kill Switch activated)
+2026-06-18 21:05:41,560 - INFO - Found 10 reels for '#gangstars'
+2026-06-18 21:05:42,559 - INFO - Searching for: gangstars daily
+2026-06-18 21:05:49,292 - INFO - Found 10 reels for 'gangstars daily'
+2026-06-18 21:05:50,290 - INFO - Collected 2 reels for gangstars
+2026-06-18 21:05:50,290 - INFO - Collecting reels for: murphy
+2026-06-18 21:05:50,291 - INFO - Searching for: murphy
+2026-06-18 21:05:55,391 - INFO - Found 10 reels for 'murphy'
+2026-06-18 21:05:56,390 - INFO - Searching for: #murphy
+2026-06-18 21:06:01,557 - INFO - Found 10 reels for '#murphy'
+2026-06-18 21:06:02,561 - INFO - Searching for: murphy daily
+2026-06-18 21:06:09,188 - INFO - Found 10 reels for 'murphy daily'
+2026-06-18 21:06:10,197 - INFO - Collected 3 reels for murphy
+2026-06-18 21:06:10,197 - INFO - Collecting reels for: war
+2026-06-18 21:06:10,197 - INFO - Searching for: war
+2026-06-18 21:06:15,330 - INFO - Found 10 reels for 'war'
+2026-06-18 21:06:16,342 - INFO - Searching for: #war
+2026-06-18 21:06:21,483 - INFO - Found 10 reels for '#war'
+2026-06-18 21:06:22,491 - INFO - Searching for: war daily
+2026-06-18 21:06:27,627 - INFO - Found 10 reels for 'war daily'
+2026-06-18 21:06:28,602 - INFO - Collected 1 reels for war
+2026-06-18 21:06:28,603 - INFO - Collecting reels for: ninjas
+2026-06-18 21:06:28,603 - INFO - Searching for: ninjas
+2026-06-18 21:06:33,718 - INFO - Found 10 reels for 'ninjas'
+2026-06-18 21:06:34,718 - INFO - Searching for: #ninjas
+2026-06-18 21:06:39,868 - INFO - Found 10 reels for '#ninjas'
+2026-06-18 21:06:40,884 - INFO - Searching for: ninjas daily
+2026-06-18 21:06:47,331 - INFO - Found 10 reels for 'ninjas daily'
+2026-06-18 21:06:48,316 - INFO - Collected 5 reels for ninjas
+2026-06-18 21:06:48,326 - INFO - Daily collection complete: 16 total reels
+2026-06-18 21:06:48,326 - INFO - Daily collection completed: 16 reels
+2026-06-18 21:07:45,484 - INFO - Scheduler has been shut down
+2026-06-18 21:07:45,505 - INFO - Scheduler stopped
+2026-06-18 21:07:54,008 - INFO - Browser initialized
+2026-06-18 21:07:54,008 - INFO - Universal Reels Finder initialized
+2026-06-18 21:07:54,009 - INFO - Loaded 5 topics from config: {'mafia': {'name': 'mafia', 'enabled': True, 'reels_per_topic': 5, 'variations': ['crime', 'gangster', 'underworld', 'godfather', 'mafia life', 'criminal', 'organized crime'], 'last_collected': '2026-06-18T20:51:09.217895'}, 'gangstars': {'name': 'gangstars', 'enabled': True, 'reels_per_topic': 5, 'variations': ['gang', 'street life', 'urban', 'crew', 'rap', 'hiphop', 'gang culture', 'hood life'], 'last_collected': '2026-06-18T20:51:12.235527'}, 'murphy': {'name': 'murphy', 'enabled': True, 'reels_per_topic': 5, 'variations': ['eddie murphy', 'comedy', 'comedian', 'funny', 'standup', 'movies', 'actor', 'legend'], 'last_collected': '2026-06-18T20:51:15.235015'}, 'war': {'name': 'war', 'enabled': True, 'reels_per_topic': 5, 'variations': ['battle', 'military', 'army', 'soldier', 'combat', 'tactical', 'special forces', 'weapons'], 'last_collected': '2026-06-18T20:51:18.268418'}, 'ninjas': {'name': 'ninjas', 'enabled': True, 'reels_per_topic': 5, 'variations': ['ninja', 'martial arts', 'warrior', 'stealth', 'samurai', 'kungfu', 'ninja skills', 'japanese'], 'last_collected': '2026-06-18T20:51:21.317582'}}
+2026-06-18 21:07:54,106 - INFO - Loaded 2 historical collections
+2026-06-18 21:07:54,106 - INFO - Today's collection already exists: 0 reels
+2026-06-18 21:07:54,137 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:07:54,137 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:07:54,140 - INFO - Added job "Daily Reel Collection" to job store "default"
+2026-06-18 21:07:54,140 - INFO - Added job "Daily Collection Backup" to job store "default"
+2026-06-18 21:07:54,140 - INFO - Scheduler started
+2026-06-18 21:07:54,140 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 21:07:59,923 - INFO - Topic 'war' already exists
+2026-06-18 21:12:17,158 - INFO - Scheduler has been shut down
+2026-06-18 21:12:17,224 - INFO - Scheduler stopped
+2026-06-18 21:12:33,691 - INFO - Browser initialized
+2026-06-18 21:12:33,691 - INFO - Universal Reels Finder initialized
+2026-06-18 21:12:33,693 - INFO - Converted old format (dict) to list: ['mafia', 'gangstars', 'murphy', 'war', 'ninjas']
+2026-06-18 21:12:33,713 - INFO - Loaded 0 historical collections
+2026-06-18 21:12:33,713 - INFO - No collection for today, generating now...
+2026-06-18 21:12:33,713 - INFO - Running daily collection job...
+2026-06-18 21:12:33,714 - INFO - Starting daily reel collection...
+2026-06-18 21:12:33,714 - INFO - Collecting reels for: mafia
+2026-06-18 21:12:33,715 - INFO - Searching for: mafia
+2026-06-18 21:12:44,541 - INFO - Found 0 reels for 'mafia'
+2026-06-18 21:12:45,690 - INFO - Searching for: #mafia
+2026-06-18 21:12:50,824 - INFO - Found 0 reels for '#mafia'
+2026-06-18 21:12:51,840 - INFO - Searching for: mafia daily
+2026-06-18 21:12:56,990 - INFO - Found 0 reels for 'mafia daily'
+2026-06-18 21:12:57,990 - INFO - Collected 0 reels for mafia
+2026-06-18 21:12:57,990 - INFO - Collecting reels for: gangstars
+2026-06-18 21:12:57,990 - INFO - Searching for: gangstars
+2026-06-18 21:13:03,106 - INFO - Found 0 reels for 'gangstars'
+2026-06-18 21:13:04,122 - INFO - Searching for: #gangstars
+2026-06-18 21:13:09,237 - INFO - Found 0 reels for '#gangstars'
+2026-06-18 21:13:10,253 - INFO - Searching for: gangstars daily
+2026-06-18 21:13:15,386 - INFO - Found 0 reels for 'gangstars daily'
+2026-06-18 21:13:16,402 - INFO - Collected 0 reels for gangstars
+2026-06-18 21:13:16,403 - INFO - Collecting reels for: murphy
+2026-06-18 21:13:16,403 - INFO - Searching for: murphy
+2026-06-18 21:13:21,538 - INFO - Found 0 reels for 'murphy'
+2026-06-18 21:13:22,550 - INFO - Searching for: #murphy
+2026-06-18 21:13:27,668 - INFO - Found 0 reels for '#murphy'
+2026-06-18 21:13:28,729 - INFO - Searching for: murphy daily
+2026-06-18 21:13:33,970 - INFO - Found 0 reels for 'murphy daily'
+2026-06-18 21:13:34,973 - INFO - Collected 0 reels for murphy
+2026-06-18 21:13:34,973 - INFO - Collecting reels for: war
+2026-06-18 21:13:34,974 - INFO - Searching for: war
+2026-06-18 21:13:40,072 - INFO - Found 0 reels for 'war'
+2026-06-18 21:13:41,081 - INFO - Searching for: #war
+2026-06-18 21:13:46,194 - INFO - Found 0 reels for '#war'
+2026-06-18 21:13:47,201 - INFO - Searching for: war daily
+2026-06-18 21:13:52,298 - INFO - Found 0 reels for 'war daily'
+2026-06-18 21:13:53,307 - INFO - Collected 0 reels for war
+2026-06-18 21:13:53,308 - INFO - Collecting reels for: ninjas
+2026-06-18 21:13:53,309 - INFO - Searching for: ninjas
+2026-06-18 21:13:58,433 - INFO - Found 0 reels for 'ninjas'
+2026-06-18 21:13:59,436 - INFO - Searching for: #ninjas
+2026-06-18 21:14:06,372 - INFO - Found 0 reels for '#ninjas'
+2026-06-18 21:14:07,384 - INFO - Searching for: ninjas daily
+2026-06-18 21:14:12,497 - INFO - Found 0 reels for 'ninjas daily'
+2026-06-18 21:14:13,509 - INFO - Collected 0 reels for ninjas
+2026-06-18 21:14:13,526 - INFO - Daily collection complete: 0 total reels
+2026-06-18 21:14:13,526 - INFO - Daily collection completed: 0 reels
+2026-06-18 21:14:13,614 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:14:13,615 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:14:13,620 - INFO - Added job "Daily Reel Collection" to job store "default"
+2026-06-18 21:14:13,620 - INFO - Added job "Daily Collection Backup" to job store "default"
+2026-06-18 21:14:13,620 - INFO - Scheduler started
+2026-06-18 21:14:13,622 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 21:15:50,234 - INFO - Scheduler has been shut down
+2026-06-18 21:15:50,242 - INFO - Scheduler stopped
+2026-06-18 21:15:57,340 - INFO - Browser initialized
+2026-06-18 21:15:57,341 - INFO - Universal Reels Finder initialized
+2026-06-18 21:15:57,351 - INFO - Loaded 1 historical collections
+2026-06-18 21:15:57,351 - INFO - Today's collection already exists: 0 reels
+2026-06-18 21:15:57,527 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:15:57,527 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-18 21:15:57,527 - INFO - Scheduler started
+2026-06-18 21:15:57,527 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 21:16:06,143 - INFO - Saved 6 topics
+2026-06-18 21:16:24,805 - INFO - Saved 7 topics
+2026-06-18 21:16:31,768 - INFO - Saved 6 topics
+2026-06-18 21:16:33,771 - INFO - Saved 5 topics
+2026-06-18 21:16:36,150 - INFO - Saved 4 topics
+2026-06-18 21:16:38,453 - INFO - Saved 3 topics
+2026-06-18 21:16:40,469 - INFO - Saved 2 topics
+2026-06-18 21:16:43,885 - INFO - Saved 2 topics
+2026-06-18 21:16:53,560 - INFO - Saved 2 topics
+2026-06-18 21:16:57,641 - INFO - Running daily collection job...
+2026-06-18 21:16:57,643 - INFO - Starting daily reel collection...
+2026-06-18 21:16:57,643 - INFO - Collecting reels for: wargame
+2026-06-18 21:16:57,643 - INFO - Searching for: wargame
+2026-06-18 21:17:07,077 - INFO - Found 0 reels for 'wargame'
+2026-06-18 21:17:08,078 - INFO - Searching for: #wargame
+2026-06-18 21:17:13,270 - INFO - Found 0 reels for '#wargame'
+2026-06-18 21:17:14,276 - INFO - Searching for: wargame daily
+2026-06-18 21:17:19,409 - INFO - Found 0 reels for 'wargame daily'
+2026-06-18 21:17:20,411 - INFO - Collected 0 reels for wargame
+2026-06-18 21:17:20,412 - INFO - Collecting reels for: spiderman
+2026-06-18 21:17:20,413 - INFO - Searching for: spiderman
+2026-06-18 21:17:25,525 - INFO - Found 0 reels for 'spiderman'
+2026-06-18 21:17:26,524 - INFO - Searching for: #spiderman
+2026-06-18 21:17:31,647 - INFO - Found 0 reels for '#spiderman'
+2026-06-18 21:17:32,649 - INFO - Searching for: spiderman daily
+2026-06-18 21:17:37,744 - INFO - Found 0 reels for 'spiderman daily'
+2026-06-18 21:17:38,743 - INFO - Collected 0 reels for spiderman
+2026-06-18 21:17:38,744 - INFO - Daily collection complete: 0 total reels
+2026-06-18 21:17:38,744 - INFO - Daily collection completed: 0 reels
+2026-06-18 21:19:51,855 - INFO - Scheduler has been shut down
+2026-06-18 21:19:51,892 - INFO - Scheduler stopped
+2026-06-18 21:20:13,252 - INFO - Browser initialized
+2026-06-18 21:20:13,253 - INFO - Universal Reels Finder initialized
+2026-06-18 21:20:13,306 - INFO - Loaded 1 historical collections
+2026-06-18 21:20:13,306 - INFO - Today's collection already exists: 0 reels
+2026-06-18 21:20:13,337 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:20:13,341 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-18 21:20:13,341 - INFO - Scheduler started
+2026-06-18 21:20:13,343 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 21:20:24,152 - INFO - Saved 3 topics
+2026-06-18 21:20:27,099 - INFO - Saved 3 topics
+2026-06-18 21:20:35,381 - INFO - Running daily collection job...
+2026-06-18 21:20:35,381 - INFO - Starting daily reel collection...
+2026-06-18 21:20:35,381 - INFO - Collecting reels for: wargame
+2026-06-18 21:20:35,381 - INFO - Searching for: wargame
+2026-06-18 21:20:49,215 - INFO - Found 0 potential reel links
+2026-06-18 21:20:49,215 - INFO - Extracted 0 reels for 'wargame'
+2026-06-18 21:20:50,232 - INFO - Searching for: #wargame
+2026-06-18 21:20:56,346 - INFO - Found 0 potential reel links
+2026-06-18 21:20:56,346 - INFO - Extracted 0 reels for '#wargame'
+2026-06-18 21:20:57,347 - INFO - Searching for: wargame reels
+2026-06-18 21:21:03,429 - INFO - Found 0 potential reel links
+2026-06-18 21:21:03,429 - INFO - Extracted 0 reels for 'wargame reels'
+2026-06-18 21:21:04,443 - INFO - Searching for: wargame video
+2026-06-18 21:21:10,811 - INFO - Found 0 potential reel links
+2026-06-18 21:21:10,811 - INFO - Extracted 0 reels for 'wargame video'
+2026-06-18 21:21:11,825 - INFO - Collected 0 reels for wargame
+2026-06-18 21:21:11,826 - INFO - Collecting reels for: spiderman
+2026-06-18 21:21:11,826 - INFO - Searching for: spiderman
+2026-06-18 21:21:17,878 - INFO - Found 0 potential reel links
+2026-06-18 21:21:17,878 - INFO - Extracted 0 reels for 'spiderman'
+2026-06-18 21:21:18,873 - INFO - Searching for: #spiderman
+2026-06-18 21:21:24,890 - INFO - Found 0 potential reel links
+2026-06-18 21:21:24,890 - INFO - Extracted 0 reels for '#spiderman'
+2026-06-18 21:21:25,906 - INFO - Searching for: spiderman reels
+2026-06-18 21:21:31,922 - INFO - Found 0 potential reel links
+2026-06-18 21:21:31,922 - INFO - Extracted 0 reels for 'spiderman reels'
+2026-06-18 21:21:32,921 - INFO - Searching for: spiderman video
+2026-06-18 21:21:39,004 - INFO - Found 0 potential reel links
+2026-06-18 21:21:39,004 - INFO - Extracted 0 reels for 'spiderman video'
+2026-06-18 21:21:40,004 - INFO - Collected 0 reels for spiderman
+2026-06-18 21:21:40,005 - INFO - Collecting reels for: mask
+2026-06-18 21:21:40,005 - INFO - Searching for: mask
+2026-06-18 21:21:46,059 - INFO - Found 0 potential reel links
+2026-06-18 21:21:46,059 - INFO - Extracted 0 reels for 'mask'
+2026-06-18 21:21:47,073 - INFO - Searching for: #mask
+2026-06-18 21:21:53,124 - INFO - Found 0 potential reel links
+2026-06-18 21:21:53,124 - INFO - Extracted 0 reels for '#mask'
+2026-06-18 21:21:54,132 - INFO - Searching for: mask reels
+2026-06-18 21:22:00,199 - INFO - Found 0 potential reel links
+2026-06-18 21:22:00,199 - INFO - Extracted 0 reels for 'mask reels'
+2026-06-18 21:22:01,206 - INFO - Searching for: mask video
+2026-06-18 21:22:07,241 - INFO - Found 0 potential reel links
+2026-06-18 21:22:07,241 - INFO - Extracted 0 reels for 'mask video'
+2026-06-18 21:22:08,255 - INFO - Collected 0 reels for mask
+2026-06-18 21:22:08,256 - INFO - Daily collection complete: 0 total reels
+2026-06-18 21:22:08,256 - INFO - Daily collection completed: 0 reels
+2026-06-18 21:24:14,277 - INFO - Scheduler has been shut down
+2026-06-18 21:24:14,279 - INFO - Scheduler stopped
+2026-06-18 21:24:28,128 - INFO - Browser initialized
+2026-06-18 21:24:28,129 - INFO - Universal Reels Finder initialized
+2026-06-18 21:24:28,150 - INFO - Loaded 2 historical collections
+2026-06-18 21:24:28,150 - INFO - Today's collection already exists: 0 reels
+2026-06-18 21:24:28,156 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:24:28,158 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-18 21:24:28,158 - INFO - Scheduler started
+2026-06-18 21:24:28,160 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 21:24:43,838 - INFO - Saved 2 topics
+2026-06-18 21:24:45,828 - INFO - Saved 1 topics
+2026-06-18 21:24:47,798 - INFO - Saved 1 topics
+2026-06-18 21:24:49,633 - INFO - Running daily collection job...
+2026-06-18 21:24:49,635 - INFO - Starting daily reel collection...
+2026-06-18 21:24:49,635 - INFO - Collecting reels for: mask
+2026-06-18 21:24:49,635 - INFO - Searching for: mask
+2026-06-18 21:24:59,575 - INFO - Found 0 reels for 'mask'
+2026-06-18 21:25:00,570 - INFO - Searching for: mask
+2026-06-18 21:25:05,658 - INFO - Found 0 reels for '#mask'
+2026-06-18 21:25:06,653 - INFO - Searching for: mask daily
+2026-06-18 21:25:11,787 - INFO - Found 0 reels for 'mask daily'
+2026-06-18 21:25:12,803 - INFO - Collected 0 reels for mask
+2026-06-18 21:25:12,803 - INFO - Daily collection complete: 0 total reels
+2026-06-18 21:25:12,803 - INFO - Daily collection completed: 0 reels
+2026-06-18 21:25:12,803 - INFO -   mask: 0 reels
+2026-06-18 21:28:04,464 - INFO - Scheduler has been shut down
+2026-06-18 21:28:04,534 - INFO - Scheduler stopped
+2026-06-18 21:28:17,774 - INFO - Browser initialized
+2026-06-18 21:28:17,774 - INFO - Universal Reels Finder initialized
+2026-06-18 21:28:17,814 - INFO - Loaded 1 historical collections
+2026-06-18 21:28:17,815 - INFO - Today's collection already exists: 0 reels
+2026-06-18 21:28:17,839 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 21:28:17,839 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-18 21:28:17,839 - INFO - Scheduler started
+2026-06-18 21:28:17,839 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 21:28:20,768 - INFO - Running daily collection job...
+2026-06-18 21:28:20,769 - INFO - Starting daily reel collection...
+2026-06-18 21:28:20,770 - INFO - Collecting reels for: mask
+2026-06-18 21:28:20,770 - INFO - Searching for: mask
+2026-06-18 21:28:37,207 - INFO - Found 0 potential reel links
+2026-06-18 21:28:37,207 - INFO - Extracted 0 reels for 'mask'
+2026-06-18 21:28:38,207 - INFO - Searching for: mask
+2026-06-18 21:28:45,310 - INFO - Found 0 potential reel links
+2026-06-18 21:28:45,310 - INFO - Extracted 0 reels for '#mask'
+2026-06-18 21:28:46,320 - INFO - Searching for: mask daily
+2026-06-18 21:28:53,427 - INFO - Found 0 potential reel links
+2026-06-18 21:28:53,430 - INFO - Extracted 0 reels for 'mask daily'
+2026-06-18 21:28:54,447 - INFO - Collected 0 reels for mask
+2026-06-18 21:28:54,453 - INFO - Daily collection complete: 0 total reels
+2026-06-18 21:28:54,454 - INFO - Daily collection completed: 0 reels
+2026-06-18 21:28:54,455 - INFO -   mask: 0 reels
+2026-06-18 21:29:43,315 - INFO - Running daily collection job...
+2026-06-18 21:29:43,317 - INFO - Starting daily reel collection...
+2026-06-18 21:29:43,317 - INFO - Collecting reels for: mask
+2026-06-18 21:29:43,318 - INFO - Searching for: mask
+2026-06-18 21:29:50,438 - INFO - Found 27 potential reel links
+2026-06-18 21:29:50,442 - INFO - Extracted 10 reels for 'mask'
+2026-06-18 21:29:51,431 - INFO - Searching for: mask
+2026-06-18 21:29:58,559 - INFO - Found 27 potential reel links
+2026-06-18 21:29:58,560 - INFO - Extracted 10 reels for '#mask'
+2026-06-18 21:29:59,556 - INFO - Searching for: mask daily
+2026-06-18 21:30:06,659 - INFO - Found 29 potential reel links
+2026-06-18 21:30:06,661 - INFO - Extracted 10 reels for 'mask daily'
+2026-06-18 21:30:07,660 - INFO - Collected 3 reels for mask
+2026-06-18 21:30:07,661 - INFO - Daily collection complete: 3 total reels
+2026-06-18 21:30:07,662 - INFO - Daily collection completed: 3 reels
+2026-06-18 21:30:07,663 - INFO -   mask: 3 reels
+2026-06-18 21:30:07,663 - INFO -     - https://www.instagram.com/reel/DI_-eJ2tjhA/
+2026-06-18 21:30:07,664 - INFO -     - https://www.instagram.com/reel/DZuqm6kTsyS/
+2026-06-18 21:30:07,664 - INFO -     - https://www.instagram.com/reel/DRvwLReEgPq/
+2026-06-18 21:31:32,460 - INFO - Saved 5 topics
+2026-06-18 21:31:36,140 - INFO - Saved 4 topics
+2026-06-18 21:31:38,480 - INFO - Saved 3 topics
+2026-06-18 21:31:40,206 - INFO - Saved 2 topics
+2026-06-18 21:31:42,106 - INFO - Saved 1 topics
+2026-06-18 21:31:43,922 - INFO - Saved 0 topics
+2026-06-18 21:31:51,925 - INFO - Saved 1 topics
+2026-06-18 21:31:53,137 - INFO - Saved 1 topics
+2026-06-18 21:31:58,987 - INFO - Running daily collection job...
+2026-06-18 21:31:58,987 - INFO - Starting daily reel collection...
+2026-06-18 21:31:58,987 - INFO - Collecting reels for: spiderman
+2026-06-18 21:31:58,987 - INFO - Searching for: spiderman
+2026-06-18 21:32:06,102 - INFO - Found 27 potential reel links
+2026-06-18 21:32:06,102 - INFO - Extracted 10 reels for 'spiderman'
+2026-06-18 21:32:07,118 - INFO - Searching for: spiderman
+2026-06-18 21:32:14,167 - INFO - Found 27 potential reel links
+2026-06-18 21:32:14,167 - INFO - Extracted 10 reels for '#spiderman'
+2026-06-18 21:32:15,165 - INFO - Searching for: spiderman daily
+2026-06-18 21:32:22,206 - INFO - Found 27 potential reel links
+2026-06-18 21:32:22,206 - INFO - Extracted 10 reels for 'spiderman daily'
+2026-06-18 21:32:23,199 - INFO - Collected 5 reels for spiderman
+2026-06-18 21:32:23,199 - INFO - Daily collection complete: 5 total reels
+2026-06-18 21:32:23,199 - INFO - Daily collection completed: 5 reels
+2026-06-18 21:32:23,199 - INFO -   spiderman: 5 reels
+2026-06-18 21:32:23,199 - INFO -     - https://www.instagram.com/reel/DZszmLkhAdY/
+2026-06-18 21:32:23,199 - INFO -     - https://www.instagram.com/reel/DZsa6jzPHm6/
+2026-06-18 21:32:23,199 - INFO -     - https://www.instagram.com/reel/DQ6nGK9kbip/
+2026-06-18 21:32:23,199 - INFO -     - https://www.instagram.com/reel/DZsLmSThKiR/
+2026-06-18 21:32:23,199 - INFO -     - https://www.instagram.com/reel/DNdwaVhgFyi/
+2026-06-18 21:33:05,966 - INFO - Scheduler has been shut down
+2026-06-18 21:33:05,971 - INFO - Scheduler stopped
+2026-06-18 21:33:06,372 - INFO - Browser closed
+2026-06-18 21:33:06,372 - INFO - Scraper closed

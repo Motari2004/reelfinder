@@ -1,0 +1,200 @@
+2026-06-18 20:34:43,465 - INFO - Browser initialized
+2026-06-18 20:34:43,466 - INFO - Scraper initialized
+2026-06-18 20:34:43,468 - INFO - Config saved
+2026-06-18 20:34:43,468 - INFO - Collector initialized
+2026-06-18 20:34:43,469 - INFO - Running collection job...
+2026-06-18 20:34:43,469 - INFO - Searching for: crime
+2026-06-18 20:34:58,280 - INFO - Found 10 reels
+2026-06-18 20:34:59,295 - INFO - Config saved
+2026-06-18 20:34:59,296 - INFO - Searching for: gang
+2026-06-18 20:35:02,396 - ERROR - Search error: Mouse.wheel: Connection closed while reading from the driver
+2026-06-18 20:35:03,409 - INFO - Searching for: street life
+2026-06-18 20:35:03,411 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:04,411 - INFO - Searching for: urban
+2026-06-18 20:35:04,411 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:05,426 - INFO - Config saved
+2026-06-18 20:35:05,426 - INFO - Searching for: eddie murphy
+2026-06-18 20:35:05,426 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:06,442 - INFO - Searching for: comedy
+2026-06-18 20:35:06,443 - WARNING - socket.send() raised exception.
+2026-06-18 20:35:06,443 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:07,459 - INFO - Searching for: comedian
+2026-06-18 20:35:07,459 - WARNING - socket.send() raised exception.
+2026-06-18 20:35:07,459 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:08,476 - INFO - Config saved
+2026-06-18 20:35:08,477 - INFO - Searching for: battle
+2026-06-18 20:35:08,478 - WARNING - socket.send() raised exception.
+2026-06-18 20:35:08,478 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:09,492 - INFO - Searching for: military
+2026-06-18 20:35:09,494 - WARNING - socket.send() raised exception.
+2026-06-18 20:35:09,495 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:10,508 - INFO - Searching for: army
+2026-06-18 20:35:10,509 - WARNING - socket.send() raised exception.
+2026-06-18 20:35:10,509 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:11,526 - INFO - Config saved
+2026-06-18 20:35:11,526 - INFO - Searching for: ninja
+2026-06-18 20:35:11,526 - WARNING - socket.send() raised exception.
+2026-06-18 20:35:11,526 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:12,542 - INFO - Searching for: martial arts
+2026-06-18 20:35:12,543 - WARNING - socket.send() raised exception.
+2026-06-18 20:35:12,543 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:13,558 - INFO - Searching for: warrior
+2026-06-18 20:35:13,559 - WARNING - socket.send() raised exception.
+2026-06-18 20:35:13,559 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:35:14,575 - INFO - Config saved
+2026-06-18 20:35:14,575 - INFO - Collection complete: 5 total reels
+2026-06-18 20:35:14,608 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 20:35:14,608 - INFO - Added job "startup_event.<locals>.<lambda>" to job store "default"
+2026-06-18 20:35:14,608 - INFO - Scheduler started
+2026-06-18 20:35:14,608 - INFO - Scheduler started
+2026-06-18 20:35:14,616 - INFO - Scheduler has been shut down
+2026-06-18 20:35:14,616 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:08,768 - INFO - Browser initialized
+2026-06-18 20:37:08,769 - INFO - Scraper initialized
+2026-06-18 20:37:08,841 - INFO - Loaded 5 topics
+2026-06-18 20:37:08,841 - INFO - Collector initialized
+2026-06-18 20:37:08,841 - INFO - Running collection job...
+2026-06-18 20:37:08,841 - INFO - Searching for: crime
+2026-06-18 20:37:19,105 - ERROR - Search error: Mouse.wheel: Connection closed while reading from the driver
+2026-06-18 20:37:20,104 - INFO - Searching for: gangster
+2026-06-18 20:37:20,105 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:21,121 - INFO - Searching for: underworld
+2026-06-18 20:37:21,121 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:22,138 - INFO - Config saved
+2026-06-18 20:37:22,138 - INFO - Searching for: gang
+2026-06-18 20:37:22,140 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:23,154 - INFO - Searching for: street life
+2026-06-18 20:37:23,157 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:23,158 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:24,170 - INFO - Searching for: urban
+2026-06-18 20:37:24,171 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:24,171 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:25,187 - INFO - Config saved
+2026-06-18 20:37:25,187 - INFO - Searching for: eddie murphy
+2026-06-18 20:37:25,187 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:25,187 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:26,203 - INFO - Searching for: comedy
+2026-06-18 20:37:26,204 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:26,204 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:27,220 - INFO - Searching for: comedian
+2026-06-18 20:37:27,223 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:27,223 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:28,237 - INFO - Config saved
+2026-06-18 20:37:28,237 - INFO - Searching for: battle
+2026-06-18 20:37:28,237 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:28,237 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:29,253 - INFO - Searching for: military
+2026-06-18 20:37:29,254 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:29,255 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:30,269 - INFO - Searching for: army
+2026-06-18 20:37:30,270 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:30,270 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:31,287 - INFO - Config saved
+2026-06-18 20:37:31,287 - INFO - Searching for: ninja
+2026-06-18 20:37:31,287 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:31,287 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:32,302 - INFO - Searching for: martial arts
+2026-06-18 20:37:32,303 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:32,303 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:33,319 - INFO - Searching for: warrior
+2026-06-18 20:37:33,319 - WARNING - socket.send() raised exception.
+2026-06-18 20:37:33,319 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:37:34,336 - INFO - Config saved
+2026-06-18 20:37:34,337 - INFO - Collection complete: 0 total reels
+2026-06-18 20:37:34,348 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 20:37:34,351 - INFO - Added job "startup_event.<locals>.<lambda>" to job store "default"
+2026-06-18 20:37:34,352 - INFO - Scheduler started
+2026-06-18 20:37:34,352 - INFO - Scheduler started
+2026-06-18 20:37:34,352 - INFO - Scheduler has been shut down
+2026-06-18 20:37:34,352 - WARNING - socket.send() raised exception.
+2026-06-18 20:39:42,490 - INFO - Browser initialized
+2026-06-18 20:39:42,490 - INFO - Scraper initialized
+2026-06-18 20:39:42,507 - INFO - Loaded 5 topics
+2026-06-18 20:39:42,508 - INFO - Collector initialized
+2026-06-18 20:39:42,508 - INFO - Running collection job...
+2026-06-18 20:39:42,509 - INFO - Searching for: crime
+2026-06-18 20:39:59,528 - INFO - Found 10 reels
+2026-06-18 20:40:00,545 - INFO - Config saved
+2026-06-18 20:40:00,545 - INFO - Searching for: gang
+2026-06-18 20:40:07,360 - INFO - Found 10 reels
+2026-06-18 20:40:08,377 - INFO - Config saved
+2026-06-18 20:40:08,377 - INFO - Searching for: eddie murphy
+2026-06-18 20:40:13,526 - INFO - Found 10 reels
+2026-06-18 20:40:14,543 - INFO - Config saved
+2026-06-18 20:40:14,543 - INFO - Searching for: battle
+2026-06-18 20:40:19,642 - INFO - Found 0 reels
+2026-06-18 20:40:20,640 - INFO - Searching for: military
+2026-06-18 20:40:25,779 - INFO - Found 0 reels
+2026-06-18 20:40:26,789 - INFO - Searching for: army
+2026-06-18 20:40:32,010 - INFO - Found 0 reels
+2026-06-18 20:40:33,014 - INFO - Config saved
+2026-06-18 20:40:33,014 - INFO - Searching for: ninja
+2026-06-18 20:40:40,936 - INFO - Found 0 reels
+2026-06-18 20:40:41,947 - INFO - Searching for: martial arts
+2026-06-18 20:40:47,149 - INFO - Found 0 reels
+2026-06-18 20:40:48,153 - INFO - Searching for: warrior
+2026-06-18 20:40:55,414 - INFO - Found 0 reels
+2026-06-18 20:40:56,421 - INFO - Config saved
+2026-06-18 20:40:56,421 - INFO - Collection complete: 15 total reels
+2026-06-18 20:40:56,431 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 20:40:56,436 - INFO - Added job "startup_event.<locals>.<lambda>" to job store "default"
+2026-06-18 20:40:56,437 - INFO - Scheduler started
+2026-06-18 20:40:56,438 - INFO - Scheduler started
+2026-06-18 20:43:25,792 - INFO - Scheduler has been shut down
+2026-06-18 20:50:55,392 - INFO - Browser initialized
+2026-06-18 20:50:55,393 - INFO - Scraper initialized
+2026-06-18 20:50:55,412 - INFO - Loaded 5 topics
+2026-06-18 20:50:55,412 - INFO - Collector initialized
+2026-06-18 20:50:55,413 - INFO - Running collection job...
+2026-06-18 20:50:55,413 - INFO - Searching for: crime
+2026-06-18 20:51:04,660 - INFO - Found 0 reels
+2026-06-18 20:51:05,669 - INFO - Searching for: gangster
+2026-06-18 20:51:07,174 - ERROR - Search input error: Target page, context or browser has been closed
+2026-06-18 20:51:07,186 - ERROR - Search error: Page.goto: Target page, context or browser has been closed
+2026-06-18 20:51:08,203 - INFO - Searching for: underworld
+2026-06-18 20:51:08,203 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:09,219 - INFO - Config saved
+2026-06-18 20:51:09,219 - INFO - Searching for: gang
+2026-06-18 20:51:09,219 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:10,211 - INFO - Searching for: street life
+2026-06-18 20:51:10,211 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:11,219 - INFO - Searching for: urban
+2026-06-18 20:51:11,219 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:12,237 - INFO - Config saved
+2026-06-18 20:51:12,237 - INFO - Searching for: eddie murphy
+2026-06-18 20:51:12,239 - WARNING - socket.send() raised exception.
+2026-06-18 20:51:12,239 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:13,235 - INFO - Searching for: comedy
+2026-06-18 20:51:13,236 - WARNING - socket.send() raised exception.
+2026-06-18 20:51:13,237 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:14,235 - INFO - Searching for: comedian
+2026-06-18 20:51:14,238 - WARNING - socket.send() raised exception.
+2026-06-18 20:51:14,238 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:15,235 - INFO - Config saved
+2026-06-18 20:51:15,236 - INFO - Searching for: battle
+2026-06-18 20:51:15,238 - WARNING - socket.send() raised exception.
+2026-06-18 20:51:15,238 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:16,250 - INFO - Searching for: military
+2026-06-18 20:51:16,251 - WARNING - socket.send() raised exception.
+2026-06-18 20:51:16,251 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:17,254 - INFO - Searching for: army
+2026-06-18 20:51:17,254 - WARNING - socket.send() raised exception.
+2026-06-18 20:51:17,254 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:18,269 - INFO - Config saved
+2026-06-18 20:51:18,269 - INFO - Searching for: ninja
+2026-06-18 20:51:18,272 - WARNING - socket.send() raised exception.
+2026-06-18 20:51:18,272 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:19,284 - INFO - Searching for: martial arts
+2026-06-18 20:51:19,285 - WARNING - socket.send() raised exception.
+2026-06-18 20:51:19,285 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:20,300 - INFO - Searching for: warrior
+2026-06-18 20:51:20,301 - WARNING - socket.send() raised exception.
+2026-06-18 20:51:20,301 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-18 20:51:21,318 - INFO - Config saved
+2026-06-18 20:51:21,318 - INFO - Collection complete: 0 total reels
+2026-06-18 20:51:21,347 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 20:51:21,351 - INFO - Added job "startup_event.<locals>.<lambda>" to job store "default"
+2026-06-18 20:51:21,351 - INFO - Scheduler started
+2026-06-18 20:51:21,351 - INFO - Scheduler started
+2026-06-18 20:51:21,351 - INFO - Scheduler has been shut down
+2026-06-18 20:51:21,351 - WARNING - socket.send() raised exception.

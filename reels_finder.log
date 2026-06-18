@@ -2,3 +2,15 @@
 2026-06-18 19:28:23,222 - INFO - Scraper initialized
 2026-06-18 19:28:37,427 - INFO - Searching for: nature
 2026-06-18 19:28:49,786 - INFO - Captured 10 reels
+2026-06-18 19:42:57,965 - INFO - Browser initialized
+2026-06-18 19:42:57,966 - INFO - Universal Reels Finder initialized
+2026-06-18 19:43:12,213 - INFO - Searching for: nature (type: auto)
+2026-06-18 19:43:26,687 - INFO - Searching for: fitness (type: auto)
+2026-06-18 19:43:28,161 - INFO - Found 10 reels for 'nature'
+2026-06-18 19:43:33,877 - INFO - Found 10 reels for 'fitness'
+2026-06-18 19:43:33,884 - INFO - Searching for: fitness (type: auto)
+2026-06-18 19:43:42,527 - INFO - Found 10 reels for 'fitness'
+2026-06-18 19:43:56,034 - INFO - Searching for: kenya (type: auto)
+2026-06-18 19:44:04,869 - INFO - Found 10 reels for 'kenya'
+2026-06-18 19:44:30,392 - INFO - Browser closed
+2026-06-18 19:44:30,393 - INFO - Scraper closed

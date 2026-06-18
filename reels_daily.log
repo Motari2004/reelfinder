@@ -1,0 +1,76 @@
+2026-06-18 19:48:03,427 - INFO - Browser initialized
+2026-06-18 19:48:03,428 - INFO - Universal Reels Finder initialized
+2026-06-18 19:48:03,429 - INFO - No collection for today, generating now...
+2026-06-18 19:48:03,429 - INFO - Running daily collection job...
+2026-06-18 19:48:03,430 - INFO - Starting daily reel collection...
+2026-06-18 19:48:03,431 - INFO - Collecting reels for: mafia
+2026-06-18 19:48:03,431 - INFO - Searching for: mafia
+2026-06-18 19:48:13,426 - INFO - Found 10 reels for 'mafia'
+2026-06-18 19:48:14,434 - INFO - Searching for: mafia
+2026-06-18 19:48:19,548 - INFO - Found 10 reels for '#mafia'
+2026-06-18 19:48:20,558 - INFO - Searching for: mafia daily
+2026-06-18 19:48:25,691 - INFO - Found 10 reels for 'mafia daily'
+2026-06-18 19:48:26,694 - INFO - Collected 5 reels for mafia
+2026-06-18 19:48:26,694 - INFO - Collecting reels for: gangstars
+2026-06-18 19:48:26,694 - INFO - Searching for: gangstars
+2026-06-18 19:48:31,814 - INFO - Found 10 reels for 'gangstars'
+2026-06-18 19:48:32,818 - INFO - Searching for: gangstars
+2026-06-18 19:48:37,931 - INFO - Found 10 reels for '#gangstars'
+2026-06-18 19:48:38,947 - INFO - Searching for: gangstars daily
+2026-06-18 19:48:44,050 - INFO - Found 10 reels for 'gangstars daily'
+2026-06-18 19:48:45,063 - INFO - Collected 2 reels for gangstars
+2026-06-18 19:48:45,063 - INFO - Collecting reels for: murphy
+2026-06-18 19:48:45,064 - INFO - Searching for: murphy
+2026-06-18 19:48:50,200 - INFO - Found 10 reels for 'murphy'
+2026-06-18 19:48:51,201 - INFO - Searching for: murphy
+2026-06-18 19:48:56,352 - INFO - Found 10 reels for '#murphy'
+2026-06-18 19:48:57,360 - INFO - Searching for: murphy daily
+2026-06-18 19:49:02,501 - INFO - Found 10 reels for 'murphy daily'
+2026-06-18 19:49:03,516 - INFO - Collected 2 reels for murphy
+2026-06-18 19:49:03,516 - INFO - Collecting reels for: war
+2026-06-18 19:49:03,517 - INFO - Searching for: war
+2026-06-18 19:49:08,686 - INFO - Found 10 reels for 'war'
+2026-06-18 19:49:09,691 - INFO - Searching for: war
+2026-06-18 19:49:14,826 - INFO - Found 10 reels for '#war'
+2026-06-18 19:49:15,841 - INFO - Searching for: war daily
+2026-06-18 19:49:22,707 - INFO - Found 10 reels for 'war daily'
+2026-06-18 19:49:23,723 - INFO - Collected 0 reels for war
+2026-06-18 19:49:23,723 - INFO - Collecting reels for: ninjas
+2026-06-18 19:49:23,724 - INFO - Searching for: ninjas
+2026-06-18 19:49:30,539 - INFO - Found 10 reels for 'ninjas'
+2026-06-18 19:49:31,556 - INFO - Searching for: ninjas
+2026-06-18 19:49:38,205 - INFO - Found 10 reels for '#ninjas'
+2026-06-18 19:49:39,206 - INFO - Searching for: ninjas daily
+2026-06-18 19:49:46,420 - INFO - Found 10 reels for 'ninjas daily'
+2026-06-18 19:49:47,436 - INFO - Collected 5 reels for ninjas
+2026-06-18 19:49:47,437 - INFO - Daily collection complete: 14 total reels
+2026-06-18 19:49:47,437 - INFO - Daily collection completed: 14 reels
+2026-06-18 19:49:47,437 - INFO -   mafia: 5 reels
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DPDbsGAjRhk/
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DZrgDQDsoqK/
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DZkqyRgDRRn/
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DXpUyEskxcn/
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DXmH5rsgaA2/
+2026-06-18 19:49:47,437 - INFO -   gangstars: 2 reels
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DWoloWbjfmT/
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DWmWWebgBD8/
+2026-06-18 19:49:47,437 - INFO -   murphy: 2 reels
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DX2deMCMeBA/
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DZZmxTAATGA/
+2026-06-18 19:49:47,437 - INFO -   war: 0 reels
+2026-06-18 19:49:47,437 - INFO -   ninjas: 5 reels
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/CNQYMuLJrdk/
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DYr-OH7CyRj/
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DZYzENMI-eN/
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/evUK1jFnEJ/
+2026-06-18 19:49:47,437 - INFO -     - https://www.instagram.com/reel/DGER3gsTA1u/
+2026-06-18 19:49:47,503 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 19:49:47,503 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-18 19:49:47,520 - INFO - Added job "Daily Reel Collection" to job store "default"
+2026-06-18 19:49:47,520 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-18 19:49:47,520 - INFO - Scheduler started
+2026-06-18 19:49:47,520 - INFO - Scheduler started - daily collection at midnight
+2026-06-18 19:51:31,063 - INFO - Scheduler has been shut down
+2026-06-18 19:51:31,065 - INFO - Scheduler stopped
+2026-06-18 19:51:31,439 - INFO - Browser closed
+2026-06-18 19:51:31,439 - INFO - Scraper closed

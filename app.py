@@ -86,7 +86,6 @@ def safe_int(value: Any) -> int:
 
 
 
-
 class GoogleDriveManager:
     """Manage Google Drive operations for shared data"""
     
@@ -101,30 +100,56 @@ class GoogleDriveManager:
         token_json = os.environ.get('GOOGLE_DRIVE_TOKEN')
         if token_json:
             try:
-                token_data = json.loads(base64.b64decode(token_json).decode('utf-8'))
-                creds = Credentials.from_authorized_user_info(token_data, SCOPES)
-                logger.info("Drive authenticated via GOOGLE_DRIVE_TOKEN")
-                return build('drive', 'v3', credentials=creds)
+                # Decode base64 to binary
+                decoded_bytes = base64.b64decode(token_json)
+                
+                # Try to load as pickle (this is the correct format for drive_token.pickle)
+                try:
+                    import io
+                    creds = pickle.loads(decoded_bytes)
+                    logger.info("✅ Drive authenticated via GOOGLE_DRIVE_TOKEN (pickle)")
+                    return build('drive', 'v3', credentials=creds)
+                except Exception as e:
+                    logger.debug(f"Pickle load failed: {e}")
+                
+                # Try as JSON (alternative format)
+                try:
+                    token_data = json.loads(decoded_bytes.decode('utf-8'))
+                    creds = Credentials.from_authorized_user_info(token_data, SCOPES)
+                    logger.info("✅ Drive authenticated via GOOGLE_DRIVE_TOKEN (JSON)")
+                    return build('drive', 'v3', credentials=creds)
+                except Exception as e:
+                    logger.debug(f"JSON load failed: {e}")
+                
+                # Try as string (last resort)
+                try:
+                    token_data = json.loads(token_json)
+                    creds = Credentials.from_authorized_user_info(token_data, SCOPES)
+                    logger.info("✅ Drive authenticated via GOOGLE_DRIVE_TOKEN (string)")
+                    return build('drive', 'v3', credentials=creds)
+                except Exception as e:
+                    logger.debug(f"String JSON load failed: {e}")
+                    
             except Exception as e:
                 logger.warning(f"GOOGLE_DRIVE_TOKEN failed: {e}")
         
-        # 2. Try local token file
+        # 2. Try local token file (for local development)
         if os.path.exists('drive_token.pickle'):
             try:
                 with open('drive_token.pickle', 'rb') as f:
                     creds = pickle.load(f)
-                logger.info("Drive authenticated via drive_token.pickle")
+                logger.info("✅ Drive authenticated via drive_token.pickle")
                 return build('drive', 'v3', credentials=creds)
             except Exception as e:
                 logger.warning(f"drive_token.pickle failed: {e}")
         
-        # 3. Try credentials.json (Local development)
+        # 3. Try credentials.json (Local development - interactive)
         if os.path.exists('credentials.json'):
             try:
                 from google_auth_oauthlib.flow import InstalledAppFlow
                 flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
                 creds = flow.run_local_server(port=0)
-                logger.info("Drive authenticated via credentials.json")
+                logger.info("✅ Drive authenticated via credentials.json")
                 # Save token for future use
                 with open('drive_token.pickle', 'wb') as f:
                     pickle.dump(creds, f)
@@ -137,7 +162,7 @@ class GoogleDriveManager:
                     from google_auth_oauthlib.flow import InstalledAppFlow
                     flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
                     creds = flow.run_console()
-                    logger.info("Drive authenticated via credentials.json (console mode)")
+                    logger.info("✅ Drive authenticated via credentials.json (console mode)")
                     with open('drive_token.pickle', 'wb') as f:
                         pickle.dump(creds, f)
                     logger.info("Token saved to drive_token.pickle for future use")
@@ -145,44 +170,36 @@ class GoogleDriveManager:
                 except Exception as e2:
                     logger.warning(f"credentials.json console auth failed: {e2}")
         
-        # 4. Try service account (Render)
+        # 4. Try service account (Render - alternative)
         credentials_json = os.environ.get('GOOGLE_CREDENTIALS')
         if credentials_json:
             try:
-                credentials_data = json.loads(base64.b64decode(credentials_json).decode('utf-8'))
+                # Try base64 encoded service account
+                try:
+                    credentials_data = json.loads(base64.b64decode(credentials_json).decode('utf-8'))
+                except:
+                    credentials_data = json.loads(credentials_json)
+                
                 if 'client_email' in credentials_data:
                     from google.oauth2 import service_account
                     creds = service_account.Credentials.from_service_account_info(
                         credentials_data, scopes=SCOPES
                     )
-                    logger.info("Drive authenticated via service account")
+                    logger.info("✅ Drive authenticated via service account")
                     return build('drive', 'v3', credentials=creds)
                 else:
                     # Try OAuth2 flow with client config
                     from google_auth_oauthlib.flow import InstalledAppFlow
                     flow = InstalledAppFlow.from_client_config(credentials_data, SCOPES)
                     creds = flow.run_local_server(port=0, open_browser=False)
-                    logger.info("Drive authenticated via GOOGLE_CREDENTIALS OAuth2")
+                    logger.info("✅ Drive authenticated via GOOGLE_CREDENTIALS OAuth2")
                     return build('drive', 'v3', credentials=creds)
             except Exception as e:
                 logger.warning(f"GOOGLE_CREDENTIALS failed: {e}")
         
-        # 5. Try to create credentials from environment as fallback
-        creds_json = os.environ.get('GOOGLE_CREDENTIALS_JSON')
-        if creds_json:
-            try:
-                creds_data = json.loads(base64.b64decode(creds_json).decode('utf-8'))
-                from google_auth_oauthlib.flow import InstalledAppFlow
-                flow = InstalledAppFlow.from_client_config(creds_data, SCOPES)
-                creds = flow.run_local_server(port=0, open_browser=False)
-                logger.info("Drive authenticated via GOOGLE_CREDENTIALS_JSON")
-                return build('drive', 'v3', credentials=creds)
-            except Exception as e:
-                logger.warning(f"GOOGLE_CREDENTIALS_JSON failed: {e}")
-        
         logger.error("❌ No Drive credentials found")
         logger.info("📌 To authenticate, place 'credentials.json' in the project folder")
-        logger.info("📌 Or set GOOGLE_DRIVE_TOKEN environment variable")
+        logger.info("📌 Or set GOOGLE_DRIVE_TOKEN environment variable (base64 encoded)")
         return None
     
     def _get_or_create_folder(self):
@@ -328,6 +345,11 @@ class GoogleDriveManager:
         except Exception as e:
             logger.error(f"Load from Drive error: {e}")
             return None
+        
+        
+        
+        
+        
 
 
 

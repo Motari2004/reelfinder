@@ -1,5 +1,5 @@
 """
-Daily Reel URL Generator - Full UI Control with Working Search
+Daily Reel URL Generator - Saves URLs to Google Drive
 """
 
 import asyncio
@@ -9,6 +9,8 @@ import logging
 import sys
 import os
 import math
+import base64
+import pickle
 from typing import List, Dict, Optional, Set, Any
 from dataclasses import dataclass, asdict, field
 from datetime import datetime
@@ -17,6 +19,13 @@ from fastapi.responses import JSONResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from playwright.async_api import async_playwright, Page, Browser
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
+from google_auth_oauthlib.flow import InstalledAppFlow
+import io
 
 # Setup logging
 logging.basicConfig(
@@ -40,6 +49,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Google Drive Configuration
+SCOPES = ['https://www.googleapis.com/auth/drive']
+DRIVE_FOLDER_NAME = "Reel_Finder_Data"
+SHARED_FILE_NAME = "shared_reels.json"
+
 # Default topics
 DEFAULT_TOPICS = ["mafia", "gangstars", "murphy", "war", "ninjas"]
 
@@ -48,6 +62,8 @@ scheduler_running = True
 scraper = None
 collector = None
 scheduler = None
+drive_service = None
+drive_folder_id = None
 
 
 def safe_int(value: Any) -> int:
@@ -59,6 +75,270 @@ def safe_int(value: Any) -> int:
         return int(float(value))
     except (ValueError, TypeError):
         return 0
+
+
+
+
+
+
+
+
+
+
+
+
+class GoogleDriveManager:
+    """Manage Google Drive operations for shared data"""
+    
+    def __init__(self):
+        self.service = self._authenticate()
+        self.folder_id = self._get_or_create_folder()
+        
+    def _authenticate(self):
+        creds = None
+        
+        # 1. Try environment token (Render)
+        token_json = os.environ.get('GOOGLE_DRIVE_TOKEN')
+        if token_json:
+            try:
+                token_data = json.loads(base64.b64decode(token_json).decode('utf-8'))
+                creds = Credentials.from_authorized_user_info(token_data, SCOPES)
+                logger.info("Drive authenticated via GOOGLE_DRIVE_TOKEN")
+                return build('drive', 'v3', credentials=creds)
+            except Exception as e:
+                logger.warning(f"GOOGLE_DRIVE_TOKEN failed: {e}")
+        
+        # 2. Try local token file
+        if os.path.exists('drive_token.pickle'):
+            try:
+                with open('drive_token.pickle', 'rb') as f:
+                    creds = pickle.load(f)
+                logger.info("Drive authenticated via drive_token.pickle")
+                return build('drive', 'v3', credentials=creds)
+            except Exception as e:
+                logger.warning(f"drive_token.pickle failed: {e}")
+        
+        # 3. Try credentials.json (Local development)
+        if os.path.exists('credentials.json'):
+            try:
+                from google_auth_oauthlib.flow import InstalledAppFlow
+                flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+                creds = flow.run_local_server(port=0)
+                logger.info("Drive authenticated via credentials.json")
+                # Save token for future use
+                with open('drive_token.pickle', 'wb') as f:
+                    pickle.dump(creds, f)
+                logger.info("Token saved to drive_token.pickle for future use")
+                return build('drive', 'v3', credentials=creds)
+            except Exception as e:
+                logger.warning(f"credentials.json authentication failed: {e}")
+                # Try alternative method if run_local_server fails
+                try:
+                    from google_auth_oauthlib.flow import InstalledAppFlow
+                    flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+                    creds = flow.run_console()
+                    logger.info("Drive authenticated via credentials.json (console mode)")
+                    with open('drive_token.pickle', 'wb') as f:
+                        pickle.dump(creds, f)
+                    logger.info("Token saved to drive_token.pickle for future use")
+                    return build('drive', 'v3', credentials=creds)
+                except Exception as e2:
+                    logger.warning(f"credentials.json console auth failed: {e2}")
+        
+        # 4. Try service account (Render)
+        credentials_json = os.environ.get('GOOGLE_CREDENTIALS')
+        if credentials_json:
+            try:
+                credentials_data = json.loads(base64.b64decode(credentials_json).decode('utf-8'))
+                if 'client_email' in credentials_data:
+                    from google.oauth2 import service_account
+                    creds = service_account.Credentials.from_service_account_info(
+                        credentials_data, scopes=SCOPES
+                    )
+                    logger.info("Drive authenticated via service account")
+                    return build('drive', 'v3', credentials=creds)
+                else:
+                    # Try OAuth2 flow with client config
+                    from google_auth_oauthlib.flow import InstalledAppFlow
+                    flow = InstalledAppFlow.from_client_config(credentials_data, SCOPES)
+                    creds = flow.run_local_server(port=0, open_browser=False)
+                    logger.info("Drive authenticated via GOOGLE_CREDENTIALS OAuth2")
+                    return build('drive', 'v3', credentials=creds)
+            except Exception as e:
+                logger.warning(f"GOOGLE_CREDENTIALS failed: {e}")
+        
+        # 5. Try to create credentials from environment as fallback
+        creds_json = os.environ.get('GOOGLE_CREDENTIALS_JSON')
+        if creds_json:
+            try:
+                creds_data = json.loads(base64.b64decode(creds_json).decode('utf-8'))
+                from google_auth_oauthlib.flow import InstalledAppFlow
+                flow = InstalledAppFlow.from_client_config(creds_data, SCOPES)
+                creds = flow.run_local_server(port=0, open_browser=False)
+                logger.info("Drive authenticated via GOOGLE_CREDENTIALS_JSON")
+                return build('drive', 'v3', credentials=creds)
+            except Exception as e:
+                logger.warning(f"GOOGLE_CREDENTIALS_JSON failed: {e}")
+        
+        logger.error("❌ No Drive credentials found")
+        logger.info("📌 To authenticate, place 'credentials.json' in the project folder")
+        logger.info("📌 Or set GOOGLE_DRIVE_TOKEN environment variable")
+        return None
+    
+    def _get_or_create_folder(self):
+        if not self.service:
+            return None
+        
+        try:
+            query = f"name='{DRIVE_FOLDER_NAME}' and mimeType='application/vnd.google-apps.folder' and trashed=false"
+            results = self.service.files().list(q=query, fields="files(id)").execute()
+            files = results.get('files', [])
+            
+            if files:
+                logger.info(f"✅ Found folder: {DRIVE_FOLDER_NAME}")
+                return files[0]['id']
+            
+            # Create folder if it doesn't exist
+            logger.info(f"📁 Creating folder: {DRIVE_FOLDER_NAME}")
+            file_metadata = {
+                'name': DRIVE_FOLDER_NAME,
+                'mimeType': 'application/vnd.google-apps.folder'
+            }
+            folder = self.service.files().create(body=file_metadata, fields='id').execute()
+            folder_id = folder.get('id')
+            logger.info(f"✅ Created folder: {DRIVE_FOLDER_NAME} (ID: {folder_id})")
+            return folder_id
+            
+        except Exception as e:
+            logger.error(f"Folder error: {e}")
+            return None
+    
+    async def save_shared_data(self, data: Dict) -> bool:
+        """Save shared data to Google Drive"""
+        if not self.service:
+            logger.error("No Drive service available")
+            return False
+        
+        if not self.folder_id:
+            logger.error("No folder ID available")
+            return False
+        
+        try:
+            # Check if file exists
+            query = f"'{self.folder_id}' in parents and name='{SHARED_FILE_NAME}' and trashed=false"
+            results = self.service.files().list(q=query, fields="files(id)").execute()
+            files = results.get('files', [])
+            
+            # Create temporary file
+            import tempfile
+            file_content = json.dumps(data, indent=2, ensure_ascii=False)
+            
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as temp_file:
+                temp_file.write(file_content)
+                temp_path = temp_file.name
+            
+            try:
+                media = MediaFileUpload(
+                    temp_path,
+                    mimetype='application/json',
+                    resumable=True
+                )
+                
+                if files:
+                    # Update existing file
+                    file_id = files[0]['id']
+                    logger.info(f"📤 Updating: {SHARED_FILE_NAME}")
+                    self.service.files().update(
+                        fileId=file_id,
+                        media_body=media
+                    ).execute()
+                    logger.info(f"✅ Updated shared file: {SHARED_FILE_NAME}")
+                else:
+                    # Create new file
+                    logger.info(f"📤 Creating: {SHARED_FILE_NAME}")
+                    file_metadata = {
+                        'name': SHARED_FILE_NAME,
+                        'parents': [self.folder_id]
+                    }
+                    self.service.files().create(
+                        body=file_metadata,
+                        media_body=media
+                    ).execute()
+                    logger.info(f"✅ Created shared file: {SHARED_FILE_NAME}")
+                
+                return True
+                
+            finally:
+                # Clean up temp file
+                if os.path.exists(temp_path):
+                    os.unlink(temp_path)
+                    logger.debug(f"🗑️ Removed temp file: {temp_path}")
+            
+        except Exception as e:
+            logger.error(f"Save to Drive error: {e}")
+            return False
+    
+    async def load_shared_data(self) -> Optional[Dict]:
+        """Load shared data from Google Drive"""
+        if not self.service:
+            logger.error("No Drive service available")
+            return None
+        
+        if not self.folder_id:
+            logger.error("No folder ID available")
+            return None
+        
+        try:
+            query = f"'{self.folder_id}' in parents and name='{SHARED_FILE_NAME}' and trashed=false"
+            results = self.service.files().list(q=query, fields="files(id, name)").execute()
+            files = results.get('files', [])
+            
+            if not files:
+                logger.info(f"No shared file '{SHARED_FILE_NAME}' found")
+                return None
+            
+            file_id = files[0]['id']
+            logger.info(f"📥 Downloading: {SHARED_FILE_NAME}")
+            
+            request = self.service.files().get_media(fileId=file_id)
+            fh = io.BytesIO()
+            downloader = MediaIoBaseDownload(fh, request)
+            
+            done = False
+            while not done:
+                status, done = downloader.next_chunk()
+                if status:
+                    progress = int(status.progress() * 100)
+                    logger.info(f"Download progress: {progress}%")
+            
+            fh.seek(0)
+            data = json.loads(fh.read().decode('utf-8'))
+            logger.info(f"✅ Loaded shared data with {data.get('total_urls', 0)} URLs")
+            
+            # Verify data structure
+            if not data.get('topics'):
+                logger.warning("Loaded data has no 'topics' field")
+                return None
+            
+            return data
+            
+        except json.JSONDecodeError as e:
+            logger.error(f"Invalid JSON in shared file: {e}")
+            return None
+        except Exception as e:
+            logger.error(f"Load from Drive error: {e}")
+            return None
+
+
+
+
+
+
+
+
+
+
+
 
 
 @dataclass
@@ -303,8 +583,9 @@ class UniversalReelsFinder:
 
 
 class DailyReelCollector:
-    def __init__(self, scraper: UniversalReelsFinder):
+    def __init__(self, scraper: UniversalReelsFinder, drive_manager: GoogleDriveManager):
         self.scraper = scraper
+        self.drive_manager = drive_manager
         self.topics: List[str] = []
         self.reels_per_topic = 5
         self.collection_history: List[Dict] = []
@@ -431,6 +712,9 @@ class DailyReelCollector:
         self.collection_history.append(self.current_collection.to_dict())
         self._save_collection()
         
+        # Save to Google Drive
+        await self._save_to_drive()
+        
         logger.info(f"Daily collection complete: {total_count} total reels")
         return self.current_collection
     
@@ -473,6 +757,23 @@ class DailyReelCollector:
         }
         with open(self.collection_file, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
+    
+    async def _save_to_drive(self):
+        """Save current collection to Google Drive"""
+        if not self.current_collection:
+            return
+        
+        data = {
+            "date": self.current_collection.date,
+            "total_count": self.current_collection.total_count,
+            "topics": {topic: [reel.to_dict() for reel in reels] for topic, reels in self.current_collection.topics.items()},
+            "generated_at": self.current_collection.generated_at,
+            "total_urls": self.current_collection.total_count,
+            "source": "reel_generator",
+            "last_updated": datetime.now().isoformat()
+        }
+        
+        await self.drive_manager.save_shared_data(data)
     
     def load_collection(self):
         if os.path.exists(self.collection_file):
@@ -567,6 +868,17 @@ HTML_TEMPLATE = """
         }
         h1 { font-size: 36px; color: #dc2743; margin-bottom: 10px; }
         .subtitle { color: #888; font-size: 16px; }
+        
+        .drive-status {
+            background: #2a2a2a;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #888;
+            border-left: 3px solid #dc2743;
+        }
+        .drive-status strong { color: #4ade80; }
         
         .stats {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -701,6 +1013,11 @@ HTML_TEMPLATE = """
     <div class="header">
         <h1>🎬 Daily Reel URL Generator</h1>
         <p class="subtitle">Full UI Control - Manage topics, scheduler, and generate daily Reel URLs</p>
+    </div>
+    
+    <div class="drive-status">
+        📁 Saved to Google Drive: <strong>Reel_Finder_Data/shared_reels.json</strong>
+        <span style="margin-left: 10px; font-size: 11px; color: #666;">(Shared with Downloader)</span>
     </div>
     
     <div id="statsContainer"></div>
@@ -1225,15 +1542,16 @@ async def health_check():
 # ======================== Main ========================
 @app.on_event("startup")
 async def startup_event():
-    global scraper, collector, scheduler
-    from apscheduler.schedulers.background import BackgroundScheduler
-    from apscheduler.triggers.cron import CronTrigger
+    global scraper, collector, scheduler, drive_service, drive_folder_id
+    
+    # Initialize Google Drive
+    drive_manager = GoogleDriveManager()
     
     scraper = UniversalReelsFinder(headless=True)
     await scraper.initialize()
     logger.info("Universal Reels Finder initialized")
     
-    collector = DailyReelCollector(scraper)
+    collector = DailyReelCollector(scraper, drive_manager)
     collector.load_collection()
     
     today_collection = collector.get_today_collection()
@@ -1242,6 +1560,9 @@ async def startup_event():
         await daily_collection_job()
     else:
         logger.info(f"Today's collection already exists: {today_collection.total_count} reels")
+    
+    from apscheduler.schedulers.background import BackgroundScheduler
+    from apscheduler.triggers.cron import CronTrigger
     
     scheduler = BackgroundScheduler()
     scheduler.add_job(
@@ -1267,5 +1588,6 @@ async def shutdown_event():
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
     print(f"🚀 Starting server on http://localhost:{port}")
+    print("📌 URLs will be saved to Google Drive: Reel_Finder_Data/shared_reels.json")
     print("📌 Use the UI to control everything - click buttons, add topics, toggle scheduler")
     uvicorn.run(app, host="0.0.0.0", port=port)

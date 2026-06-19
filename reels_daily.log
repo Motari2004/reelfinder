@@ -668,3 +668,162 @@
 2026-06-19 10:44:42,086 - INFO - Scheduler started - daily collection at midnight
 2026-06-19 11:14:47,844 - INFO - Scheduler has been shut down
 2026-06-19 11:14:47,875 - INFO - Scheduler stopped
+2026-06-19 11:22:18,874 - ERROR - No Drive credentials found
+2026-06-19 11:22:20,116 - INFO - Browser initialized
+2026-06-19 11:22:20,116 - INFO - Universal Reels Finder initialized
+2026-06-19 11:22:20,118 - INFO - Loaded 1 historical collections
+2026-06-19 11:22:20,118 - INFO - Today's collection already exists: 5 reels
+2026-06-19 11:22:20,307 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 11:22:20,307 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 11:22:20,307 - INFO - Scheduler started
+2026-06-19 11:22:20,307 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 11:22:36,540 - INFO - Saved 1 topics
+2026-06-19 11:22:38,590 - INFO - Saved 0 topics
+2026-06-19 11:22:42,870 - INFO - Saved 1 topics
+2026-06-19 11:22:47,720 - INFO - Running daily collection job...
+2026-06-19 11:22:47,720 - INFO - Starting daily reel collection...
+2026-06-19 11:22:47,720 - INFO - Collecting reels for: tourist
+2026-06-19 11:22:47,720 - INFO - Searching for: tourist
+2026-06-19 11:23:04,182 - INFO - Found 29 potential reel links
+2026-06-19 11:23:04,185 - INFO - Extracted 10 reels for 'tourist'
+2026-06-19 11:23:05,210 - INFO - Searching for: tourist
+2026-06-19 11:23:12,284 - INFO - Found 29 potential reel links
+2026-06-19 11:23:12,285 - INFO - Extracted 10 reels for '#tourist'
+2026-06-19 11:23:13,292 - INFO - Searching for: tourist daily
+2026-06-19 11:23:20,331 - INFO - Found 28 potential reel links
+2026-06-19 11:23:20,342 - INFO - Extracted 10 reels for 'tourist daily'
+2026-06-19 11:23:21,347 - INFO - Collected 0 reels for tourist
+2026-06-19 11:23:21,347 - INFO - Daily collection complete: 0 total reels
+2026-06-19 11:23:21,347 - INFO - Daily collection completed: 0 reels
+2026-06-19 11:23:21,347 - INFO -   tourist: 0 reels
+2026-06-19 11:27:37,688 - INFO - Saved 0 topics
+2026-06-19 11:27:41,538 - INFO - Saved 1 topics
+2026-06-19 11:27:43,873 - INFO - Running daily collection job...
+2026-06-19 11:27:43,873 - INFO - Starting daily reel collection...
+2026-06-19 11:27:43,873 - INFO - Collecting reels for: science
+2026-06-19 11:27:43,873 - INFO - Searching for: science
+2026-06-19 11:27:50,959 - INFO - Found 29 potential reel links
+2026-06-19 11:27:50,960 - INFO - Extracted 10 reels for 'science'
+2026-06-19 11:27:51,967 - INFO - Searching for: science
+2026-06-19 11:27:59,002 - INFO - Found 29 potential reel links
+2026-06-19 11:27:59,002 - INFO - Extracted 10 reels for '#science'
+2026-06-19 11:28:00,001 - INFO - Searching for: science daily
+2026-06-19 11:28:07,050 - INFO - Found 27 potential reel links
+2026-06-19 11:28:07,050 - INFO - Extracted 10 reels for 'science daily'
+2026-06-19 11:28:08,050 - INFO - Collected 3 reels for science
+2026-06-19 11:28:08,050 - INFO - Daily collection complete: 3 total reels
+2026-06-19 11:28:08,050 - INFO - Daily collection completed: 3 reels
+2026-06-19 11:28:08,050 - INFO -   science: 3 reels
+2026-06-19 11:28:08,050 - INFO -     - https://www.instagram.com/reel/DYPy2v3pHXV/
+2026-06-19 11:28:08,050 - INFO -     - https://www.instagram.com/reel/DO8IQiwDayQ/
+2026-06-19 11:28:08,050 - INFO -     - https://www.instagram.com/reel/DZnbkNhBkBg/
+2026-06-19 11:34:18,772 - INFO - Scheduler has been shut down
+2026-06-19 11:34:18,794 - INFO - Scheduler stopped
+2026-06-19 11:34:25,648 - ERROR - No Drive credentials found
+2026-06-19 11:34:26,518 - INFO - Browser initialized
+2026-06-19 11:34:26,518 - INFO - Universal Reels Finder initialized
+2026-06-19 11:34:26,545 - INFO - Loaded 2 historical collections
+2026-06-19 11:34:26,545 - INFO - Today's collection already exists: 0 reels
+2026-06-19 11:34:26,740 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 11:34:26,742 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 11:34:26,742 - INFO - Scheduler started
+2026-06-19 11:34:26,744 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 11:34:32,418 - INFO - Saved 5 topics
+2026-06-19 11:34:34,764 - INFO - Saved 4 topics
+2026-06-19 11:34:36,987 - INFO - Saved 3 topics
+2026-06-19 11:34:39,599 - INFO - Saved 2 topics
+2026-06-19 11:34:41,439 - INFO - Saved 1 topics
+2026-06-19 11:34:50,630 - INFO - Running daily collection job...
+2026-06-19 11:34:50,631 - INFO - Starting daily reel collection...
+2026-06-19 11:34:50,631 - INFO - Collecting reels for: ninjas
+2026-06-19 11:34:50,632 - INFO - Searching for: ninjas
+2026-06-19 11:35:05,526 - INFO - Found 27 potential reel links
+2026-06-19 11:35:05,528 - INFO - Extracted 10 reels for 'ninjas'
+2026-06-19 11:35:06,548 - INFO - Searching for: ninjas
+2026-06-19 11:35:13,619 - INFO - Found 27 potential reel links
+2026-06-19 11:35:13,619 - INFO - Extracted 10 reels for '#ninjas'
+2026-06-19 11:35:14,632 - INFO - Searching for: ninjas daily
+2026-06-19 11:35:21,669 - INFO - Found 28 potential reel links
+2026-06-19 11:35:21,669 - INFO - Extracted 10 reels for 'ninjas daily'
+2026-06-19 11:35:22,689 - INFO - Collected 2 reels for ninjas
+2026-06-19 11:35:22,690 - INFO - Daily collection complete: 2 total reels
+2026-06-19 11:35:22,690 - INFO - Daily collection completed: 2 reels
+2026-06-19 11:35:22,690 - INFO -   ninjas: 2 reels
+2026-06-19 11:35:22,690 - INFO -     - https://www.instagram.com/reel/DZXwve0zocJ/
+2026-06-19 11:35:22,690 - INFO -     - https://www.instagram.com/reel/DGER3gsTA1u/
+2026-06-19 11:42:33,664 - INFO - Scheduler has been shut down
+2026-06-19 11:42:33,674 - INFO - Scheduler stopped
+2026-06-19 11:42:34,155 - INFO - Browser closed
+2026-06-19 11:42:34,156 - INFO - Scraper closed
+2026-06-19 11:42:53,187 - INFO - "GET /?state=rQmvQpnZYueZApKb7EKHTR2r1EkigV&iss=https://accounts.google.com&code=4/0AdkVLPzT3AkfItPl_nJO_75un33PR7MFv0RBciWBHGN0_km0Y5mrJCmdirh2LM6PNvcaMw&scope=https://www.googleapis.com/auth/drive HTTP/1.1" 200 65
+2026-06-19 11:42:53,750 - INFO - Drive authenticated via credentials.json
+2026-06-19 11:42:53,753 - INFO - Token saved to drive_token.pickle for future use
+2026-06-19 11:42:53,758 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-19 11:42:54,960 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-19 11:42:56,442 - INFO - Browser initialized
+2026-06-19 11:42:56,442 - INFO - Universal Reels Finder initialized
+2026-06-19 11:42:56,478 - INFO - Loaded 1 historical collections
+2026-06-19 11:42:56,478 - INFO - Today's collection already exists: 2 reels
+2026-06-19 11:42:56,778 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 11:42:56,780 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 11:42:56,780 - INFO - Scheduler started
+2026-06-19 11:42:56,781 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 11:43:08,118 - INFO - Saved 0 topics
+2026-06-19 11:43:12,681 - INFO - Saved 1 topics
+2026-06-19 11:43:14,805 - INFO - Running daily collection job...
+2026-06-19 11:43:14,807 - INFO - Starting daily reel collection...
+2026-06-19 11:43:14,807 - INFO - Collecting reels for: china
+2026-06-19 11:43:14,808 - INFO - Searching for: china
+2026-06-19 11:43:27,189 - INFO - Found 30 potential reel links
+2026-06-19 11:43:27,191 - INFO - Extracted 10 reels for 'china'
+2026-06-19 11:43:28,212 - INFO - Searching for: china
+2026-06-19 11:43:35,325 - INFO - Found 30 potential reel links
+2026-06-19 11:43:35,327 - INFO - Extracted 10 reels for '#china'
+2026-06-19 11:43:36,332 - INFO - Searching for: china daily
+2026-06-19 11:43:43,423 - INFO - Found 30 potential reel links
+2026-06-19 11:43:43,426 - INFO - Extracted 10 reels for 'china daily'
+2026-06-19 11:43:44,427 - INFO - Collected 3 reels for china
+2026-06-19 11:43:44,949 - ERROR - Save to Drive error: expected str, bytes or os.PathLike object, not BytesIO
+2026-06-19 11:43:44,950 - INFO - Daily collection complete: 3 total reels
+2026-06-19 11:43:44,950 - INFO - Daily collection completed: 3 reels
+2026-06-19 11:43:44,951 - INFO -   china: 3 reels
+2026-06-19 11:43:44,951 - INFO -     - https://www.instagram.com/reel/DZvphvphdi_/
+2026-06-19 11:43:44,951 - INFO -     - https://www.instagram.com/reel/DZuGkRtDBXW/
+2026-06-19 11:43:44,952 - INFO -     - https://www.instagram.com/reel/DUUk8JTkp6_/
+2026-06-19 11:45:36,258 - INFO - Scheduler has been shut down
+2026-06-19 11:45:36,258 - INFO - Scheduler stopped
+2026-06-19 11:45:43,374 - INFO - Drive authenticated via drive_token.pickle
+2026-06-19 11:45:43,378 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-19 11:45:44,930 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-19 11:45:45,746 - INFO - Browser initialized
+2026-06-19 11:45:45,746 - INFO - Universal Reels Finder initialized
+2026-06-19 11:45:45,771 - INFO - Loaded 1 historical collections
+2026-06-19 11:45:45,771 - INFO - Today's collection already exists: 3 reels
+2026-06-19 11:45:45,951 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 11:45:45,953 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 11:45:45,953 - INFO - Scheduler started
+2026-06-19 11:45:45,953 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 11:45:55,213 - INFO - Running daily collection job...
+2026-06-19 11:45:55,213 - INFO - Starting daily reel collection...
+2026-06-19 11:45:55,213 - INFO - Collecting reels for: china
+2026-06-19 11:45:55,213 - INFO - Searching for: china
+2026-06-19 11:46:07,908 - INFO - Found 30 potential reel links
+2026-06-19 11:46:07,908 - INFO - Extracted 10 reels for 'china'
+2026-06-19 11:46:08,890 - INFO - Searching for: china
+2026-06-19 11:46:15,957 - INFO - Found 30 potential reel links
+2026-06-19 11:46:15,957 - INFO - Extracted 10 reels for '#china'
+2026-06-19 11:46:16,973 - INFO - Searching for: china daily
+2026-06-19 11:46:24,026 - INFO - Found 30 potential reel links
+2026-06-19 11:46:24,030 - INFO - Extracted 10 reels for 'china daily'
+2026-06-19 11:46:25,043 - INFO - Collected 3 reels for china
+2026-06-19 11:46:25,460 - INFO - 📤 Creating: shared_reels.json
+2026-06-19 11:46:27,705 - INFO - ✅ Created shared file: shared_reels.json
+2026-06-19 11:46:27,705 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpuo_x9767.json'
+2026-06-19 11:46:27,705 - INFO - Daily collection complete: 3 total reels
+2026-06-19 11:46:27,705 - INFO - Daily collection completed: 3 reels
+2026-06-19 11:46:27,705 - INFO -   china: 3 reels
+2026-06-19 11:46:27,709 - INFO -     - https://www.instagram.com/reel/DZvphvphdi_/
+2026-06-19 11:46:27,709 - INFO -     - https://www.instagram.com/reel/DZuGkRtDBXW/
+2026-06-19 11:46:27,709 - INFO -     - https://www.instagram.com/reel/DUUk8JTkp6_/
+2026-06-19 11:48:50,679 - INFO - Scheduler has been shut down
+2026-06-19 11:48:50,680 - INFO - Scheduler stopped

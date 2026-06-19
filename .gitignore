@@ -1,0 +1,105 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+*.log
+reels_daily.log
+reels_intelligent.log
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Configuration files with sensitive data
+credentials.json
+drive_token.pickle
+drive_token.json
+token.pickle
+youtube_token.pickle
+instagram_cookies.txt
+client_secrets.json
+service-account-key.json
+
+# JSON data files (optional - keep if you want to track)
+# daily_reels.json
+# topics_config.json
+# downloaded_reels.json
+# pending_reels.json
+# found_urls.json
+
+# Local development files
+.env
+.env.local
+.env.*.local
+*.local
+
+# Playwright
+playwright-report/
+test-results/
+playwright/.cache/
+
+# OS specific
+Thumbs.db
+.DS_Store
+.directory
+
+# Secrets
+*.secret
+*.key
+*.pem
+*.crt
+*.p12
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+*.temp
+
+# Docker
+*.dockerignore

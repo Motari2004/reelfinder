@@ -658,3 +658,13 @@
 2026-06-19 10:36:33,905 - INFO - Scheduler stopped
 2026-06-19 10:36:34,038 - INFO - Browser closed
 2026-06-19 10:36:34,038 - INFO - Scraper closed
+2026-06-19 10:44:42,036 - INFO - Browser initialized
+2026-06-19 10:44:42,038 - INFO - Universal Reels Finder initialized
+2026-06-19 10:44:42,071 - INFO - Loaded 1 historical collections
+2026-06-19 10:44:42,071 - INFO - Today's collection already exists: 5 reels
+2026-06-19 10:44:42,082 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 10:44:42,084 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 10:44:42,084 - INFO - Scheduler started
+2026-06-19 10:44:42,086 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 11:14:47,844 - INFO - Scheduler has been shut down
+2026-06-19 11:14:47,875 - INFO - Scheduler stopped

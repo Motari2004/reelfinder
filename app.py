@@ -1,5 +1,5 @@
 """
-Daily Reel URL Generator - Full UI Control with Settings
+Daily Reel URL Generator - Full UI Control with Working Search
 """
 
 import asyncio
@@ -9,7 +9,7 @@ import logging
 import sys
 import os
 import math
-from typing import List, Dict, Optional, Set, Any, Union
+from typing import List, Dict, Optional, Set, Any
 from dataclasses import dataclass, asdict, field
 from datetime import datetime
 from fastapi import FastAPI, Query, HTTPException, BackgroundTasks
@@ -149,7 +149,6 @@ class UniversalReelsFinder:
             
             logger.info(f"Searching for: {search_term}")
             
-            # Direct search URL
             search_url = f'{self.search_url}/#gsc.tab=0&gsc.q={search_term.replace(" ", "+")}'
             await self.page.goto(search_url)
             await self.page.wait_for_load_state('networkidle', timeout=15000)
@@ -545,7 +544,7 @@ async def daily_collection_job():
         logger.error(f"Daily collection job failed: {e}")
 
 
-# ======================== UI HTML ========================
+# ======================== HTML Template ========================
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html>

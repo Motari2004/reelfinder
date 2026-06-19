@@ -1,5 +1,5 @@
 """
-Daily Reel URL Generator - Full UI Control with Working Search
+Daily Reel URL Generator - Full UI Control with Settings
 """
 
 import asyncio
@@ -108,8 +108,6 @@ class DailyCollection:
 
 
 class UniversalReelsFinder:
-    """Universal Reels Finder - Search anything"""
-    
     def __init__(self, headless: bool = True):
         self.headless = headless
         self.browser = None
@@ -118,7 +116,6 @@ class UniversalReelsFinder:
         self.search_url = "https://reelsfinder.satishyadav.com"
         
     async def initialize(self):
-        """Initialize browser in headless mode"""
         self.playwright = await async_playwright().start()
         self.browser = await self.playwright.chromium.launch(
             headless=self.headless,
@@ -136,7 +133,6 @@ class UniversalReelsFinder:
         logger.info("Browser initialized")
         
     async def close(self):
-        """Close browser"""
         if self.browser:
             await self.browser.close()
         if self.playwright:
@@ -144,7 +140,6 @@ class UniversalReelsFinder:
         logger.info("Browser closed")
     
     async def search(self, query: str, max_results: int = 50, search_type: str = "auto") -> List[ReelData]:
-        """Universal search - handles any query type with improved reliability"""
         reels = []
         seen_shortcodes = set()
         
@@ -154,20 +149,17 @@ class UniversalReelsFinder:
             
             logger.info(f"Searching for: {search_term}")
             
-            # Direct search URL (more reliable)
+            # Direct search URL
             search_url = f'{self.search_url}/#gsc.tab=0&gsc.q={search_term.replace(" ", "+")}'
             await self.page.goto(search_url)
             await self.page.wait_for_load_state('networkidle', timeout=15000)
             
-            # Wait for results to load
             await asyncio.sleep(3)
             
-            # Scroll to load more results
             for _ in range(4):
                 await self.page.mouse.wheel(0, 500)
                 await asyncio.sleep(1)
             
-            # Extract links with improved selectors
             links = await self.page.evaluate('''
                 () => {
                     const links = [];
@@ -204,7 +196,6 @@ class UniversalReelsFinder:
                 href = link_data.get('href', '')
                 text = link_data.get('text', '')
                 
-                # Extract shortcode
                 shortcode_match = re.search(r'instagram\.com/(?:reel|p)/([A-Za-z0-9_-]+)', href)
                 if not shortcode_match:
                     continue
@@ -215,23 +206,19 @@ class UniversalReelsFinder:
                     
                 seen_shortcodes.add(shortcode)
                 
-                # Extract username
                 username_match = re.search(r'@([A-Za-z0-9_.]+)', text)
                 username = username_match.group(1) if username_match else 'unknown'
                 
-                # Extract caption
                 caption = ''
                 if username_match:
                     caption_parts = text.split(username_match.group(0))
                     if len(caption_parts) > 1:
                         caption = caption_parts[1].strip()[:200]
                 
-                # Extract hashtags
                 hashtags = re.findall(r'#([A-Za-z0-9_]+)', text)
                 
-                # Extract likes
                 likes = 0
-                likes_match = re.search(r'([\\d.]+[KM]?)\\s*(?:likes|❤️|♥)', text, re.IGNORECASE)
+                likes_match = re.search(r'([\d.]+[KM]?)\s*(?:likes|❤️|♥)', text, re.IGNORECASE)
                 if likes_match:
                     likes_str = likes_match.group(1).upper()
                     try:
@@ -244,9 +231,8 @@ class UniversalReelsFinder:
                     except:
                         likes = 0
                 
-                # Extract comments
                 comments = 0
-                comments_match = re.search(r'([\\d.]+[KM]?)\\s*(?:comments|💬)', text, re.IGNORECASE)
+                comments_match = re.search(r'([\d.]+[KM]?)\s*(?:comments|💬)', text, re.IGNORECASE)
                 if comments_match:
                     comments_str = comments_match.group(1).upper()
                     try:
@@ -259,9 +245,8 @@ class UniversalReelsFinder:
                     except:
                         comments = 0
                 
-                # Extract views
                 views = 0
-                views_match = re.search(r'([\\d.]+[KM]?)\\s*(?:views|👁️)', text, re.IGNORECASE)
+                views_match = re.search(r'([\d.]+[KM]?)\s*(?:views|👁️)', text, re.IGNORECASE)
                 if views_match:
                     views_str = views_match.group(1).upper()
                     try:
@@ -299,59 +284,7 @@ class UniversalReelsFinder:
             
         return reels
     
-    async def _extract_reel_links(self) -> List[Dict]:
-        """Extract reel links with metadata from page"""
-        return await self.page.evaluate('''
-            () => {
-                const links = [];
-                const elements = document.querySelectorAll('a');
-                
-                elements.forEach(el => {
-                    if (el.href && el.href.includes('instagram.com/reel/')) {
-                        let parent = el.parentElement;
-                        let container = el;
-                        for (let i = 0; i < 5 && parent; i++) {
-                            if (parent.textContent && parent.textContent.length > 30) {
-                                container = parent;
-                                break;
-                            }
-                            parent = parent.parentElement;
-                        }
-                        
-                        const text = container.textContent || '';
-                        const usernameMatch = text.match(/@([A-Za-z0-9_.]+)/);
-                        const captionMatch = text.match(/@[A-Za-z0-9_.]+\\s*(.+?)(?=\\s*@|$)/);
-                        
-                        const extractNumber = (pattern) => {
-                            const match = text.match(pattern);
-                            if (!match) return 0;
-                            let num = parseFloat(match[1]);
-                            if (match[1].includes('K')) num *= 1000;
-                            if (match[1].includes('M')) num *= 1000000;
-                            return Math.round(num);
-                        };
-                        
-                        const img = container.querySelector('img');
-                        const thumbnail = img ? img.src : '';
-                        
-                        links.push({
-                            href: el.href,
-                            text: text,
-                            username: usernameMatch ? usernameMatch[1] : '',
-                            caption: captionMatch ? captionMatch[1].trim() : '',
-                            likes: extractNumber(/([\\d.]+[KM]?)\\s*(?:likes|❤️|♥)/i),
-                            comments: extractNumber(/([\\d.]+[KM]?)\\s*(?:comments|💬)/i),
-                            views: extractNumber(/([\\d.]+[KM]?)\\s*(?:views|👁️)/i),
-                            thumbnail: thumbnail
-                        });
-                    }
-                });
-                return links;
-            }
-        ''')
-    
     def _normalize_query(self, query: str, search_type: str) -> str:
-        """Normalize query based on search type"""
         query = query.strip()
         
         if search_type == "hashtag":
@@ -362,20 +295,12 @@ class UniversalReelsFinder:
             if query.startswith('@'):
                 return query[1:]
             return query
-        else:  # auto
+        else:
             if query.startswith('#'):
                 return query[1:]
             elif query.startswith('@'):
                 return query[1:]
             return query
-    
-    def _extract_hashtags(self, text: str) -> List[str]:
-        """Extract hashtags from text"""
-        return re.findall(r'#([A-Za-z0-9_]+)', text)
-    
-    def _extract_mentions(self, text: str) -> List[str]:
-        """Extract mentioned users from text"""
-        return re.findall(r'@([A-Za-z0-9_.]+)', text)
 
 
 class DailyReelCollector:
@@ -463,19 +388,17 @@ class DailyReelCollector:
         for topic in self.topics:
             logger.info(f"Collecting reels for: {topic}")
             
-            # Search with variations to get unique results
             variations = [
                 topic,
                 f"#{topic}",
                 f"{topic} daily",
-                f"{topic} trending",
-                f"best {topic}"
+                f"{topic} trending"
             ]
             
             all_reels = []
             seen_shortcodes = set()
             
-            for variation in variations[:3]:  # Try first 3 variations
+            for variation in variations[:3]:
                 if len(all_reels) >= self.reels_per_topic * 2:
                     break
                     
@@ -485,16 +408,14 @@ class DailyReelCollector:
                     for reel in reels:
                         if reel.shortcode not in seen_shortcodes:
                             seen_shortcodes.add(reel.shortcode)
-                            # Check if reel is relevant to topic
                             if self._is_relevant(reel, topic):
                                 all_reels.append(reel)
                 except Exception as e:
                     logger.error(f"Error searching {variation}: {e}")
                     continue
                 
-                await asyncio.sleep(1)  # Rate limiting
+                await asyncio.sleep(1)
             
-            # Select the best/unique reels
             selected_reels = self._select_unique_reels(all_reels, self.reels_per_topic)
             topic_reels[topic] = selected_reels
             total_count += len(selected_reels)
@@ -515,38 +436,20 @@ class DailyReelCollector:
         return self.current_collection
     
     def _is_relevant(self, reel: ReelData, topic: str) -> bool:
-        """Check if reel is relevant to the topic"""
         text = (reel.caption + ' ' + ' '.join(reel.hashtags)).lower()
         topic_lower = topic.lower()
         
-        # Check for topic in caption or hashtags
         if topic_lower in text:
             return True
-        
-        # Check for related terms
-        related_terms = {
-            "mafia": ["crime", "gang", "criminal", "underworld"],
-            "gangstars": ["gang", "star", "famous", "celebrity", "crew"],
-            "murphy": ["murphy", "eddie", "comedian"],
-            "war": ["battle", "fight", "conflict", "army", "soldier"],
-            "ninjas": ["ninja", "martial", "warrior", "stealth", "samurai"]
-        }
-        
-        for term in related_terms.get(topic_lower, []):
-            if term in text:
-                return True
         
         return False
     
     def _select_unique_reels(self, reels: List[ReelData], count: int) -> List[ReelData]:
-        """Select unique and diverse reels"""
         if len(reels) <= count:
             return reels
         
-        # Sort by engagement (likes + comments)
         sorted_reels = sorted(reels, key=lambda r: r.likes + r.comments, reverse=True)
         
-        # Ensure diversity by selecting from different users
         selected = []
         used_users = set()
         
@@ -557,7 +460,6 @@ class DailyReelCollector:
                 if len(selected) >= count:
                     break
         
-        # If we need more, fill with remaining reels
         if len(selected) < count:
             remaining = [r for r in sorted_reels if r not in selected]
             selected.extend(remaining[:count - len(selected)])
@@ -634,7 +536,6 @@ async def daily_collection_job():
         collection = await collector.generate_daily_reels()
         logger.info(f"Daily collection completed: {collection.total_count} reels")
         
-        # Print summary
         for topic, reels in collection.topics.items():
             logger.info(f"  {topic}: {len(reels)} reels")
             for reel in reels:

@@ -576,3 +576,85 @@
 2026-06-18 21:33:05,971 - INFO - Scheduler stopped
 2026-06-18 21:33:06,372 - INFO - Browser closed
 2026-06-18 21:33:06,372 - INFO - Scraper closed
+2026-06-19 10:30:55,296 - INFO - Browser initialized
+2026-06-19 10:30:55,297 - INFO - Universal Reels Finder initialized
+2026-06-19 10:30:55,339 - INFO - Loaded 1 historical collections
+2026-06-19 10:30:55,339 - INFO - No collection for today, generating now...
+2026-06-19 10:30:55,339 - INFO - Running daily collection job...
+2026-06-19 10:30:55,339 - INFO - Starting daily reel collection...
+2026-06-19 10:30:55,343 - INFO - Collecting reels for: spiderman
+2026-06-19 10:30:55,343 - INFO - Searching for: spiderman
+2026-06-19 10:31:10,866 - INFO - Found 28 potential reel links
+2026-06-19 10:31:10,869 - INFO - Extracted 10 reels for 'spiderman'
+2026-06-19 10:31:11,879 - INFO - Searching for: spiderman
+2026-06-19 10:31:18,976 - INFO - Found 28 potential reel links
+2026-06-19 10:31:18,978 - INFO - Extracted 10 reels for '#spiderman'
+2026-06-19 10:31:19,985 - INFO - Searching for: spiderman daily
+2026-06-19 10:31:27,046 - INFO - Found 28 potential reel links
+2026-06-19 10:31:27,055 - INFO - Extracted 10 reels for 'spiderman daily'
+2026-06-19 10:31:28,072 - INFO - Collected 5 reels for spiderman
+2026-06-19 10:31:28,073 - INFO - Daily collection complete: 5 total reels
+2026-06-19 10:31:28,073 - INFO - Daily collection completed: 5 reels
+2026-06-19 10:31:28,073 - INFO -   spiderman: 5 reels
+2026-06-19 10:31:28,073 - INFO -     - https://www.instagram.com/reel/DZsa6jzPHm6/
+2026-06-19 10:31:28,073 - INFO -     - https://www.instagram.com/reel/DZvb9ymAqX0/
+2026-06-19 10:31:28,073 - INFO -     - https://www.instagram.com/reel/DQ6nGK9kbip/
+2026-06-19 10:31:28,073 - INFO -     - https://www.instagram.com/reel/DZsLmSThKiR/
+2026-06-19 10:31:28,073 - INFO -     - https://www.instagram.com/reel/DNjrSV0NM-P/
+2026-06-19 10:31:28,105 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 10:31:28,105 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 10:31:28,105 - INFO - Scheduler started
+2026-06-19 10:31:28,105 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 10:33:49,232 - INFO - Scheduler has been shut down
+2026-06-19 10:33:49,232 - INFO - Scheduler stopped
+2026-06-19 10:33:55,388 - INFO - Browser initialized
+2026-06-19 10:33:55,388 - INFO - Universal Reels Finder initialized
+2026-06-19 10:33:55,409 - INFO - Loaded 2 historical collections
+2026-06-19 10:33:55,409 - INFO - Today's collection already exists: 5 reels
+2026-06-19 10:33:55,418 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 10:33:55,420 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 10:33:55,420 - INFO - Scheduler started
+2026-06-19 10:33:55,421 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 10:34:07,795 - INFO - Saved 5 topics
+2026-06-19 10:34:12,678 - INFO - Saved 4 topics
+2026-06-19 10:34:14,811 - INFO - Saved 3 topics
+2026-06-19 10:34:17,035 - INFO - Saved 2 topics
+2026-06-19 10:34:19,574 - INFO - Saved 1 topics
+2026-06-19 10:34:23,227 - INFO - Saved 2 topics
+2026-06-19 10:34:33,858 - INFO - Running daily collection job...
+2026-06-19 10:34:33,858 - INFO - Starting daily reel collection...
+2026-06-19 10:34:33,858 - INFO - Collecting reels for: murphy
+2026-06-19 10:34:33,858 - INFO - Searching for: murphy
+2026-06-19 10:34:47,182 - INFO - Found 30 potential reel links
+2026-06-19 10:34:47,184 - INFO - Extracted 10 reels for 'murphy'
+2026-06-19 10:34:48,189 - INFO - Searching for: murphy
+2026-06-19 10:34:55,222 - INFO - Found 30 potential reel links
+2026-06-19 10:34:55,222 - INFO - Extracted 10 reels for '#murphy'
+2026-06-19 10:34:56,237 - INFO - Searching for: murphy daily
+2026-06-19 10:35:03,270 - INFO - Found 25 potential reel links
+2026-06-19 10:35:03,270 - INFO - Extracted 10 reels for 'murphy daily'
+2026-06-19 10:35:04,269 - INFO - Collected 2 reels for murphy
+2026-06-19 10:35:04,270 - INFO - Collecting reels for: kenya
+2026-06-19 10:35:04,270 - INFO - Searching for: kenya
+2026-06-19 10:35:11,297 - INFO - Found 30 potential reel links
+2026-06-19 10:35:11,299 - INFO - Extracted 10 reels for 'kenya'
+2026-06-19 10:35:12,308 - INFO - Searching for: kenya
+2026-06-19 10:35:19,420 - INFO - Found 30 potential reel links
+2026-06-19 10:35:19,421 - INFO - Extracted 10 reels for '#kenya'
+2026-06-19 10:35:20,434 - INFO - Searching for: kenya daily
+2026-06-19 10:35:27,459 - INFO - Found 30 potential reel links
+2026-06-19 10:35:27,459 - INFO - Extracted 10 reels for 'kenya daily'
+2026-06-19 10:35:28,456 - INFO - Collected 3 reels for kenya
+2026-06-19 10:35:28,458 - INFO - Daily collection complete: 5 total reels
+2026-06-19 10:35:28,458 - INFO - Daily collection completed: 5 reels
+2026-06-19 10:35:28,459 - INFO -   murphy: 2 reels
+2026-06-19 10:35:28,459 - INFO -     - https://www.instagram.com/reel/DOtZM1PjBqx/
+2026-06-19 10:35:28,459 - INFO -     - https://www.instagram.com/reel/DT5lFgSiglo/
+2026-06-19 10:35:28,459 - INFO -   kenya: 3 reels
+2026-06-19 10:35:28,460 - INFO -     - https://www.instagram.com/reel/DZudXHvsOHJ/
+2026-06-19 10:35:28,460 - INFO -     - https://www.instagram.com/reel/DZqFrb0Ig8C/
+2026-06-19 10:35:28,460 - INFO -     - https://www.instagram.com/reel/DZvJ9twohfJ/
+2026-06-19 10:36:33,905 - INFO - Scheduler has been shut down
+2026-06-19 10:36:33,905 - INFO - Scheduler stopped
+2026-06-19 10:36:34,038 - INFO - Browser closed
+2026-06-19 10:36:34,038 - INFO - Scraper closed

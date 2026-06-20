@@ -57,7 +57,7 @@ app.add_middleware(
 REELS_PER_TOPIC = 3              # Number of reels per topic
 TOPICS_PER_DAY = 2               # Number of topics to collect daily
 SCHEDULE_HOUR = 16               # 3:30 PM = 15:30
-SCHEDULE_MINUTE = 7
+SCHEDULE_MINUTE = 10
 # ============================================
 
 # Google Drive Configuration

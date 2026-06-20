@@ -1,6 +1,5 @@
 """
 Daily Reel URL Generator - Saves URLs to Google Drive
-2 Topics Daily × 3 Reels Each = 6 Total Reels
 """
 
 import asyncio
@@ -12,7 +11,6 @@ import os
 import math
 import base64
 import pickle
-import random
 from typing import List, Dict, Optional, Set, Any
 from dataclasses import dataclass, asdict, field
 from datetime import datetime
@@ -51,21 +49,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ============================================
-# CONFIGURATION
-# ============================================
-REELS_PER_TOPIC = 3              # Number of reels per topic
-TOPICS_PER_DAY = 2               # Number of topics to collect daily
-SCHEDULE_HOUR = 16               # 3:30 PM = 15:30
-SCHEDULE_MINUTE = 7
-# ============================================
-
 # Google Drive Configuration
 SCOPES = ['https://www.googleapis.com/auth/drive']
 DRIVE_FOLDER_NAME = "Reel_Finder_Data"
 SHARED_FILE_NAME = "shared_reels.json"
 
-# Default topics pool
+# Default topics
 DEFAULT_TOPICS = ["mafia", "gangstars", "murphy", "war", "ninjas"]
 
 # Global state
@@ -97,21 +86,6 @@ def safe_int(value: Any) -> int:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class GoogleDriveManager:
     """Manage Google Drive operations for shared data"""
     
@@ -129,15 +103,16 @@ class GoogleDriveManager:
                 # Decode base64 to binary
                 decoded_bytes = base64.b64decode(token_json)
                 
-                # Try to load as pickle
+                # Try to load as pickle (this is the correct format for drive_token.pickle)
                 try:
+                    import io
                     creds = pickle.loads(decoded_bytes)
                     logger.info("✅ Drive authenticated via GOOGLE_DRIVE_TOKEN (pickle)")
                     return build('drive', 'v3', credentials=creds)
                 except Exception as e:
                     logger.debug(f"Pickle load failed: {e}")
                 
-                # Try as JSON
+                # Try as JSON (alternative format)
                 try:
                     token_data = json.loads(decoded_bytes.decode('utf-8'))
                     creds = Credentials.from_authorized_user_info(token_data, SCOPES)
@@ -146,7 +121,7 @@ class GoogleDriveManager:
                 except Exception as e:
                     logger.debug(f"JSON load failed: {e}")
                 
-                # Try as string
+                # Try as string (last resort)
                 try:
                     token_data = json.loads(token_json)
                     creds = Credentials.from_authorized_user_info(token_data, SCOPES)
@@ -158,7 +133,7 @@ class GoogleDriveManager:
             except Exception as e:
                 logger.warning(f"GOOGLE_DRIVE_TOKEN failed: {e}")
         
-        # 2. Try local token file
+        # 2. Try local token file (for local development)
         if os.path.exists('drive_token.pickle'):
             try:
                 with open('drive_token.pickle', 'rb') as f:
@@ -168,34 +143,38 @@ class GoogleDriveManager:
             except Exception as e:
                 logger.warning(f"drive_token.pickle failed: {e}")
         
-        # 3. Try credentials.json
+        # 3. Try credentials.json (Local development - interactive)
         if os.path.exists('credentials.json'):
             try:
                 from google_auth_oauthlib.flow import InstalledAppFlow
                 flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
                 creds = flow.run_local_server(port=0)
                 logger.info("✅ Drive authenticated via credentials.json")
+                # Save token for future use
                 with open('drive_token.pickle', 'wb') as f:
                     pickle.dump(creds, f)
-                logger.info("Token saved to drive_token.pickle")
+                logger.info("Token saved to drive_token.pickle for future use")
                 return build('drive', 'v3', credentials=creds)
             except Exception as e:
-                logger.warning(f"credentials.json auth failed: {e}")
+                logger.warning(f"credentials.json authentication failed: {e}")
+                # Try alternative method if run_local_server fails
                 try:
                     from google_auth_oauthlib.flow import InstalledAppFlow
                     flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
                     creds = flow.run_console()
-                    logger.info("✅ Drive authenticated via credentials.json (console)")
+                    logger.info("✅ Drive authenticated via credentials.json (console mode)")
                     with open('drive_token.pickle', 'wb') as f:
                         pickle.dump(creds, f)
+                    logger.info("Token saved to drive_token.pickle for future use")
                     return build('drive', 'v3', credentials=creds)
                 except Exception as e2:
                     logger.warning(f"credentials.json console auth failed: {e2}")
         
-        # 4. Try service account
+        # 4. Try service account (Render - alternative)
         credentials_json = os.environ.get('GOOGLE_CREDENTIALS')
         if credentials_json:
             try:
+                # Try base64 encoded service account
                 try:
                     credentials_data = json.loads(base64.b64decode(credentials_json).decode('utf-8'))
                 except:
@@ -209,6 +188,7 @@ class GoogleDriveManager:
                     logger.info("✅ Drive authenticated via service account")
                     return build('drive', 'v3', credentials=creds)
                 else:
+                    # Try OAuth2 flow with client config
                     from google_auth_oauthlib.flow import InstalledAppFlow
                     flow = InstalledAppFlow.from_client_config(credentials_data, SCOPES)
                     creds = flow.run_local_server(port=0, open_browser=False)
@@ -235,6 +215,7 @@ class GoogleDriveManager:
                 logger.info(f"✅ Found folder: {DRIVE_FOLDER_NAME}")
                 return files[0]['id']
             
+            # Create folder if it doesn't exist
             logger.info(f"📁 Creating folder: {DRIVE_FOLDER_NAME}")
             file_metadata = {
                 'name': DRIVE_FOLDER_NAME,
@@ -250,7 +231,7 @@ class GoogleDriveManager:
             return None
     
     async def save_shared_data(self, data: Dict) -> bool:
-        """Save shared data to Google Drive using BytesIO (no temp files)"""
+        """Save shared data to Google Drive"""
         if not self.service:
             logger.error("No Drive service available")
             return False
@@ -265,48 +246,50 @@ class GoogleDriveManager:
             results = self.service.files().list(q=query, fields="files(id)").execute()
             files = results.get('files', [])
             
-            # Create JSON content
+            # Create temporary file
+            import tempfile
             file_content = json.dumps(data, indent=2, ensure_ascii=False)
             
-            # Use BytesIO instead of temporary file
-            import io
-            from googleapiclient.http import MediaIoBaseUpload
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as temp_file:
+                temp_file.write(file_content)
+                temp_path = temp_file.name
             
-            # Create a BytesIO object
-            file_stream = io.BytesIO(file_content.encode('utf-8'))
-            
-            # Create media upload
-            media = MediaIoBaseUpload(
-                file_stream,
-                mimetype='application/json',
-                resumable=True
-            )
-            
-            if files:
-                file_id = files[0]['id']
-                logger.info(f"📤 Updating: {SHARED_FILE_NAME}")
-                self.service.files().update(
-                    fileId=file_id,
-                    media_body=media
-                ).execute()
-                logger.info(f"✅ Updated shared file: {SHARED_FILE_NAME}")
-            else:
-                logger.info(f"📤 Creating: {SHARED_FILE_NAME}")
-                file_metadata = {
-                    'name': SHARED_FILE_NAME,
-                    'parents': [self.folder_id]
-                }
-                self.service.files().create(
-                    body=file_metadata,
-                    media_body=media
-                ).execute()
-                logger.info(f"✅ Created shared file: {SHARED_FILE_NAME}")
-            
-            # Close the stream
-            file_stream.close()
-            
-            # Return True on success
-            return True
+            try:
+                media = MediaFileUpload(
+                    temp_path,
+                    mimetype='application/json',
+                    resumable=True
+                )
+                
+                if files:
+                    # Update existing file
+                    file_id = files[0]['id']
+                    logger.info(f"📤 Updating: {SHARED_FILE_NAME}")
+                    self.service.files().update(
+                        fileId=file_id,
+                        media_body=media
+                    ).execute()
+                    logger.info(f"✅ Updated shared file: {SHARED_FILE_NAME}")
+                else:
+                    # Create new file
+                    logger.info(f"📤 Creating: {SHARED_FILE_NAME}")
+                    file_metadata = {
+                        'name': SHARED_FILE_NAME,
+                        'parents': [self.folder_id]
+                    }
+                    self.service.files().create(
+                        body=file_metadata,
+                        media_body=media
+                    ).execute()
+                    logger.info(f"✅ Created shared file: {SHARED_FILE_NAME}")
+                
+                return True
+                
+            finally:
+                # Clean up temp file
+                if os.path.exists(temp_path):
+                    os.unlink(temp_path)
+                    logger.debug(f"🗑️ Removed temp file: {temp_path}")
             
         except Exception as e:
             logger.error(f"Save to Drive error: {e}")
@@ -349,6 +332,7 @@ class GoogleDriveManager:
             data = json.loads(fh.read().decode('utf-8'))
             logger.info(f"✅ Loaded shared data with {data.get('total_urls', 0)} URLs")
             
+            # Verify data structure
             if not data.get('topics'):
                 logger.warning("Loaded data has no 'topics' field")
                 return None
@@ -361,24 +345,11 @@ class GoogleDriveManager:
         except Exception as e:
             logger.error(f"Load from Drive error: {e}")
             return None
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
 
 
 
@@ -394,7 +365,7 @@ class ReelData:
     url: str
     shortcode: str
     username: str
-    caption: str
+    caption: str  # Full caption
     likes: int
     comments: int
     views: int
@@ -402,7 +373,7 @@ class ReelData:
     thumbnail_url: str = ""
     hashtags: List[str] = field(default_factory=list)
     mentioned_users: List[str] = field(default_factory=list)
-    full_caption: str = ""
+    full_caption: str = ""  # Additional field for raw caption
     
     def to_dict(self):
         return {
@@ -421,6 +392,10 @@ class ReelData:
         }
 
 
+
+
+
+
 @dataclass
 class DailyCollection:
     date: str
@@ -435,6 +410,23 @@ class DailyCollection:
             "total_count": safe_int(self.total_count),
             "generated_at": str(self.generated_at)
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class UniversalReelsFinder:
@@ -490,6 +482,7 @@ class UniversalReelsFinder:
                 await self.page.mouse.wheel(0, 500)
                 await asyncio.sleep(1)
             
+            # Enhanced extraction with better caption detection
             links = await self.page.evaluate('''
                 () => {
                     const links = [];
@@ -497,8 +490,12 @@ class UniversalReelsFinder:
                     
                     elements.forEach(el => {
                         const href = el.href || '';
+                        
+                        // Try to find the actual caption text
                         let captionText = '';
                         let text = el.textContent || '';
+                        
+                        // Look for caption in parent elements
                         let parent = el.parentElement;
                         for (let i = 0; i < 5 && parent; i++) {
                             const parentText = parent.textContent || '';
@@ -509,6 +506,7 @@ class UniversalReelsFinder:
                             parent = parent.parentElement;
                         }
                         
+                        // Try to find a container with caption class
                         const captionContainer = el.closest('div[class*="caption"], div[class*="description"], div[class*="text"], div[class*="content"]');
                         if (captionContainer) {
                             captionText = captionContainer.textContent || '';
@@ -545,21 +543,26 @@ class UniversalReelsFinder:
                     
                 seen_shortcodes.add(shortcode)
                 
+                # Extract username - try multiple patterns
                 username = 'unknown'
                 username_match = re.search(r'@([A-Za-z0-9_.]+)', text)
                 if username_match:
                     username = username_match.group(1)
                 else:
+                    # Try to find username in the URL
                     url_match = re.search(r'instagram\.com/(?:reel|p)/([A-Za-z0-9_-]+)', href)
                     if url_match:
                         username = url_match.group(1)
                 
+                # Get full cleaned caption
                 raw_caption = caption_text or text
                 clean_caption = self._clean_caption(raw_caption)
                 
+                # Extract hashtags and mentions from the cleaned caption
                 hashtags = re.findall(r'#([A-Za-z0-9_]+)', clean_caption)
                 mentions = re.findall(r'@([A-Za-z0-9_.]+)', clean_caption)
                 
+                # Extract numbers from text
                 likes = self._extract_number(text, r'([\d.]+[KM]?)\s*(?:likes|❤️|♥)')
                 comments = self._extract_number(text, r'([\d.]+[KM]?)\s*(?:comments|💬)')
                 views = self._extract_number(text, r'([\d.]+[KM]?)\s*(?:views|👁️)')
@@ -594,48 +597,75 @@ class UniversalReelsFinder:
         if not text:
             return 'No caption'
         
+        # Remove common prefixes
         text = re.sub(r'^📝\s*Caption:\s*', '', text, flags=re.IGNORECASE)
         text = re.sub(r'^Caption:\s*', '', text, flags=re.IGNORECASE)
         text = re.sub(r'^📝\s*', '', text)
+        
+        # Remove Instagram URLs and patterns
         text = re.sub(r'https?://(?:www\.)?instagram\.com/[^\s]+', '', text)
         text = re.sub(r'www\.instagram\.com/[^\s]+', '', text)
         text = re.sub(r'Instagram\s*›\s*reel\s*[^\s]+', '', text)
         text = re.sub(r'Instagram\s*›\s*p\s*[^\s]+', '', text)
+        
+        # Remove the URL pattern that appears in your data
         text = re.sub(r'-\s*Instagram\s*www\.instagram\.com\s*https://www\.instagram\.com/reel/[^\s]+', '', text)
         text = re.sub(r'Instagram\s*www\.instagram\.com\s*https://www\.instagram\.com/reel/[^\s]+', '', text)
+        
+        # Remove repeated URLs
         text = re.sub(r'(https?://[^\s]+)\s*\1', '', text)
+        
+        # Remove dates that appear in captions
         text = re.sub(r'\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{4}', '', text)
         text = re.sub(r'\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}', '', text)
-        text = re.sub(r'siku\s+\d+\s+zilizopita', '', text)
+        text = re.sub(r'siku\s+\d+\s+zilizopita', '', text)  # Remove Swahili date phrases
         text = re.sub(r'\d+\s+(?:hours?|minutes?|days?|weeks?|months?|years?)\s+ago', '', text, flags=re.IGNORECASE)
+        
+        # Remove emojis at start
         text = re.sub(r'^[📝👤🏷️❤️💬📊📥📅🔗]\s*', '', text)
+        
+        # Remove metadata patterns
         text = re.sub(r'👤 Uploader:.*?(?=\s|$)', '', text)
         text = re.sub(r'🏷️ Hashtags:.*?(?=\s|$)', '', text)
         text = re.sub(r'❤️ \d+.*?(?=\s|$)', '', text)
         text = re.sub(r'💬 \d+.*?(?=\s|$)', '', text)
         text = re.sub(r'📥 Downloaded:.*?(?=\s|$)', '', text)
         text = re.sub(r'📅 .*?(?=\s|$)', '', text)
+        
+        # Remove like/comment counts and usernames from caption
         text = re.sub(r'\d+\s+(?:likes?|comments?|views?)', '', text, flags=re.IGNORECASE)
         text = re.sub(r'-\s+\w+\s+on\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},\s+\d{4}', '', text)
         text = re.sub(r'"\s*-\s*[\w.]+\s+on\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},\s+\d{4}', '', text)
+        
+        # Remove "reel" and "reel" with shortcode patterns
         text = re.sub(r'reel\s+[A-Za-z0-9_-]+', '', text)
         text = re.sub(r'\s+reel\s+', ' ', text)
+        
+        # Remove any remaining URL-like patterns
         text = re.sub(r'https?://[^\s]+', '', text)
         text = re.sub(r'www\.[^\s]+', '', text)
+        
+        # Remove repeated dots
         text = re.sub(r'\.{2,}', '.', text)
+        
+        # Clean up extra whitespace
         text = re.sub(r'\s+', ' ', text).strip()
         
+        # Remove duplicate sentences (common in your data)
         sentences = re.split(r'(?<=[.!?])\s+', text)
         seen_sentences = set()
         unique_sentences = []
         for sentence in sentences:
+            # Normalize sentence for comparison
             clean_sentence = sentence.strip().lower()
             if len(clean_sentence) > 10 and clean_sentence not in seen_sentences:
                 seen_sentences.add(clean_sentence)
                 unique_sentences.append(sentence.strip())
         text = '. '.join(unique_sentences)
         
+        # If text is too long or contains suspicious patterns, try to extract meaningful content
         if len(text) > 300 or 'www.instagram.com' in text:
+            # Try to extract first meaningful sentence
             sentences = re.split(r'[.!?]', text)
             meaningful = []
             for sentence in sentences:
@@ -644,13 +674,19 @@ class UniversalReelsFinder:
             if meaningful:
                 text = '. '.join(meaningful[:3]) + '.'
         
+        # Remove any remaining labels
         text = re.sub(r'^[📝👤🏷️❤️💬📊📥📅🔗]\s*', '', text)
+        
+        # Remove "reel" at the end
         text = re.sub(r'\s+reel\s*$', '', text)
+        
+        # Final cleanup - remove any remaining URL fragments
         text = re.sub(r'[^\w\s.,!?\'"\-()#@]', '', text)
         
         return text if text and len(text) > 10 else 'No caption'
     
     def _extract_number(self, text: str, pattern: str) -> int:
+        """Extract number with K/M suffix from text"""
         match = re.search(pattern, text, re.IGNORECASE)
         if not match:
             return 0
@@ -702,58 +738,17 @@ class UniversalReelsFinder:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class DailyReelCollector:
     def __init__(self, scraper: UniversalReelsFinder, drive_manager: GoogleDriveManager):
         self.scraper = scraper
         self.drive_manager = drive_manager
         self.topics: List[str] = []
-        self.reels_per_topic = REELS_PER_TOPIC
-        self.topics_per_day = TOPICS_PER_DAY
+        self.reels_per_topic = 5
         self.collection_history: List[Dict] = []
         self.current_collection: Optional[DailyCollection] = None
         self.collection_file = "daily_reels.json"
         self.topics_file = "topics_config.json"
-        self.used_topics_tracker = "used_topics.json"
-        self.used_topics: Set[str] = set()
         self._load_topics()
-        self._load_used_topics()
         
     def _load_topics(self):
         if os.path.exists(self.topics_file):
@@ -767,54 +762,18 @@ class DailyReelCollector:
                     elif isinstance(topics_data, list):
                         self.topics = topics_data
                     else:
-                        self.topics = DEFAULT_TOPICS.copy() if DEFAULT_TOPICS else []
+                        self.topics = DEFAULT_TOPICS.copy()
                     
                     self.topics = [t for t in self.topics if t and isinstance(t, str)]
                     if not self.topics:
-                        self.topics = DEFAULT_TOPICS.copy() if DEFAULT_TOPICS else []
+                        self.topics = DEFAULT_TOPICS.copy()
                         
             except Exception as e:
                 logger.error(f"Error loading topics: {e}")
-                self.topics = DEFAULT_TOPICS.copy() if DEFAULT_TOPICS else []
+                self.topics = DEFAULT_TOPICS.copy()
         else:
-            self.topics = DEFAULT_TOPICS.copy() if DEFAULT_TOPICS else []
+            self.topics = DEFAULT_TOPICS.copy()
             self._save_topics()
-    
-    def _load_used_topics(self):
-        """Load the list of topics that have been used before"""
-        self.used_topics = set()
-        if os.path.exists(self.used_topics_tracker):
-            try:
-                with open(self.used_topics_tracker, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    self.used_topics = set(data.get("used_topics", []))
-                logger.info(f"Loaded {len(self.used_topics)} used topics from history")
-            except Exception as e:
-                logger.error(f"Error loading used topics: {e}")
-                self._build_used_topics_from_history()
-        else:
-            # Initialize from collection history if exists
-            self._build_used_topics_from_history()
-    
-    def _build_used_topics_from_history(self):
-        """Build used topics set from collection history"""
-        self.used_topics = set()
-        for collection in self.collection_history:
-            for topic in collection.get("topics", {}).keys():
-                self.used_topics.add(topic)
-        self._save_used_topics()
-    
-    def _save_used_topics(self):
-        """Save used topics to disk"""
-        try:
-            with open(self.used_topics_tracker, 'w', encoding='utf-8') as f:
-                json.dump({
-                    "used_topics": list(self.used_topics),
-                    "total_used": len(self.used_topics),
-                    "last_updated": datetime.now().isoformat()
-                }, f, indent=2)
-        except Exception as e:
-            logger.error(f"Error saving used topics: {e}")
     
     def _save_topics(self):
         try:
@@ -836,9 +795,6 @@ class DailyReelCollector:
         
         self.topics = clean_topics
         self._save_topics()
-        # Reset used topics when topics change
-        self.used_topics.clear()
-        self._save_used_topics()
         return True
     
     def add_topic(self, topic: str):
@@ -849,7 +805,6 @@ class DailyReelCollector:
             return False
         self.topics.append(topic)
         self._save_topics()
-        # New topic is not used yet, so don't add to used_topics
         return True
     
     def remove_topic(self, topic: str):
@@ -858,89 +813,15 @@ class DailyReelCollector:
             return False
         self.topics.remove(topic)
         self._save_topics()
-        # Remove from used topics if present
-        if topic in self.used_topics:
-            self.used_topics.remove(topic)
-            self._save_used_topics()
         return True
-    
-    def _select_daily_topics(self) -> List[str]:
-        """Select random topics for today - no repeats from previous days"""
-        available_topics = [t for t in self.topics if t and t.strip()]
-        
-        if not available_topics:
-            logger.warning("No topics available!")
-            return []
-        
-        # If we have fewer topics than topics_per_day, use all available
-        if len(available_topics) <= self.topics_per_day:
-            logger.info(f"Using all {len(available_topics)} available topics: {available_topics}")
-            # Mark all as used
-            for topic in available_topics:
-                self.used_topics.add(topic)
-            self._save_used_topics()
-            return available_topics
-        
-        # Get topics that haven't been used yet
-        unused_topics = [t for t in available_topics if t not in self.used_topics]
-        
-        # If all topics have been used, reset (start fresh)
-        if len(unused_topics) < self.topics_per_day:
-            logger.info(f"🔄 All {len(available_topics)} topics have been used. Resetting for fresh rotation.")
-            self.used_topics.clear()
-            self._save_used_topics()
-            unused_topics = available_topics.copy()
-        
-        # If we still don't have enough, use what we have
-        if len(unused_topics) <= self.topics_per_day:
-            logger.info(f"Using remaining {len(unused_topics)} unused topics: {unused_topics}")
-            for topic in unused_topics:
-                self.used_topics.add(topic)
-            self._save_used_topics()
-            return unused_topics
-        
-        # Use random seed based on date for consistency
-        today_seed = datetime.now().strftime("%Y-%m-%d")
-        random.seed(today_seed)
-        
-        selected = random.sample(unused_topics, self.topics_per_day)
-        
-        # Mark selected topics as used
-        for topic in selected:
-            self.used_topics.add(topic)
-        self._save_used_topics()
-        
-        remaining = len([t for t in available_topics if t not in self.used_topics])
-        logger.info(f"📋 Selected {len(selected)} topics for today: {selected}")
-        logger.info(f"   Topics remaining: {remaining} unused out of {len(available_topics)}")
-        
-        return selected
     
     async def generate_daily_reels(self) -> DailyCollection:
         logger.info("Starting daily reel collection...")
         
-        # Select topics for today
-        daily_topics = self._select_daily_topics()
-        
-        if not daily_topics:
-            logger.warning("No topics selected for today!")
-            # Fallback: try to use first topic if available
-            if self.topics:
-                daily_topics = [self.topics[0]]
-                logger.info(f"Fallback to first topic: {daily_topics}")
-            else:
-                logger.error("No topics available!")
-                return DailyCollection(
-                    date=datetime.now().strftime("%Y-%m-%d"),
-                    topics={},
-                    total_count=0,
-                    generated_at=datetime.now().isoformat()
-                )
-        
         topic_reels = {}
         total_count = 0
         
-        for topic in daily_topics:
+        for topic in self.topics:
             logger.info(f"Collecting reels for: {topic}")
             
             variations = [
@@ -990,7 +871,7 @@ class DailyReelCollector:
         # Save to Google Drive
         await self._save_to_drive()
         
-        logger.info(f"Daily collection complete: {total_count} total reels from {len(daily_topics)} topics")
+        logger.info(f"Daily collection complete: {total_count} total reels")
         return self.current_collection
     
     def _is_relevant(self, reel: ReelData, topic: str) -> bool:
@@ -1034,44 +915,21 @@ class DailyReelCollector:
             json.dump(data, f, indent=2, ensure_ascii=False)
     
     async def _save_to_drive(self):
-        """Save data to Google Drive - handles both current collection and emergency topics"""
-        try:
-            # Get today's collection
-            today = datetime.now().strftime("%Y-%m-%d")
-            collection = self.get_today_collection()
-            
-            if not collection:
-                # If no collection exists, use current_collection if available
-                if self.current_collection:
-                    collection = self.current_collection
-                else:
-                    logger.warning("No collection to save to Drive")
-                    return False
-            
-            # Build data for Drive
-            data = {
-                "date": collection.date,
-                "total_count": collection.total_count,
-                "topics": {topic: [reel.to_dict() for reel in reels] for topic, reels in collection.topics.items()},
-                "generated_at": collection.generated_at,
-                "total_urls": collection.total_count,
-                "source": "reel_generator",
-                "last_updated": datetime.now().isoformat()
-            }
-            
-            logger.info(f"📤 Saving {collection.total_count} reels to Google Drive...")
-            success = await self.drive_manager.save_shared_data(data)
-            
-            if success:
-                logger.info(f"✅ Successfully saved to Drive: {SHARED_FILE_NAME}")
-            else:
-                logger.error(f"❌ Failed to save to Drive")
-            
-            return success
-            
-        except Exception as e:
-            logger.error(f"Error saving to Drive: {e}")
-            return False
+        """Save current collection to Google Drive"""
+        if not self.current_collection:
+            return
+        
+        data = {
+            "date": self.current_collection.date,
+            "total_count": self.current_collection.total_count,
+            "topics": {topic: [reel.to_dict() for reel in reels] for topic, reels in self.current_collection.topics.items()},
+            "generated_at": self.current_collection.generated_at,
+            "total_urls": self.current_collection.total_count,
+            "source": "reel_generator",
+            "last_updated": datetime.now().isoformat()
+        }
+        
+        await self.drive_manager.save_shared_data(data)
     
     def load_collection(self):
         if os.path.exists(self.collection_file):
@@ -1080,8 +938,6 @@ class DailyReelCollector:
                     data = json.load(f)
                 self.collection_history = data.get("history", [])
                 logger.info(f"Loaded {len(self.collection_history)} historical collections")
-                # Rebuild used topics from history
-                self._build_used_topics_from_history()
             except Exception as e:
                 logger.error(f"Error loading collection: {e}")
     
@@ -1118,27 +974,6 @@ class DailyReelCollector:
         for reels in collection.topics.values():
             all_urls.extend([reel.url for reel in reels])
         return all_urls
-    
-    def reset_used_topics(self):
-        """Manually reset the used topics tracker"""
-        self.used_topics.clear()
-        self._save_used_topics()
-        logger.info("🔄 Used topics tracker has been reset")
-        return True
-    
-    def get_topic_stats(self) -> Dict:
-        """Get statistics about topic usage"""
-        available_topics = [t for t in self.topics if t and t.strip()]
-        unused_count = len([t for t in available_topics if t not in self.used_topics])
-        
-        return {
-            "total_topics": len(available_topics),
-            "used_topics": len(self.used_topics),
-            "unused_topics": unused_count,
-            "topics_remaining": unused_count,
-            "used_list": list(self.used_topics),
-            "available_list": available_topics
-        }
 
 
 async def daily_collection_job():
@@ -1148,7 +983,7 @@ async def daily_collection_job():
         logger.info("Scheduler is stopped - skipping collection")
         return
     
-    logger.info("Running daily collection job at 3:30 PM...")
+    logger.info("Running daily collection job...")
     
     try:
         if not scraper.page:
@@ -1164,38 +999,6 @@ async def daily_collection_job():
         
     except Exception as e:
         logger.error(f"Daily collection job failed: {e}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # ======================== HTML Template ========================
@@ -1221,17 +1024,6 @@ HTML_TEMPLATE = """
         }
         h1 { font-size: 36px; color: #dc2743; margin-bottom: 10px; }
         .subtitle { color: #888; font-size: 16px; }
-        
-        .info-box {
-            background: #2a2a2a;
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-size: 13px;
-            color: #888;
-            border-left: 3px solid #f59e0b;
-        }
-        .info-box strong { color: #4ade80; }
         
         .drive-status {
             background: #2a2a2a;
@@ -1379,11 +1171,6 @@ HTML_TEMPLATE = """
         <p class="subtitle">Full UI Control - Manage topics, scheduler, and generate daily Reel URLs</p>
     </div>
     
-    <div class="info-box">
-        📊 <strong>{REELS_PER_TOPIC}</strong> reels per topic • <strong>{TOPICS_PER_DAY}</strong> topics daily = <strong>{REELS_PER_TOPIC * TOPICS_PER_DAY}</strong> total reels per day
-        <span style="margin-left: 15px;">⏰ Runs daily at <strong>3:30 PM</strong></span>
-    </div>
-    
     <div class="drive-status">
         📁 Saved to Google Drive: <strong>Reel_Finder_Data/shared_reels.json</strong>
         <span style="margin-left: 10px; font-size: 11px; color: #666;">(Shared with Downloader)</span>
@@ -1429,17 +1216,6 @@ HTML_TEMPLATE = """
             <button class="btn btn-secondary" onclick="refreshData()">🔄 Refresh</button>
             <button class="btn btn-danger" onclick="clearHistory()">🗑️ Clear History</button>
         </div>
-        <div class="section">
-    <h2>🚨 Emergency Topic (Instant Generation)</h2>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-        <input type="text" id="emergencyTopicInput" placeholder="Enter emergency topic..." 
-               style="flex:1; min-width:200px; padding:12px 16px; background:#0a0a0a; border:2px solid #dc2743; border-radius:8px; color:#fff; font-size:14px;">
-        <button class="btn" style="background:#dc2743; color:white; font-weight:bold;" onclick="generateEmergency()">
-            🚨 Generate Now
-        </button>
-        <div id="emergencyStatus" class="status-msg"></div>
-    </div>
-</div>
     </div>
     
     <div id="resultsSection" class="section">
@@ -1642,55 +1418,6 @@ HTML_TEMPLATE = """
             }
         }
         
-        
-        
-        
-        
-async function generateEmergency() {
-    const input = document.getElementById('emergencyTopicInput');
-    const topic = input.value.trim().toLowerCase();
-    
-    if (!topic) {
-        showEmergencyStatus('Please enter a topic name', 'error');
-        return;
-    }
-    
-    showEmergencyStatus(`🚨 Generating emergency reels for "${topic}"...`, 'info');
-    
-    try {
-        const response = await fetch('/api/emergency', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ topic: topic })
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            showEmergencyStatus(`✅ Generated ${data.count} reels for "${data.topic}"!`, 'success');
-            input.value = '';
-            setTimeout(() => { loadTopics(); loadResults(); }, 2000);
-        } else {
-            showEmergencyStatus('❌ ' + (data.detail || data.message || 'Unknown error'), 'error');
-        }
-    } catch (error) {
-        showEmergencyStatus('❌ Error: ' + error.message, 'error');
-    }
-}
-
-function showEmergencyStatus(message, type = 'info') {
-    const el = document.getElementById('emergencyStatus');
-    el.className = 'status-msg ' + type;
-    el.textContent = message;
-    el.style.display = 'block';
-    setTimeout(() => { el.style.display = 'none'; }, 8000);
-}
-        
-        
-        
-        
-        
-        
         async function resetTopics() {
             if (!confirm('Reset to default topics? (mafia, gangstars, murphy, war, ninjas)')) return;
             
@@ -1811,10 +1538,7 @@ function showEmergencyStatus(message, type = 'info') {
 # ======================== API Endpoints ========================
 @app.get("/")
 async def root():
-    # Pass config values to template
-    html = HTML_TEMPLATE.replace("{REELS_PER_TOPIC}", str(REELS_PER_TOPIC))
-    html = html.replace("{TOPICS_PER_DAY}", str(TOPICS_PER_DAY))
-    return HTMLResponse(html)
+    return HTMLResponse(HTML_TEMPLATE)
 
 @app.get("/api/topics")
 async def get_topics_api():
@@ -1967,122 +1691,8 @@ async def health_check():
         "timestamp": datetime.now().isoformat(),
         "scheduler_running": scheduler_running,
         "topics": collector.topics if collector else DEFAULT_TOPICS,
-        "has_today_collection": collector.get_today_collection() is not None if collector else False,
-        "config": {
-            "reels_per_topic": REELS_PER_TOPIC,
-            "topics_per_day": TOPICS_PER_DAY,
-            "schedule": f"{SCHEDULE_HOUR:02d}:{SCHEDULE_MINUTE:02d}"
-        }
+        "has_today_collection": collector.get_today_collection() is not None if collector else False
     }
-
-
-
-@app.post("/api/emergency")
-async def generate_emergency_topic(data: dict):
-    """Generate reels immediately for a specific topic (emergency/priority)"""
-    global collector, scraper
-    
-    if not collector or not scraper:
-        raise HTTPException(status_code=503, detail="Collector or scraper not initialized")
-    
-    topic = data.get("topic", "").strip().lower()
-    if not topic:
-        raise HTTPException(status_code=400, detail="Topic name required")
-    
-    try:
-        # Ensure browser is initialized
-        if not scraper.page:
-            await scraper.initialize()
-        
-        logger.info(f"🚨 EMERGENCY GENERATION for topic: {topic}")
-        
-        # Generate reels for this specific topic
-        variations = [
-            topic,
-            f"#{topic}",
-            f"{topic} daily",
-            f"{topic} trending"
-        ]
-        
-        all_reels = []
-        seen_shortcodes = set()
-        
-        for variation in variations[:3]:
-            if len(all_reels) >= REELS_PER_TOPIC * 2:
-                break
-                
-            try:
-                reels = await scraper.search(variation, max_results=20)
-                
-                for reel in reels:
-                    if reel.shortcode not in seen_shortcodes:
-                        seen_shortcodes.add(reel.shortcode)
-                        if collector._is_relevant(reel, topic):
-                            all_reels.append(reel)
-            except Exception as e:
-                logger.error(f"Error searching {variation}: {e}")
-                continue
-            
-            await asyncio.sleep(1)
-        
-        selected_reels = collector._select_unique_reels(all_reels, REELS_PER_TOPIC)
-        
-        today = datetime.now().strftime("%Y-%m-%d")
-        
-        # Check if we already have a collection for today
-        existing_collection = collector.get_today_collection()
-        
-        if existing_collection:
-            # Merge with existing today's collection
-            existing_collection.topics[topic] = selected_reels
-            existing_collection.total_count = sum(len(reels) for reels in existing_collection.topics.values())
-            collector.current_collection = existing_collection
-            
-            # Update history
-            for i, collection in enumerate(collector.collection_history):
-                if collection.get("date") == today:
-                    collector.collection_history[i] = existing_collection.to_dict()
-                    break
-        else:
-            # Create new collection
-            emergency_collection = DailyCollection(
-                date=today,
-                topics={topic: selected_reels},
-                total_count=len(selected_reels),
-                generated_at=datetime.now().isoformat()
-            )
-            collector.current_collection = emergency_collection
-            collector.collection_history.append(emergency_collection.to_dict())
-        
-        # Save to local file
-        collector._save_collection()
-        
-        # Save to Google Drive - THIS IS THE KEY FIX
-        drive_success = await collector._save_to_drive()
-        
-        if drive_success:
-            logger.info(f"✅ Emergency collection saved to Google Drive")
-        else:
-            logger.warning(f"⚠️ Failed to save emergency collection to Google Drive")
-        
-        logger.info(f"✅ Emergency generation complete: {len(selected_reels)} reels for '{topic}'")
-        
-        return {
-            "success": True,
-            "topic": topic,
-            "count": len(selected_reels),
-            "reels": [reel.to_dict() for reel in selected_reels],
-            "drive_saved": drive_success,
-            "message": f"Generated {len(selected_reels)} reels for emergency topic: {topic}"
-        }
-        
-    except Exception as e:
-        logger.error(f"Emergency generation failed: {e}")
-        raise HTTPException(status_code=500, detail=f"Generation failed: {str(e)}")
-
-
-
-
 
 
 # ======================== Main ========================
@@ -2107,19 +1717,18 @@ async def startup_event():
     else:
         logger.info(f"Today's collection already exists: {today_collection.total_count} reels")
     
-    from apscheduler.schedulers.asyncio import AsyncIOScheduler
+    from apscheduler.schedulers.background import BackgroundScheduler
     from apscheduler.triggers.cron import CronTrigger
-    import asyncio
     
-    scheduler = AsyncIOScheduler()
+    scheduler = BackgroundScheduler()
     scheduler.add_job(
         func=daily_collection_job,
-        trigger=CronTrigger(hour=SCHEDULE_HOUR, minute=SCHEDULE_MINUTE),
+        trigger=CronTrigger(hour=0, minute=0),
         id="daily_reel_collection",
         replace_existing=True
     )
     scheduler.start()
-    logger.info(f"Scheduler started - daily collection at {SCHEDULE_HOUR:02d}:{SCHEDULE_MINUTE:02d}")
+    logger.info("Scheduler started - daily collection at midnight")
 
 @app.on_event("shutdown")
 async def shutdown_event():
@@ -2131,10 +1740,10 @@ async def shutdown_event():
         await scraper.close()
         logger.info("Scraper closed")
 
+
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
     print(f"🚀 Starting server on http://localhost:{port}")
-    print(f"📊 {REELS_PER_TOPIC} reels per topic × {TOPICS_PER_DAY} topics = {REELS_PER_TOPIC * TOPICS_PER_DAY} total reels daily")
-    print(f"⏰ Schedule: {SCHEDULE_HOUR:02d}:{SCHEDULE_MINUTE:02d} daily")
     print("📌 URLs will be saved to Google Drive: Reel_Finder_Data/shared_reels.json")
+    print("📌 Use the UI to control everything - click buttons, add topics, toggle scheduler")
     uvicorn.run(app, host="0.0.0.0", port=port)

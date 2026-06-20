@@ -827,3 +827,1074 @@
 2026-06-19 11:46:27,709 - INFO -     - https://www.instagram.com/reel/DUUk8JTkp6_/
 2026-06-19 11:48:50,679 - INFO - Scheduler has been shut down
 2026-06-19 11:48:50,680 - INFO - Scheduler stopped
+2026-06-19 12:39:51,139 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-19 12:39:51,144 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-19 12:39:52,262 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-19 12:39:55,296 - INFO - Browser initialized
+2026-06-19 12:39:55,298 - INFO - Universal Reels Finder initialized
+2026-06-19 12:39:55,301 - INFO - Loaded 2 historical collections
+2026-06-19 12:39:55,302 - INFO - Today's collection already exists: 3 reels
+2026-06-19 12:39:55,571 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 12:39:55,574 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 12:39:55,575 - INFO - Scheduler started
+2026-06-19 12:39:55,576 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 12:40:00,717 - INFO - Saved 0 topics
+2026-06-19 12:40:09,389 - INFO - Saved 1 topics
+2026-06-19 12:40:10,805 - INFO - Running daily collection job...
+2026-06-19 12:40:10,807 - INFO - Starting daily reel collection...
+2026-06-19 12:40:10,807 - INFO - Collecting reels for: watchdogs
+2026-06-19 12:40:10,807 - INFO - Searching for: watchdogs
+2026-06-19 12:40:28,854 - INFO - Found 29 potential reel links
+2026-06-19 12:40:28,854 - INFO - Extracted 10 reels for 'watchdogs'
+2026-06-19 12:40:29,857 - INFO - Searching for: watchdogs
+2026-06-19 12:40:36,951 - INFO - Found 29 potential reel links
+2026-06-19 12:40:36,952 - INFO - Extracted 10 reels for '#watchdogs'
+2026-06-19 12:40:37,963 - INFO - Searching for: watchdogs daily
+2026-06-19 12:40:45,056 - INFO - Found 30 potential reel links
+2026-06-19 12:40:45,057 - INFO - Extracted 10 reels for 'watchdogs daily'
+2026-06-19 12:40:46,054 - INFO - Collected 5 reels for watchdogs
+2026-06-19 12:40:46,671 - INFO - 📤 Updating: shared_reels.json
+2026-06-19 12:40:49,669 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-19 12:40:49,676 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpxftsd4ib.json'
+2026-06-19 12:40:49,676 - INFO - Daily collection complete: 5 total reels
+2026-06-19 12:40:49,676 - INFO - Daily collection completed: 5 reels
+2026-06-19 12:40:49,676 - INFO -   watchdogs: 5 reels
+2026-06-19 12:40:49,676 - INFO -     - https://www.instagram.com/reel/DUyeYmhDowW/
+2026-06-19 12:40:49,676 - INFO -     - https://www.instagram.com/reel/DUHeQK6DZGk/
+2026-06-19 12:40:49,680 - INFO -     - https://www.instagram.com/reel/DUMjKu5jNbW/
+2026-06-19 12:40:49,680 - INFO -     - https://www.instagram.com/reel/DTo8vkwDkQp/
+2026-06-19 12:40:49,680 - INFO -     - https://www.instagram.com/reel/DUafyHvjFPH/
+2026-06-19 13:05:08,341 - INFO - Scheduler has been shut down
+2026-06-19 13:05:08,394 - INFO - Scheduler stopped
+2026-06-19 13:05:16,747 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-19 13:05:16,759 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-19 13:05:19,316 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-19 13:05:21,128 - INFO - Browser initialized
+2026-06-19 13:05:21,129 - INFO - Universal Reels Finder initialized
+2026-06-19 13:05:21,212 - INFO - Loaded 3 historical collections
+2026-06-19 13:05:21,213 - INFO - Today's collection already exists: 3 reels
+2026-06-19 13:05:21,502 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 13:05:21,506 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 13:05:21,507 - INFO - Scheduler started
+2026-06-19 13:05:21,509 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 13:05:35,491 - INFO - Saved 0 topics
+2026-06-19 13:06:09,906 - INFO - Saved 1 topics
+2026-06-19 13:06:11,514 - INFO - Running daily collection job...
+2026-06-19 13:06:11,515 - INFO - Starting daily reel collection...
+2026-06-19 13:06:11,515 - INFO - Collecting reels for: artificial intelligence
+2026-06-19 13:06:11,516 - INFO - Searching for: artificial intelligence
+2026-06-19 13:06:27,140 - INFO - Found 29 potential reel links
+2026-06-19 13:06:27,145 - INFO - Extracted 10 reels for 'artificial intelligence'
+2026-06-19 13:06:28,145 - INFO - Searching for: artificial intelligence
+2026-06-19 13:06:35,199 - INFO - Found 29 potential reel links
+2026-06-19 13:06:35,200 - INFO - Extracted 10 reels for '#artificial intelligence'
+2026-06-19 13:06:36,212 - INFO - Searching for: artificial intelligence daily
+2026-06-19 13:06:43,307 - INFO - Found 30 potential reel links
+2026-06-19 13:06:43,309 - INFO - Extracted 10 reels for 'artificial intelligence daily'
+2026-06-19 13:06:44,324 - INFO - Collected 5 reels for artificial intelligence
+2026-06-19 13:06:44,906 - INFO - 📤 Updating: shared_reels.json
+2026-06-19 13:06:47,561 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-19 13:06:47,562 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpln43f4yp.json'
+2026-06-19 13:06:47,562 - INFO - Daily collection complete: 5 total reels
+2026-06-19 13:06:47,563 - INFO - Daily collection completed: 5 reels
+2026-06-19 13:06:47,563 - INFO -   artificial intelligence: 5 reels
+2026-06-19 13:06:47,563 - INFO -     - https://www.instagram.com/reel/DMF0FrSOSgR/
+2026-06-19 13:06:47,564 - INFO -     - https://www.instagram.com/reel/DTPvW7Fiufc/
+2026-06-19 13:06:47,564 - INFO -     - https://www.instagram.com/reel/DYN06jszWJf/
+2026-06-19 13:06:47,564 - INFO -     - https://www.instagram.com/reel/DXXB9hcCLp_/
+2026-06-19 13:06:47,565 - INFO -     - https://www.instagram.com/reel/DX_jn4vDdBh/
+2026-06-19 13:10:22,930 - INFO - Scheduler has been shut down
+2026-06-19 13:10:22,968 - INFO - Scheduler stopped
+2026-06-19 13:10:31,565 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-19 13:10:31,573 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-19 13:10:33,951 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-19 13:10:35,656 - INFO - Browser initialized
+2026-06-19 13:10:35,657 - INFO - Universal Reels Finder initialized
+2026-06-19 13:10:35,722 - INFO - Loaded 4 historical collections
+2026-06-19 13:10:35,722 - INFO - Today's collection already exists: 3 reels
+2026-06-19 13:10:36,044 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 13:10:36,050 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 13:10:36,051 - INFO - Scheduler started
+2026-06-19 13:10:36,052 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 13:10:41,480 - INFO - Saved 0 topics
+2026-06-19 13:10:54,260 - INFO - Saved 1 topics
+2026-06-19 13:10:55,624 - INFO - Running daily collection job...
+2026-06-19 13:10:55,625 - INFO - Starting daily reel collection...
+2026-06-19 13:10:55,626 - INFO - Collecting reels for: killer switch
+2026-06-19 13:10:55,626 - INFO - Searching for: killer switch
+2026-06-19 13:11:09,809 - INFO - Found 30 potential reel links
+2026-06-19 13:11:09,818 - INFO - Extracted 10 reels for 'killer switch'
+2026-06-19 13:11:10,826 - INFO - Searching for: killer switch
+2026-06-19 13:11:17,937 - INFO - Found 30 potential reel links
+2026-06-19 13:11:17,939 - INFO - Extracted 10 reels for '#killer switch'
+2026-06-19 13:11:18,965 - INFO - Searching for: killer switch daily
+2026-06-19 13:11:26,049 - INFO - Found 30 potential reel links
+2026-06-19 13:11:26,050 - INFO - Extracted 10 reels for 'killer switch daily'
+2026-06-19 13:11:27,063 - INFO - Collected 0 reels for killer switch
+2026-06-19 13:11:27,681 - INFO - 📤 Updating: shared_reels.json
+2026-06-19 13:11:30,474 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-19 13:11:30,477 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpg6yt7bdi.json'
+2026-06-19 13:11:30,478 - INFO - Daily collection complete: 0 total reels
+2026-06-19 13:11:30,478 - INFO - Daily collection completed: 0 reels
+2026-06-19 13:11:30,478 - INFO -   killer switch: 0 reels
+2026-06-19 13:12:40,203 - INFO - Running daily collection job...
+2026-06-19 13:12:40,204 - INFO - Starting daily reel collection...
+2026-06-19 13:12:40,204 - INFO - Collecting reels for: killer switch
+2026-06-19 13:12:40,205 - INFO - Searching for: killer switch
+2026-06-19 13:12:47,291 - INFO - Found 30 potential reel links
+2026-06-19 13:12:47,293 - INFO - Extracted 10 reels for 'killer switch'
+2026-06-19 13:12:48,309 - INFO - Searching for: killer switch
+2026-06-19 13:12:55,414 - INFO - Found 30 potential reel links
+2026-06-19 13:12:55,416 - INFO - Extracted 10 reels for '#killer switch'
+2026-06-19 13:12:56,412 - INFO - Searching for: killer switch daily
+2026-06-19 13:13:03,494 - INFO - Found 30 potential reel links
+2026-06-19 13:13:03,496 - INFO - Extracted 10 reels for 'killer switch daily'
+2026-06-19 13:13:04,512 - INFO - Collected 0 reels for killer switch
+2026-06-19 13:13:05,027 - INFO - 📤 Updating: shared_reels.json
+2026-06-19 13:13:07,599 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-19 13:13:07,600 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmptmt8negz.json'
+2026-06-19 13:13:07,602 - INFO - Daily collection complete: 0 total reels
+2026-06-19 13:13:07,602 - INFO - Daily collection completed: 0 reels
+2026-06-19 13:13:07,602 - INFO -   killer switch: 0 reels
+2026-06-19 13:13:09,969 - INFO - Saved 0 topics
+2026-06-19 13:13:13,763 - INFO - Saved 1 topics
+2026-06-19 13:13:14,672 - INFO - Running daily collection job...
+2026-06-19 13:13:14,674 - INFO - Starting daily reel collection...
+2026-06-19 13:13:14,675 - INFO - Collecting reels for: spiderman
+2026-06-19 13:13:14,675 - INFO - Searching for: spiderman
+2026-06-19 13:13:21,754 - INFO - Found 30 potential reel links
+2026-06-19 13:13:21,756 - INFO - Extracted 10 reels for 'spiderman'
+2026-06-19 13:13:22,768 - INFO - Searching for: spiderman
+2026-06-19 13:13:29,822 - INFO - Found 30 potential reel links
+2026-06-19 13:13:29,825 - INFO - Extracted 10 reels for '#spiderman'
+2026-06-19 13:13:30,815 - INFO - Searching for: spiderman daily
+2026-06-19 13:13:37,900 - INFO - Found 28 potential reel links
+2026-06-19 13:13:37,903 - INFO - Extracted 10 reels for 'spiderman daily'
+2026-06-19 13:13:38,910 - INFO - Collected 5 reels for spiderman
+2026-06-19 13:13:39,562 - INFO - 📤 Updating: shared_reels.json
+2026-06-19 13:13:42,435 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-19 13:13:42,436 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpza9ki2nx.json'
+2026-06-19 13:13:42,437 - INFO - Daily collection complete: 5 total reels
+2026-06-19 13:13:42,437 - INFO - Daily collection completed: 5 reels
+2026-06-19 13:13:42,437 - INFO -   spiderman: 5 reels
+2026-06-19 13:13:42,438 - INFO -     - https://www.instagram.com/reel/DZszmLkhAdY/
+2026-06-19 13:13:42,438 - INFO -     - https://www.instagram.com/reel/DZvb9ymAqX0/
+2026-06-19 13:13:42,439 - INFO -     - https://www.instagram.com/reel/DNjrSV0NM-P/
+2026-06-19 13:13:42,439 - INFO -     - https://www.instagram.com/reel/DZpc0jshQpC/
+2026-06-19 13:13:42,439 - INFO -     - https://www.instagram.com/reel/DZsa6jzPHm6/
+2026-06-19 13:22:55,232 - INFO - Saved 5 topics
+2026-06-19 13:22:57,501 - INFO - Saved 4 topics
+2026-06-19 13:22:59,894 - INFO - Saved 3 topics
+2026-06-19 13:23:02,355 - INFO - Saved 2 topics
+2026-06-19 13:23:04,363 - INFO - Saved 1 topics
+2026-06-19 13:23:05,765 - INFO - Running daily collection job...
+2026-06-19 13:23:05,767 - INFO - Starting daily reel collection...
+2026-06-19 13:23:05,768 - INFO - Collecting reels for: gangstars
+2026-06-19 13:23:05,768 - INFO - Searching for: gangstars
+2026-06-19 13:23:13,277 - INFO - Found 29 potential reel links
+2026-06-19 13:23:13,282 - INFO - Extracted 10 reels for 'gangstars'
+2026-06-19 13:23:14,291 - INFO - Collected 5 reels for gangstars
+2026-06-19 13:23:15,559 - INFO - 📤 Updating: shared_reels.json
+2026-06-19 13:23:17,807 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-19 13:23:17,810 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmp_c8_yslj.json'
+2026-06-19 13:23:17,811 - INFO - Daily collection complete: 5 total reels
+2026-06-19 13:23:17,811 - INFO - Daily collection completed: 5 reels
+2026-06-19 13:23:17,811 - INFO -   gangstars: 5 reels
+2026-06-19 13:23:17,811 - INFO -     - https://www.instagram.com/reel/DW8bPjGAPq1/
+2026-06-19 13:23:17,812 - INFO -     - https://www.instagram.com/reel/DW7Bg0Vj0DG/
+2026-06-19 13:23:17,812 - INFO -     - https://www.instagram.com/reel/DW6misCDIpe/
+2026-06-19 13:23:17,812 - INFO -     - https://www.instagram.com/reel/DW8XFPrAe8U/
+2026-06-19 13:23:17,813 - INFO -     - https://www.instagram.com/reel/DW6eRgxCflh/
+2026-06-19 13:57:16,196 - INFO - Scheduler has been shut down
+2026-06-19 13:57:16,221 - INFO - Scheduler stopped
+2026-06-19 14:18:18,577 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-19 14:18:18,585 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-19 14:18:21,347 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-19 14:18:22,840 - INFO - Browser initialized
+2026-06-19 14:18:22,840 - INFO - Universal Reels Finder initialized
+2026-06-19 14:18:22,844 - INFO - Loaded 4 historical collections
+2026-06-19 14:18:22,844 - INFO - Today's collection already exists: 0 reels
+2026-06-19 14:18:23,207 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-19 14:18:23,212 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-19 14:18:23,212 - INFO - Scheduler started
+2026-06-19 14:18:23,221 - INFO - Scheduler started - daily collection at midnight
+2026-06-19 14:53:02,070 - INFO - Scheduler stopped (Kill Switch)
+2026-06-19 14:53:07,056 - INFO - Saved 0 topics
+2026-06-19 14:56:09,706 - INFO - Scheduler started
+2026-06-19 14:56:35,477 - INFO - Saved 1 topics
+2026-06-19 14:56:37,038 - INFO - Running daily collection job...
+2026-06-19 14:56:37,042 - INFO - Starting daily reel collection...
+2026-06-19 14:56:37,042 - INFO - Collecting reels for: wwe
+2026-06-19 14:56:37,045 - INFO - Searching for: wwe
+2026-06-19 14:56:53,471 - INFO - Found 30 potential reel links
+2026-06-19 14:56:53,490 - INFO - Extracted 10 reels for 'wwe'
+2026-06-19 14:56:54,498 - INFO - Collected 5 reels for wwe
+2026-06-19 14:56:56,341 - INFO - 📤 Updating: shared_reels.json
+2026-06-19 14:56:58,591 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-19 14:56:58,596 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpyl_6x3f1.json'
+2026-06-19 14:56:58,596 - INFO - Daily collection complete: 5 total reels
+2026-06-19 14:56:58,597 - INFO - Daily collection completed: 5 reels
+2026-06-19 14:56:58,597 - INFO -   wwe: 5 reels
+2026-06-19 14:56:58,597 - INFO -     - https://www.instagram.com/reel/DZoBYtyvxNV/
+2026-06-19 14:56:58,597 - INFO -     - https://www.instagram.com/reel/DZoX-sDM-Dn/
+2026-06-19 14:56:58,597 - INFO -     - https://www.instagram.com/reel/DZu4_KTuvjz/
+2026-06-19 14:56:58,598 - INFO -     - https://www.instagram.com/reel/DZpz34HIzT_/
+2026-06-19 14:56:58,598 - INFO -     - https://www.instagram.com/reel/DZoWnIyM07o/
+2026-06-19 15:33:00,103 - INFO - Saved 0 topics
+2026-06-19 15:33:04,008 - INFO - Saved 1 topics
+2026-06-19 15:33:05,135 - INFO - Running daily collection job...
+2026-06-19 15:33:05,140 - INFO - Starting daily reel collection...
+2026-06-19 15:33:05,143 - INFO - Collecting reels for: menfight
+2026-06-19 15:33:05,144 - INFO - Searching for: menfight
+2026-06-19 15:33:12,788 - INFO - Found 28 potential reel links
+2026-06-19 15:33:12,815 - INFO - Extracted 10 reels for 'menfight'
+2026-06-19 15:33:13,830 - INFO - Searching for: menfight
+2026-06-19 15:33:20,921 - INFO - Found 28 potential reel links
+2026-06-19 15:33:20,924 - INFO - Extracted 10 reels for '#menfight'
+2026-06-19 15:33:21,922 - INFO - Searching for: menfight daily
+2026-06-19 15:33:29,003 - INFO - Found 25 potential reel links
+2026-06-19 15:33:29,006 - INFO - Extracted 10 reels for 'menfight daily'
+2026-06-19 15:33:30,016 - INFO - Collected 0 reels for menfight
+2026-06-19 15:33:32,198 - INFO - 📤 Updating: shared_reels.json
+2026-06-19 15:33:35,262 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-19 15:33:35,264 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmp4qkrx_5y.json'
+2026-06-19 15:33:35,265 - INFO - Daily collection complete: 0 total reels
+2026-06-19 15:33:35,267 - INFO - Daily collection completed: 0 reels
+2026-06-19 15:33:35,270 - INFO -   menfight: 0 reels
+2026-06-19 15:34:07,441 - INFO - Running daily collection job...
+2026-06-19 15:34:07,442 - INFO - Starting daily reel collection...
+2026-06-19 15:34:07,442 - INFO - Collecting reels for: menfight
+2026-06-19 15:34:07,443 - INFO - Searching for: menfight
+2026-06-19 15:34:14,554 - INFO - Found 29 potential reel links
+2026-06-19 15:34:14,556 - INFO - Extracted 10 reels for 'menfight'
+2026-06-19 15:34:15,548 - INFO - Searching for: menfight
+2026-06-19 15:34:22,647 - INFO - Found 29 potential reel links
+2026-06-19 15:34:22,650 - INFO - Extracted 10 reels for '#menfight'
+2026-06-19 15:34:23,669 - INFO - Searching for: menfight daily
+2026-06-19 15:34:30,726 - INFO - Found 25 potential reel links
+2026-06-19 15:34:30,728 - INFO - Extracted 10 reels for 'menfight daily'
+2026-06-19 15:34:31,746 - INFO - Collected 0 reels for menfight
+2026-06-19 15:34:32,369 - INFO - 📤 Updating: shared_reels.json
+2026-06-19 15:34:35,087 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-19 15:34:35,088 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpcx3tstt9.json'
+2026-06-19 15:34:35,088 - INFO - Daily collection complete: 0 total reels
+2026-06-19 15:34:35,088 - INFO - Daily collection completed: 0 reels
+2026-06-19 15:34:35,089 - INFO -   menfight: 0 reels
+2026-06-19 15:34:38,728 - INFO - Saved 0 topics
+2026-06-19 15:34:43,865 - INFO - Saved 1 topics
+2026-06-19 15:34:44,950 - INFO - Running daily collection job...
+2026-06-19 15:34:44,950 - INFO - Starting daily reel collection...
+2026-06-19 15:34:44,950 - INFO - Collecting reels for: wildlife
+2026-06-19 15:34:44,951 - INFO - Searching for: wildlife
+2026-06-19 15:34:52,045 - INFO - Found 30 potential reel links
+2026-06-19 15:34:52,047 - INFO - Extracted 10 reels for 'wildlife'
+2026-06-19 15:34:53,049 - INFO - Collected 5 reels for wildlife
+2026-06-19 15:34:53,788 - INFO - 📤 Updating: shared_reels.json
+2026-06-19 15:34:56,558 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-19 15:34:56,558 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmphru32edc.json'
+2026-06-19 15:34:56,559 - INFO - Daily collection complete: 5 total reels
+2026-06-19 15:34:56,559 - INFO - Daily collection completed: 5 reels
+2026-06-19 15:34:56,560 - INFO -   wildlife: 5 reels
+2026-06-19 15:34:56,560 - INFO -     - https://www.instagram.com/reel/DVaQo9gDEEt/
+2026-06-19 15:34:56,561 - INFO -     - https://www.instagram.com/reel/DOv89QlgdZ4/
+2026-06-19 15:34:56,561 - INFO -     - https://www.instagram.com/reel/DMVY-WksZf0/
+2026-06-19 15:34:56,562 - INFO -     - https://www.instagram.com/reel/DU5tsD9iM-I/
+2026-06-19 15:34:56,562 - INFO -     - https://www.instagram.com/reel/DMY0vgtNQDX/
+2026-06-20 14:56:38,027 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 14:56:38,035 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 14:56:41,910 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 14:56:43,153 - INFO - Browser initialized
+2026-06-20 14:56:43,153 - INFO - Universal Reels Finder initialized
+2026-06-20 14:56:43,204 - INFO - Loaded 3 historical collections
+2026-06-20 14:56:43,205 - INFO - No collection for today, generating now...
+2026-06-20 14:56:43,206 - INFO - Running daily collection job...
+2026-06-20 14:56:43,207 - INFO - Starting daily reel collection...
+2026-06-20 14:56:43,208 - INFO - Collecting reels for: wildlife
+2026-06-20 14:56:43,208 - INFO - Searching for: wildlife
+2026-06-20 14:57:02,584 - INFO - Found 30 potential reel links
+2026-06-20 14:57:02,595 - INFO - Extracted 10 reels for 'wildlife'
+2026-06-20 14:57:03,598 - INFO - Collected 5 reels for wildlife
+2026-06-20 14:57:04,062 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 14:57:07,835 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 14:57:07,836 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmp2fzffoxf.json'
+2026-06-20 14:57:07,838 - INFO - Daily collection complete: 5 total reels
+2026-06-20 14:57:07,840 - INFO - Daily collection completed: 5 reels
+2026-06-20 14:57:07,841 - INFO -   wildlife: 5 reels
+2026-06-20 14:57:07,842 - INFO -     - https://www.instagram.com/reel/DOv89QlgdZ4/
+2026-06-20 14:57:07,843 - INFO -     - https://www.instagram.com/reel/DVaQo9gDEEt/
+2026-06-20 14:57:07,844 - INFO -     - https://www.instagram.com/reel/DMVY-WksZf0/
+2026-06-20 14:57:07,845 - INFO -     - https://www.instagram.com/reel/DU5tsD9iM-I/
+2026-06-20 14:57:07,846 - INFO -     - https://www.instagram.com/reel/DMY0vgtNQDX/
+2026-06-20 14:57:08,423 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 14:57:08,427 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 14:57:08,427 - INFO - Scheduler started
+2026-06-20 14:57:08,431 - INFO - Scheduler started - daily collection at midnight
+2026-06-20 14:57:54,018 - INFO - Saved 0 topics
+2026-06-20 14:58:29,512 - INFO - Saved 1 topics
+2026-06-20 14:58:44,591 - INFO - Running daily collection job...
+2026-06-20 14:58:44,593 - INFO - Starting daily reel collection...
+2026-06-20 14:58:44,595 - INFO - Collecting reels for: elon mask
+2026-06-20 14:58:44,596 - INFO - Searching for: elon mask
+2026-06-20 14:58:51,712 - INFO - Found 29 potential reel links
+2026-06-20 14:58:51,716 - INFO - Extracted 10 reels for 'elon mask'
+2026-06-20 14:58:52,725 - INFO - Searching for: elon mask
+2026-06-20 14:58:59,846 - INFO - Found 29 potential reel links
+2026-06-20 14:58:59,861 - INFO - Extracted 10 reels for '#elon mask'
+2026-06-20 14:59:00,862 - INFO - Searching for: elon mask daily
+2026-06-20 14:59:07,910 - INFO - Found 29 potential reel links
+2026-06-20 14:59:07,925 - INFO - Extracted 10 reels for 'elon mask daily'
+2026-06-20 14:59:08,940 - INFO - Collected 0 reels for elon mask
+2026-06-20 14:59:09,408 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 14:59:11,922 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 14:59:11,922 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmp46_lhqae.json'
+2026-06-20 14:59:11,922 - INFO - Daily collection complete: 0 total reels
+2026-06-20 14:59:11,922 - INFO - Daily collection completed: 0 reels
+2026-06-20 14:59:11,922 - INFO -   elon mask: 0 reels
+2026-06-20 14:59:53,520 - INFO - Saved 0 topics
+2026-06-20 15:00:00,713 - INFO - Saved 1 topics
+2026-06-20 15:00:01,696 - INFO - Running daily collection job...
+2026-06-20 15:00:01,697 - INFO - Starting daily reel collection...
+2026-06-20 15:00:01,697 - INFO - Collecting reels for: computer engineering
+2026-06-20 15:00:01,698 - INFO - Searching for: computer engineering
+2026-06-20 15:00:08,835 - INFO - Found 29 potential reel links
+2026-06-20 15:00:08,839 - INFO - Extracted 10 reels for 'computer engineering'
+2026-06-20 15:00:09,845 - INFO - Searching for: computer engineering
+2026-06-20 15:00:16,979 - INFO - Found 29 potential reel links
+2026-06-20 15:00:16,983 - INFO - Extracted 10 reels for '#computer engineering'
+2026-06-20 15:00:18,000 - INFO - Searching for: computer engineering daily
+2026-06-20 15:00:25,098 - INFO - Found 29 potential reel links
+2026-06-20 15:00:25,098 - INFO - Extracted 10 reels for 'computer engineering daily'
+2026-06-20 15:00:26,100 - INFO - Collected 5 reels for computer engineering
+2026-06-20 15:00:26,602 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:00:28,993 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:00:28,995 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpmq0w1bbk.json'
+2026-06-20 15:00:28,997 - INFO - Daily collection complete: 5 total reels
+2026-06-20 15:00:29,001 - INFO - Daily collection completed: 5 reels
+2026-06-20 15:00:29,003 - INFO -   computer engineering: 5 reels
+2026-06-20 15:00:29,005 - INFO -     - https://www.instagram.com/reel/DQG87f-DEZJ/
+2026-06-20 15:00:29,009 - INFO -     - https://www.instagram.com/reel/DPWQZl6DB-g/
+2026-06-20 15:00:29,011 - INFO -     - https://www.instagram.com/reel/DTrW73qjWh-/
+2026-06-20 15:00:29,011 - INFO -     - https://www.instagram.com/reel/DXPEC7JywTN/
+2026-06-20 15:00:29,013 - INFO -     - https://www.instagram.com/reel/DWOted4jFjV/
+2026-06-20 15:01:57,855 - INFO - Saved 0 topics
+2026-06-20 15:02:12,291 - INFO - Saved 1 topics
+2026-06-20 15:02:13,254 - INFO - Running daily collection job...
+2026-06-20 15:02:13,256 - INFO - Starting daily reel collection...
+2026-06-20 15:02:13,256 - INFO - Collecting reels for: elon musk
+2026-06-20 15:02:13,257 - INFO - Searching for: elon musk
+2026-06-20 15:02:20,372 - INFO - Found 30 potential reel links
+2026-06-20 15:02:20,388 - INFO - Extracted 10 reels for 'elon musk'
+2026-06-20 15:02:21,391 - INFO - Collected 5 reels for elon musk
+2026-06-20 15:02:21,892 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:02:24,129 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:02:24,129 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpwl_woak7.json'
+2026-06-20 15:02:24,129 - INFO - Daily collection complete: 5 total reels
+2026-06-20 15:02:24,129 - INFO - Daily collection completed: 5 reels
+2026-06-20 15:02:24,129 - INFO -   elon musk: 5 reels
+2026-06-20 15:02:24,129 - INFO -     - https://www.instagram.com/reel/DZrvXXioI0_/
+2026-06-20 15:02:24,129 - INFO -     - https://www.instagram.com/reel/DZsLxSnIc7x/
+2026-06-20 15:02:24,129 - INFO -     - https://www.instagram.com/reel/DZhNc5nKRHK/
+2026-06-20 15:02:24,129 - INFO -     - https://www.instagram.com/reel/DZqrxiHTP4W/
+2026-06-20 15:02:24,129 - INFO -     - https://www.instagram.com/reel/DZzgtLsRO56/
+2026-06-20 15:03:03,919 - INFO - Saved 0 topics
+2026-06-20 15:03:07,265 - INFO - Saved 1 topics
+2026-06-20 15:03:08,437 - INFO - Running daily collection job...
+2026-06-20 15:03:08,438 - INFO - Starting daily reel collection...
+2026-06-20 15:03:08,439 - INFO - Collecting reels for: tesla
+2026-06-20 15:03:08,441 - INFO - Searching for: tesla
+2026-06-20 15:03:15,503 - INFO - Found 29 potential reel links
+2026-06-20 15:03:15,518 - INFO - Extracted 10 reels for 'tesla'
+2026-06-20 15:03:16,509 - INFO - Collected 5 reels for tesla
+2026-06-20 15:03:17,181 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:03:19,490 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:03:19,490 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmp1zj2u3q1.json'
+2026-06-20 15:03:19,490 - INFO - Daily collection complete: 5 total reels
+2026-06-20 15:03:19,490 - INFO - Daily collection completed: 5 reels
+2026-06-20 15:03:19,505 - INFO -   tesla: 5 reels
+2026-06-20 15:03:19,505 - INFO -     - https://www.instagram.com/reel/DUMKN5WEY-0/
+2026-06-20 15:03:19,505 - INFO -     - https://www.instagram.com/reel/DZF7xyGNsRm/
+2026-06-20 15:03:19,505 - INFO -     - https://www.instagram.com/reel/DWVInKzNB3E/
+2026-06-20 15:03:19,505 - INFO -     - https://www.instagram.com/reel/DXKU2AsCfMC/
+2026-06-20 15:03:19,505 - INFO -     - https://www.instagram.com/reel/DZr7iXwvgsc/
+2026-06-20 15:09:26,534 - INFO - Running daily collection job...
+2026-06-20 15:09:26,534 - INFO - Starting daily reel collection...
+2026-06-20 15:09:26,534 - INFO - Collecting reels for: tesla
+2026-06-20 15:09:26,534 - INFO - Searching for: tesla
+2026-06-20 15:09:33,732 - INFO - Found 29 potential reel links
+2026-06-20 15:09:33,748 - INFO - Extracted 10 reels for 'tesla'
+2026-06-20 15:09:34,746 - INFO - Collected 5 reels for tesla
+2026-06-20 15:09:35,506 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:09:38,138 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:09:38,138 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpkrzscf4_.json'
+2026-06-20 15:09:38,141 - INFO - Daily collection complete: 5 total reels
+2026-06-20 15:09:38,141 - INFO - Daily collection completed: 5 reels
+2026-06-20 15:09:38,141 - INFO -   tesla: 5 reels
+2026-06-20 15:09:38,141 - INFO -     - https://www.instagram.com/reel/DUMKN5WEY-0/
+2026-06-20 15:09:38,141 - INFO -     - https://www.instagram.com/reel/DZF7xyGNsRm/
+2026-06-20 15:09:38,141 - INFO -     - https://www.instagram.com/reel/DWVInKzNB3E/
+2026-06-20 15:09:38,148 - INFO -     - https://www.instagram.com/reel/DXKU2AsCfMC/
+2026-06-20 15:09:38,148 - INFO -     - https://www.instagram.com/reel/DZr7iXwvgsc/
+2026-06-20 15:09:47,264 - INFO - Scheduler has been shut down
+2026-06-20 15:09:47,265 - INFO - Scheduler stopped
+2026-06-20 15:09:54,232 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:09:54,240 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:09:56,836 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:09:58,314 - INFO - Browser initialized
+2026-06-20 15:09:58,315 - INFO - Universal Reels Finder initialized
+2026-06-20 15:09:58,351 - INFO - Loaded 1 historical collections
+2026-06-20 15:09:58,352 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:09:58,741 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:09:58,745 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:09:58,745 - INFO - Scheduler started
+2026-06-20 15:09:58,748 - INFO - Scheduler started - daily collection at midnight
+2026-06-20 15:10:00,092 - INFO - Running daily collection job...
+2026-06-20 15:10:00,093 - INFO - Starting daily reel collection...
+2026-06-20 15:10:00,095 - INFO - Collecting reels for: tesla
+2026-06-20 15:10:00,095 - INFO - Searching for: tesla
+2026-06-20 15:10:13,097 - INFO - Found 29 potential reel links
+2026-06-20 15:10:13,108 - INFO - Extracted 10 reels for 'tesla'
+2026-06-20 15:10:14,112 - INFO - Searching for: tesla
+2026-06-20 15:10:21,253 - INFO - Found 29 potential reel links
+2026-06-20 15:10:21,256 - INFO - Extracted 10 reels for '#tesla'
+2026-06-20 15:10:22,281 - INFO - Searching for: tesla daily
+2026-06-20 15:10:29,420 - INFO - Found 30 potential reel links
+2026-06-20 15:10:29,428 - INFO - Extracted 10 reels for 'tesla daily'
+2026-06-20 15:10:30,452 - INFO - Collected 7 reels for tesla
+2026-06-20 15:10:30,986 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:10:33,486 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:10:33,488 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmph8k6l7nu.json'
+2026-06-20 15:10:33,489 - INFO - Daily collection complete: 7 total reels
+2026-06-20 15:10:33,490 - INFO - Daily collection completed: 7 reels
+2026-06-20 15:10:33,491 - INFO -   tesla: 7 reels
+2026-06-20 15:10:33,494 - INFO -     - https://www.instagram.com/reel/DZF7xyGNsRm/
+2026-06-20 15:10:33,495 - INFO -     - https://www.instagram.com/reel/DXKU2AsCfMC/
+2026-06-20 15:10:33,496 - INFO -     - https://www.instagram.com/reel/DUMKN5WEY-0/
+2026-06-20 15:10:33,496 - INFO -     - https://www.instagram.com/reel/DZr7iXwvgsc/
+2026-06-20 15:10:33,498 - INFO -     - https://www.instagram.com/reel/DWnDgyYCQst/
+2026-06-20 15:10:33,499 - INFO -     - https://www.instagram.com/reel/DZu6GGZPAa9/
+2026-06-20 15:10:33,501 - INFO -     - https://www.instagram.com/reel/DZy7vyqJR7q/
+2026-06-20 15:15:26,318 - INFO - Scheduler has been shut down
+2026-06-20 15:15:26,318 - INFO - Scheduler stopped
+2026-06-20 15:15:35,383 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:15:35,399 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:15:38,007 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:15:39,786 - INFO - Browser initialized
+2026-06-20 15:15:39,787 - INFO - Universal Reels Finder initialized
+2026-06-20 15:15:39,838 - INFO - Loaded 2 historical collections
+2026-06-20 15:15:39,839 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:15:40,212 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:15:40,217 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:15:40,218 - INFO - Scheduler started
+2026-06-20 15:15:40,219 - INFO - Scheduler started - daily collection at 15:30
+2026-06-20 15:16:45,939 - INFO - Scheduler has been shut down
+2026-06-20 15:16:45,939 - INFO - Scheduler stopped
+2026-06-20 15:16:52,758 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:16:52,773 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:16:55,129 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:16:56,246 - INFO - Browser initialized
+2026-06-20 15:16:56,246 - INFO - Universal Reels Finder initialized
+2026-06-20 15:16:56,248 - INFO - Loaded 2 historical collections
+2026-06-20 15:16:56,249 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:16:56,541 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:16:56,551 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:16:56,551 - INFO - Scheduler started
+2026-06-20 15:16:56,551 - INFO - Scheduler started - daily collection at 15:17
+2026-06-20 15:17:00,020 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='17'], next run at: 2026-06-20 15:17:00 EAT)" (scheduled at 2026-06-20 15:17:00+03:00)
+2026-06-20 15:17:00,020 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='17'], next run at: 2026-06-21 15:17:00 EAT)" executed successfully
+2026-06-20 15:17:22,297 - INFO - Scheduler has been shut down
+2026-06-20 15:17:22,297 - INFO - Scheduler stopped
+2026-06-20 15:19:23,742 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:19:23,750 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:19:26,491 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:19:27,589 - INFO - Browser initialized
+2026-06-20 15:19:27,589 - INFO - Universal Reels Finder initialized
+2026-06-20 15:19:27,589 - INFO - Loaded 2 historical collections
+2026-06-20 15:19:27,589 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:19:27,860 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:19:27,864 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:19:27,864 - INFO - Scheduler started
+2026-06-20 15:19:27,864 - INFO - Scheduler started - daily collection at 15:20
+2026-06-20 15:19:27,868 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:19:27,868 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:19:30,373 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:19:31,440 - INFO - Browser initialized
+2026-06-20 15:19:31,440 - INFO - Universal Reels Finder initialized
+2026-06-20 15:19:31,440 - INFO - Loaded 2 historical collections
+2026-06-20 15:19:31,440 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:19:31,440 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:19:31,448 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:19:31,448 - INFO - Scheduler started
+2026-06-20 15:19:31,448 - INFO - Scheduler started - daily collection at 15:20
+2026-06-20 15:20:00,010 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='20'], next run at: 2026-06-20 15:20:00 EAT)" (scheduled at 2026-06-20 15:20:00+03:00)
+2026-06-20 15:20:00,010 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='20'], next run at: 2026-06-21 15:20:00 EAT)" (scheduled at 2026-06-20 15:20:00+03:00)
+2026-06-20 15:20:00,010 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='20'], next run at: 2026-06-21 15:20:00 EAT)" executed successfully
+2026-06-20 15:20:00,010 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 15:20:00,010 - INFO - Starting daily reel collection...
+2026-06-20 15:20:00,010 - INFO - Collecting reels for: tesla
+2026-06-20 15:20:00,010 - INFO - Searching for: tesla
+2026-06-20 15:20:15,155 - INFO - Found 29 potential reel links
+2026-06-20 15:20:15,170 - INFO - Extracted 10 reels for 'tesla'
+2026-06-20 15:20:16,166 - INFO - Collected 3 reels for tesla
+2026-06-20 15:20:16,748 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:20:19,279 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:20:19,294 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpx4vf9zda.json'
+2026-06-20 15:20:19,294 - INFO - Daily collection complete: 3 total reels
+2026-06-20 15:20:19,294 - INFO - Daily collection completed: 3 reels
+2026-06-20 15:20:19,310 - INFO -   tesla: 3 reels
+2026-06-20 15:20:19,310 - INFO -     - https://www.instagram.com/reel/DZF7xyGNsRm/
+2026-06-20 15:20:19,316 - INFO -     - https://www.instagram.com/reel/DXKU2AsCfMC/
+2026-06-20 15:20:19,316 - INFO -     - https://www.instagram.com/reel/DUMKN5WEY-0/
+2026-06-20 15:20:19,316 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='20'], next run at: 2026-06-21 15:20:00 EAT)" executed successfully
+2026-06-20 15:27:12,002 - INFO - Scheduler stopped
+2026-06-20 15:27:12,043 - INFO - Scheduler has been shut down
+2026-06-20 15:27:12,096 - ERROR - Future exception was never retrieved
+future: <Future finished exception=Exception('Connection closed while reading from the driver')>
+Exception: Connection closed while reading from the driver
+2026-06-20 15:27:36,232 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:27:36,248 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:27:38,919 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:27:40,226 - INFO - Browser initialized
+2026-06-20 15:27:40,226 - INFO - Universal Reels Finder initialized
+2026-06-20 15:27:40,246 - INFO - Loaded 3 historical collections
+2026-06-20 15:27:40,246 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:27:40,542 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:27:40,558 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:27:40,558 - INFO - Scheduler started
+2026-06-20 15:27:40,558 - INFO - Scheduler started - daily collection at 15:28
+2026-06-20 15:27:40,558 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:27:40,558 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:27:43,111 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:27:44,300 - INFO - Browser initialized
+2026-06-20 15:27:44,302 - INFO - Universal Reels Finder initialized
+2026-06-20 15:27:44,303 - INFO - Loaded 3 historical collections
+2026-06-20 15:27:44,303 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:27:44,308 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:27:44,308 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:27:44,308 - INFO - Scheduler started
+2026-06-20 15:27:44,308 - INFO - Scheduler started - daily collection at 15:28
+2026-06-20 15:28:00,014 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='28'], next run at: 2026-06-20 15:28:00 EAT)" (scheduled at 2026-06-20 15:28:00+03:00)
+2026-06-20 15:28:00,015 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='28'], next run at: 2026-06-21 15:28:00 EAT)" (scheduled at 2026-06-20 15:28:00+03:00)
+2026-06-20 15:28:00,016 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='28'], next run at: 2026-06-21 15:28:00 EAT)" executed successfully
+2026-06-20 15:28:00,017 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 15:28:00,019 - INFO - Starting daily reel collection...
+2026-06-20 15:28:00,020 - INFO - Using all 1 available topics: ['tesla']
+2026-06-20 15:28:00,021 - INFO - Collecting reels for: tesla
+2026-06-20 15:28:00,022 - INFO - Searching for: tesla
+2026-06-20 15:28:12,195 - INFO - Found 29 potential reel links
+2026-06-20 15:28:12,199 - INFO - Extracted 10 reels for 'tesla'
+2026-06-20 15:28:13,212 - INFO - Collected 3 reels for tesla
+2026-06-20 15:28:13,931 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:28:17,710 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:28:17,711 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpj2bpdogs.json'
+2026-06-20 15:28:17,712 - INFO - Daily collection complete: 3 total reels from 1 topics
+2026-06-20 15:28:17,715 - INFO - Daily collection completed: 3 reels
+2026-06-20 15:28:17,716 - INFO -   tesla: 3 reels
+2026-06-20 15:28:17,717 - INFO -     - https://www.instagram.com/reel/DZF7xyGNsRm/
+2026-06-20 15:28:17,718 - INFO -     - https://www.instagram.com/reel/DXKU2AsCfMC/
+2026-06-20 15:28:17,718 - INFO -     - https://www.instagram.com/reel/DUMKN5WEY-0/
+2026-06-20 15:28:17,721 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='28'], next run at: 2026-06-21 15:28:00 EAT)" executed successfully
+2026-06-20 15:28:57,467 - INFO - Saved 2 topics
+2026-06-20 15:29:03,956 - INFO - Saved 3 topics
+2026-06-20 15:29:07,182 - INFO - Saved 2 topics
+2026-06-20 15:29:10,823 - INFO - Saved 3 topics
+2026-06-20 15:29:19,831 - INFO - Scheduler stopped
+2026-06-20 15:29:19,835 - INFO - Scheduler has been shut down
+2026-06-20 15:29:20,059 - INFO - Browser closed
+2026-06-20 15:29:20,059 - INFO - Scraper closed
+2026-06-20 15:29:20,096 - ERROR - Future exception was never retrieved
+future: <Future finished exception=Exception('Connection closed while reading from the driver')>
+Exception: Connection closed while reading from the driver
+2026-06-20 15:29:36,314 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:29:36,314 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:29:38,730 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:29:40,019 - INFO - Browser initialized
+2026-06-20 15:29:40,019 - INFO - Universal Reels Finder initialized
+2026-06-20 15:29:40,050 - INFO - Loaded 4 historical collections
+2026-06-20 15:29:40,058 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:29:40,451 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:29:40,451 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:29:40,451 - INFO - Scheduler started
+2026-06-20 15:29:40,451 - INFO - Scheduler started - daily collection at 15:30
+2026-06-20 15:29:40,451 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:29:40,451 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:29:43,156 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:29:44,464 - INFO - Browser initialized
+2026-06-20 15:29:44,464 - INFO - Universal Reels Finder initialized
+2026-06-20 15:29:44,467 - INFO - Loaded 4 historical collections
+2026-06-20 15:29:44,468 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:29:44,471 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:29:44,473 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:29:44,473 - INFO - Scheduler started
+2026-06-20 15:29:44,474 - INFO - Scheduler started - daily collection at 15:30
+2026-06-20 15:30:00,009 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='30'], next run at: 2026-06-20 15:30:00 EAT)" (scheduled at 2026-06-20 15:30:00+03:00)
+2026-06-20 15:30:00,009 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='30'], next run at: 2026-06-21 15:30:00 EAT)" (scheduled at 2026-06-20 15:30:00+03:00)
+2026-06-20 15:30:00,011 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='30'], next run at: 2026-06-21 15:30:00 EAT)" executed successfully
+2026-06-20 15:30:00,012 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 15:30:00,014 - INFO - Starting daily reel collection...
+2026-06-20 15:30:00,017 - INFO - 📋 Selected 2 topics for today: ['mars', 'ninjas']
+2026-06-20 15:30:00,017 - INFO - Collecting reels for: mars
+2026-06-20 15:30:00,018 - INFO - Searching for: mars
+2026-06-20 15:30:13,276 - INFO - Found 30 potential reel links
+2026-06-20 15:30:13,285 - INFO - Extracted 10 reels for 'mars'
+2026-06-20 15:30:14,271 - INFO - Collected 3 reels for mars
+2026-06-20 15:30:14,271 - INFO - Collecting reels for: ninjas
+2026-06-20 15:30:14,273 - INFO - Searching for: ninjas
+2026-06-20 15:30:21,385 - INFO - Found 28 potential reel links
+2026-06-20 15:30:21,394 - INFO - Extracted 10 reels for 'ninjas'
+2026-06-20 15:30:22,390 - INFO - Collected 3 reels for ninjas
+2026-06-20 15:30:22,984 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:30:26,138 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:30:26,138 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpm27cybmp.json'
+2026-06-20 15:30:26,138 - INFO - Daily collection complete: 6 total reels from 2 topics
+2026-06-20 15:30:26,138 - INFO - Daily collection completed: 6 reels
+2026-06-20 15:30:26,138 - INFO -   mars: 3 reels
+2026-06-20 15:30:26,138 - INFO -     - https://www.instagram.com/reel/DY26W7hxE8G/
+2026-06-20 15:30:26,138 - INFO -     - https://www.instagram.com/reel/DZqT2TsDoyQ/
+2026-06-20 15:30:26,138 - INFO -     - https://www.instagram.com/reel/DWhz7t_kZhX/
+2026-06-20 15:30:26,138 - INFO -   ninjas: 3 reels
+2026-06-20 15:30:26,138 - INFO -     - https://www.instagram.com/reel/DW96C7mCDx7/
+2026-06-20 15:30:26,138 - INFO -     - https://www.instagram.com/reel/DQ4oxzAjGuP/
+2026-06-20 15:30:26,138 - INFO -     - https://www.instagram.com/reel/DZtLQKOJng3/
+2026-06-20 15:30:26,138 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='30'], next run at: 2026-06-21 15:30:00 EAT)" executed successfully
+2026-06-20 15:33:13,929 - INFO - Scheduler stopped
+2026-06-20 15:33:13,993 - INFO - Scheduler has been shut down
+2026-06-20 15:33:45,042 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:33:45,058 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:33:47,763 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:33:49,050 - INFO - Browser initialized
+2026-06-20 15:33:49,050 - INFO - Universal Reels Finder initialized
+2026-06-20 15:33:49,079 - INFO - Loaded 5 historical collections
+2026-06-20 15:33:49,079 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:33:49,387 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:33:49,387 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:33:49,387 - INFO - Scheduler started
+2026-06-20 15:33:49,387 - INFO - Scheduler started - daily collection at 15:34
+2026-06-20 15:33:49,387 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:33:49,402 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:33:52,231 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:33:53,435 - INFO - Browser initialized
+2026-06-20 15:33:53,435 - INFO - Universal Reels Finder initialized
+2026-06-20 15:33:53,435 - INFO - Loaded 5 historical collections
+2026-06-20 15:33:53,439 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:33:53,439 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:33:53,439 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:33:53,439 - INFO - Scheduler started
+2026-06-20 15:33:53,439 - INFO - Scheduler started - daily collection at 15:34
+2026-06-20 15:34:00,021 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='34'], next run at: 2026-06-20 15:34:00 EAT)" (scheduled at 2026-06-20 15:34:00+03:00)
+2026-06-20 15:34:00,021 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='34'], next run at: 2026-06-21 15:34:00 EAT)" executed successfully
+2026-06-20 15:34:00,021 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='34'], next run at: 2026-06-20 15:34:00 EAT)" (scheduled at 2026-06-20 15:34:00+03:00)
+2026-06-20 15:34:00,021 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='34'], next run at: 2026-06-21 15:34:00 EAT)" executed successfully
+2026-06-20 15:36:01,262 - INFO - Scheduler has been shut down
+2026-06-20 15:36:01,264 - INFO - Scheduler stopped
+2026-06-20 15:36:01,404 - ERROR - Future exception was never retrieved
+future: <Future finished exception=Exception('Connection closed while reading from the driver')>
+Exception: Connection closed while reading from the driver
+2026-06-20 15:36:17,430 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:36:17,436 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:36:20,445 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:36:21,620 - INFO - Browser initialized
+2026-06-20 15:36:21,621 - INFO - Universal Reels Finder initialized
+2026-06-20 15:36:21,623 - INFO - Loaded 5 historical collections
+2026-06-20 15:36:21,623 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:36:21,946 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:36:21,948 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:36:21,949 - INFO - Scheduler started
+2026-06-20 15:36:21,951 - INFO - Scheduler started - daily collection at 15:37
+2026-06-20 15:37:00,002 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='37'], next run at: 2026-06-20 15:37:00 EAT)" (scheduled at 2026-06-20 15:37:00+03:00)
+2026-06-20 15:37:00,004 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='37'], next run at: 2026-06-21 15:37:00 EAT)" executed successfully
+2026-06-20 15:37:53,060 - INFO - Scheduler has been shut down
+2026-06-20 15:37:53,064 - INFO - Scheduler stopped
+2026-06-20 15:37:59,383 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:37:59,387 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:38:02,741 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:38:03,957 - INFO - Browser initialized
+2026-06-20 15:38:03,957 - INFO - Universal Reels Finder initialized
+2026-06-20 15:38:03,957 - INFO - Loaded 5 historical collections
+2026-06-20 15:38:03,957 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:38:04,246 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:38:04,246 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:38:04,246 - INFO - Scheduler started
+2026-06-20 15:38:04,246 - INFO - Scheduler started - daily collection at 15:20
+2026-06-20 15:38:26,710 - INFO - Scheduler stopped
+2026-06-20 15:38:26,771 - INFO - Scheduler has been shut down
+2026-06-20 15:38:33,295 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:38:33,300 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:38:36,548 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:38:37,630 - INFO - Browser initialized
+2026-06-20 15:38:37,630 - INFO - Universal Reels Finder initialized
+2026-06-20 15:38:37,632 - INFO - Loaded 5 historical collections
+2026-06-20 15:38:37,632 - INFO - Today's collection already exists: 5 reels
+2026-06-20 15:38:37,946 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:38:37,949 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:38:37,949 - INFO - Scheduler started
+2026-06-20 15:38:37,951 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:39:00,006 - INFO - Running job "daily_collection_job (trigger: cron[hour='15', minute='39'], next run at: 2026-06-21 15:39:00 EAT)" (scheduled at 2026-06-20 15:39:00+03:00)
+2026-06-20 15:39:00,006 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 15:39:00,006 - INFO - Starting daily reel collection...
+2026-06-20 15:39:00,006 - INFO - 📋 Selected topics for today: ['mars', 'ninjas']
+2026-06-20 15:39:00,006 - INFO - Collecting reels for: mars
+2026-06-20 15:39:00,006 - INFO - Searching for: mars
+2026-06-20 15:39:18,498 - INFO - Found 30 potential reel links
+2026-06-20 15:39:18,514 - INFO - Extracted 10 reels for 'mars'
+2026-06-20 15:39:19,522 - INFO - Collected 3 reels for mars
+2026-06-20 15:39:19,522 - INFO - Collecting reels for: ninjas
+2026-06-20 15:39:19,522 - INFO - Searching for: ninjas
+2026-06-20 15:39:24,450 - INFO - Saved 2 topics
+2026-06-20 15:39:26,277 - INFO - Saved 1 topics
+2026-06-20 15:39:26,608 - INFO - Found 28 potential reel links
+2026-06-20 15:39:26,608 - INFO - Extracted 10 reels for 'ninjas'
+2026-06-20 15:39:27,608 - INFO - Collected 3 reels for ninjas
+2026-06-20 15:39:28,098 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:39:30,373 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:39:30,373 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpzlys2e8h.json'
+2026-06-20 15:39:30,373 - INFO - Daily collection complete: 6 total reels
+2026-06-20 15:39:30,373 - INFO - Daily collection completed: 6 reels
+2026-06-20 15:39:30,373 - INFO -   mars: 3 reels
+2026-06-20 15:39:30,389 - INFO -     - https://www.instagram.com/reel/DX30HP0R5cG/
+2026-06-20 15:39:30,389 - INFO -     - https://www.instagram.com/reel/DY26W7hxE8G/
+2026-06-20 15:39:30,389 - INFO -     - https://www.instagram.com/reel/DZqT2TsDoyQ/
+2026-06-20 15:39:30,389 - INFO -   ninjas: 3 reels
+2026-06-20 15:39:30,389 - INFO -     - https://www.instagram.com/reel/DW96C7mCDx7/
+2026-06-20 15:39:30,389 - INFO -     - https://www.instagram.com/reel/DZtLQKOJng3/
+2026-06-20 15:39:30,389 - INFO -     - https://www.instagram.com/reel/DQ4oxzAjGuP/
+2026-06-20 15:39:30,389 - INFO - Job "daily_collection_job (trigger: cron[hour='15', minute='39'], next run at: 2026-06-21 15:39:00 EAT)" executed successfully
+2026-06-20 15:39:30,389 - INFO - Saved 0 topics
+2026-06-20 15:39:32,698 - INFO - Saved 5 topics
+2026-06-20 15:39:36,466 - INFO - Saved 4 topics
+2026-06-20 15:39:40,327 - INFO - Saved 5 topics
+2026-06-20 15:40:03,709 - INFO - Saved 5 topics
+2026-06-20 15:40:06,809 - INFO - Scheduler stopped
+2026-06-20 15:40:06,844 - INFO - Scheduler has been shut down
+2026-06-20 15:40:13,054 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:40:13,059 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:40:17,054 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:40:18,356 - INFO - Browser initialized
+2026-06-20 15:40:18,356 - INFO - Universal Reels Finder initialized
+2026-06-20 15:40:18,391 - INFO - Loaded 1 historical collections
+2026-06-20 15:40:18,391 - INFO - Today's collection already exists: 6 reels
+2026-06-20 15:40:18,717 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:40:18,720 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:40:18,721 - INFO - Scheduler started
+2026-06-20 15:40:18,723 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:40:21,796 - INFO - Saved 5 topics
+2026-06-20 15:40:25,659 - INFO - Saved 4 topics
+2026-06-20 15:40:27,426 - INFO - Saved 5 topics
+2026-06-20 15:40:59,189 - INFO - Saved 5 topics
+2026-06-20 15:41:02,288 - INFO - Saved 4 topics
+2026-06-20 15:41:04,154 - INFO - Saved 5 topics
+2026-06-20 15:41:06,956 - INFO - Scheduler stopped
+2026-06-20 15:41:06,992 - INFO - Scheduler has been shut down
+2026-06-20 15:41:13,700 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:41:13,708 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:41:17,099 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:41:18,294 - INFO - Browser initialized
+2026-06-20 15:41:18,294 - INFO - Universal Reels Finder initialized
+2026-06-20 15:41:18,310 - INFO - Loaded 1 historical collections
+2026-06-20 15:41:18,310 - INFO - Today's collection already exists: 6 reels
+2026-06-20 15:41:18,710 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:41:18,712 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:41:18,712 - INFO - Scheduler started
+2026-06-20 15:41:18,714 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:41:23,677 - INFO - Saved 5 topics
+2026-06-20 15:41:41,802 - INFO - Saved 5 topics
+2026-06-20 15:41:44,965 - INFO - Saved 4 topics
+2026-06-20 15:41:46,556 - INFO - Saved 5 topics
+2026-06-20 15:41:49,079 - INFO - Scheduler stopped
+2026-06-20 15:41:49,080 - INFO - Scheduler has been shut down
+2026-06-20 15:41:55,750 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:41:55,754 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:41:59,108 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:42:00,502 - INFO - Browser initialized
+2026-06-20 15:42:00,502 - INFO - Universal Reels Finder initialized
+2026-06-20 15:42:00,514 - INFO - Loaded 1 historical collections
+2026-06-20 15:42:00,514 - INFO - Today's collection already exists: 6 reels
+2026-06-20 15:42:00,902 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:42:00,903 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:42:00,903 - INFO - Scheduler started
+2026-06-20 15:42:00,903 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:42:05,453 - INFO - Saved 5 topics
+2026-06-20 15:42:20,833 - INFO - Saved 6 topics
+2026-06-20 15:42:41,524 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 15:42:41,525 - INFO - Starting daily reel collection...
+2026-06-20 15:42:41,529 - INFO - 📋 Selected topics for today: ['american', 'war']
+2026-06-20 15:42:41,539 - INFO - Collecting reels for: american
+2026-06-20 15:42:41,542 - INFO - Searching for: american
+2026-06-20 15:42:51,549 - INFO - Scheduler stopped
+2026-06-20 15:43:22,093 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:43:22,100 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:43:24,892 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:43:25,921 - INFO - Browser initialized
+2026-06-20 15:43:25,922 - INFO - Universal Reels Finder initialized
+2026-06-20 15:43:25,936 - INFO - Loaded 1 historical collections
+2026-06-20 15:43:25,936 - INFO - Today's collection already exists: 6 reels
+2026-06-20 15:43:26,198 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:43:26,200 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:43:26,201 - INFO - Scheduler started
+2026-06-20 15:43:26,202 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:45:59,931 - INFO - Scheduler stopped
+2026-06-20 15:45:59,934 - INFO - Scheduler has been shut down
+2026-06-20 15:46:07,065 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:46:07,074 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:46:10,061 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:46:12,257 - INFO - Browser initialized
+2026-06-20 15:46:12,257 - INFO - Universal Reels Finder initialized
+2026-06-20 15:46:12,261 - INFO - Loaded 1 historical collections
+2026-06-20 15:46:12,261 - INFO - Today's collection already exists: 6 reels
+2026-06-20 15:46:12,675 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:46:12,677 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:46:12,678 - INFO - Scheduler started
+2026-06-20 15:46:12,679 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:47:18,070 - INFO - Scheduler stopped
+2026-06-20 15:47:18,130 - INFO - Scheduler has been shut down
+2026-06-20 15:47:24,788 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:47:24,796 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:47:27,582 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:47:28,968 - INFO - Browser initialized
+2026-06-20 15:47:28,968 - INFO - Universal Reels Finder initialized
+2026-06-20 15:47:28,981 - INFO - Loaded 0 historical collections
+2026-06-20 15:47:28,985 - INFO - No collection for today, generating now...
+2026-06-20 15:47:28,985 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 15:47:28,985 - INFO - Starting daily reel collection...
+2026-06-20 15:47:28,985 - INFO - 📋 Selected topics for today: ['american', 'war']
+2026-06-20 15:47:28,985 - INFO - Collecting reels for: american
+2026-06-20 15:47:28,985 - INFO - Searching for: american
+2026-06-20 15:47:42,212 - INFO - Found 28 potential reel links
+2026-06-20 15:47:42,230 - INFO - Extracted 10 reels for 'american'
+2026-06-20 15:47:43,232 - INFO - Collected 3 reels for american
+2026-06-20 15:47:43,232 - INFO - Collecting reels for: war
+2026-06-20 15:47:43,233 - INFO - Searching for: war
+2026-06-20 15:47:50,324 - ERROR - Search error: Page.evaluate: Target page, context or browser has been closed
+2026-06-20 15:47:51,326 - INFO - Searching for: war
+2026-06-20 15:47:51,332 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-20 15:47:52,337 - INFO - Searching for: war daily
+2026-06-20 15:47:52,346 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-20 15:47:53,361 - INFO - Collected 0 reels for war
+2026-06-20 15:47:53,881 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:47:56,430 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:47:56,432 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmpjfwr4pfq.json'
+2026-06-20 15:47:56,434 - INFO - Daily collection complete: 3 total reels
+2026-06-20 15:47:56,436 - INFO - Daily collection completed: 3 reels
+2026-06-20 15:47:56,437 - INFO -   american: 3 reels
+2026-06-20 15:47:56,439 - INFO -     - https://www.instagram.com/reel/DZwGoFTCl4T/
+2026-06-20 15:47:56,440 - INFO -     - https://www.instagram.com/reel/DZvH374JVv2/
+2026-06-20 15:47:56,441 - INFO -     - https://www.instagram.com/reel/DZNZxDglVgd/
+2026-06-20 15:47:56,442 - INFO -   war: 0 reels
+2026-06-20 15:47:56,753 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:47:56,756 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:47:56,756 - INFO - Scheduler started
+2026-06-20 15:47:56,756 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:47:56,760 - INFO - Scheduler stopped
+2026-06-20 15:47:56,763 - INFO - Scheduler has been shut down
+2026-06-20 15:48:03,704 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:48:03,709 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:48:06,244 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:48:07,516 - INFO - Browser initialized
+2026-06-20 15:48:07,516 - INFO - Universal Reels Finder initialized
+2026-06-20 15:48:07,536 - INFO - Loaded 1 historical collections
+2026-06-20 15:48:07,537 - INFO - Today's collection already exists: 3 reels
+2026-06-20 15:48:07,834 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:48:07,836 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:48:07,837 - INFO - Scheduler started
+2026-06-20 15:48:07,838 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:48:15,805 - INFO - 🚨 EMERGENCY GENERATION for topic: computer
+2026-06-20 15:48:15,806 - INFO - Searching for: computer
+2026-06-20 15:48:28,846 - INFO - Found 30 potential reel links
+2026-06-20 15:48:28,858 - INFO - Extracted 10 reels for 'computer'
+2026-06-20 15:48:29,868 - INFO - ✅ Emergency generation complete: 3 reels for 'computer'
+2026-06-20 15:50:16,597 - INFO - Scheduler stopped
+2026-06-20 15:50:16,645 - INFO - Scheduler has been shut down
+2026-06-20 15:50:24,931 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:50:24,931 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:50:27,790 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:50:28,982 - INFO - Browser initialized
+2026-06-20 15:50:28,982 - INFO - Universal Reels Finder initialized
+2026-06-20 15:50:29,011 - INFO - Loaded 2 historical collections
+2026-06-20 15:50:29,011 - INFO - Today's collection already exists: 3 reels
+2026-06-20 15:50:29,310 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:50:29,327 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:50:29,327 - INFO - Scheduler started
+2026-06-20 15:50:29,327 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:50:42,159 - INFO - 🚨 EMERGENCY GENERATION for topic: computer
+2026-06-20 15:50:42,159 - INFO - Searching for: computer
+2026-06-20 15:50:55,549 - INFO - Found 30 potential reel links
+2026-06-20 15:50:55,565 - INFO - Extracted 10 reels for 'computer'
+2026-06-20 15:50:57,103 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:51:00,463 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:51:00,463 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmp318bcz6n.json'
+2026-06-20 15:51:00,466 - WARNING - ⚠️ Failed to save emergency collection to Google Drive
+2026-06-20 15:51:00,466 - INFO - ✅ Emergency generation complete: 3 reels for 'computer'
+2026-06-20 15:51:45,037 - INFO - 🚨 EMERGENCY GENERATION for topic: artificial
+2026-06-20 15:51:45,037 - INFO - Searching for: artificial
+2026-06-20 15:51:52,138 - INFO - Found 28 potential reel links
+2026-06-20 15:51:52,144 - INFO - Extracted 10 reels for 'artificial'
+2026-06-20 15:51:53,735 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:51:56,330 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:51:56,332 - ERROR - Save to Drive error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PC\\AppData\\Local\\Temp\\tmp85hh3yzp.json'
+2026-06-20 15:51:56,333 - WARNING - ⚠️ Failed to save emergency collection to Google Drive
+2026-06-20 15:51:56,334 - INFO - ✅ Emergency generation complete: 3 reels for 'artificial'
+2026-06-20 15:54:18,617 - INFO - Scheduler stopped
+2026-06-20 15:54:18,662 - INFO - Scheduler has been shut down
+2026-06-20 15:54:24,724 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:54:24,732 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:54:27,825 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:54:29,194 - INFO - Browser initialized
+2026-06-20 15:54:29,194 - INFO - Universal Reels Finder initialized
+2026-06-20 15:54:29,215 - INFO - Loaded 2 historical collections
+2026-06-20 15:54:29,216 - INFO - Today's collection already exists: 9 reels
+2026-06-20 15:54:29,600 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:54:29,604 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:54:29,604 - INFO - Scheduler started
+2026-06-20 15:54:29,608 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:54:40,588 - INFO - 🚨 EMERGENCY GENERATION for topic: spider
+2026-06-20 15:54:40,588 - INFO - Searching for: spider
+2026-06-20 15:54:56,157 - INFO - Found 29 potential reel links
+2026-06-20 15:54:56,157 - INFO - Extracted 10 reels for 'spider'
+2026-06-20 15:54:57,827 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:55:00,488 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:55:00,488 - WARNING - ⚠️ Failed to save emergency collection to Google Drive
+2026-06-20 15:55:00,488 - INFO - ✅ Emergency generation complete: 3 reels for 'spider'
+2026-06-20 15:56:13,697 - INFO - Scheduler stopped
+2026-06-20 15:56:13,740 - INFO - Scheduler has been shut down
+2026-06-20 15:56:19,720 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:56:19,724 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:56:22,516 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:56:23,586 - INFO - Browser initialized
+2026-06-20 15:56:23,586 - INFO - Universal Reels Finder initialized
+2026-06-20 15:56:23,610 - INFO - Loaded 1 historical collections
+2026-06-20 15:56:23,614 - INFO - Today's collection already exists: 3 reels
+2026-06-20 15:56:24,007 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:56:24,011 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:56:24,011 - INFO - Scheduler started
+2026-06-20 15:56:24,011 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:56:35,198 - INFO - 🚨 EMERGENCY GENERATION for topic: intelligence
+2026-06-20 15:56:35,199 - INFO - Searching for: intelligence
+2026-06-20 15:56:50,527 - INFO - Found 29 potential reel links
+2026-06-20 15:56:50,534 - INFO - Extracted 10 reels for 'intelligence'
+2026-06-20 15:56:52,080 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 15:56:54,673 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 15:56:54,673 - WARNING - ⚠️ Failed to save emergency collection to Google Drive
+2026-06-20 15:56:54,677 - INFO - ✅ Emergency generation complete: 3 reels for 'intelligence'
+2026-06-20 15:59:21,226 - INFO - Scheduler stopped
+2026-06-20 15:59:21,308 - INFO - Scheduler has been shut down
+2026-06-20 15:59:28,307 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 15:59:28,315 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 15:59:31,529 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 15:59:33,017 - INFO - Browser initialized
+2026-06-20 15:59:33,017 - INFO - Universal Reels Finder initialized
+2026-06-20 15:59:33,038 - INFO - Loaded 1 historical collections
+2026-06-20 15:59:33,038 - INFO - Today's collection already exists: 6 reels
+2026-06-20 15:59:33,492 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 15:59:33,492 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 15:59:33,492 - INFO - Scheduler started
+2026-06-20 15:59:33,492 - INFO - Scheduler started - daily collection at 15:39
+2026-06-20 15:59:41,166 - INFO - 🚨 EMERGENCY GENERATION for topic: emergency
+2026-06-20 15:59:41,166 - INFO - Searching for: emergency
+2026-06-20 15:59:56,715 - INFO - Found 30 potential reel links
+2026-06-20 15:59:56,715 - INFO - Extracted 10 reels for 'emergency'
+2026-06-20 15:59:57,725 - INFO - 📤 Saving 9 reels to Google Drive...
+2026-06-20 15:59:58,264 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 16:00:00,519 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 16:00:00,519 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-20 16:00:00,519 - INFO - ✅ Emergency collection saved to Google Drive
+2026-06-20 16:00:00,519 - INFO - ✅ Emergency generation complete: 3 reels for 'emergency'
+2026-06-20 16:00:49,242 - INFO - Scheduler stopped
+2026-06-20 16:00:49,283 - INFO - Scheduler has been shut down
+2026-06-20 16:01:14,482 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 16:01:14,494 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 16:01:17,935 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 16:01:18,921 - INFO - Browser initialized
+2026-06-20 16:01:18,922 - INFO - Universal Reels Finder initialized
+2026-06-20 16:01:18,951 - INFO - Loaded 1 historical collections
+2026-06-20 16:01:18,951 - INFO - Today's collection already exists: 9 reels
+2026-06-20 16:01:19,236 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 16:01:19,238 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 16:01:19,238 - INFO - Scheduler started
+2026-06-20 16:01:19,240 - INFO - Scheduler started - daily collection at 16:02
+2026-06-20 16:02:00,013 - INFO - Running job "daily_collection_job (trigger: cron[hour='16', minute='2'], next run at: 2026-06-21 16:02:00 EAT)" (scheduled at 2026-06-20 16:02:00+03:00)
+2026-06-20 16:02:00,014 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 16:02:00,017 - INFO - Starting daily reel collection...
+2026-06-20 16:02:00,020 - INFO - 📋 Selected topics for today: ['american', 'war']
+2026-06-20 16:02:00,020 - INFO - Collecting reels for: american
+2026-06-20 16:02:00,021 - INFO - Searching for: american
+2026-06-20 16:02:15,726 - INFO - Found 28 potential reel links
+2026-06-20 16:02:15,736 - INFO - Extracted 10 reels for 'american'
+2026-06-20 16:02:16,748 - INFO - Collected 3 reels for american
+2026-06-20 16:02:16,749 - INFO - Collecting reels for: war
+2026-06-20 16:02:16,750 - INFO - Searching for: war
+2026-06-20 16:02:23,864 - INFO - Found 30 potential reel links
+2026-06-20 16:02:23,868 - INFO - Extracted 10 reels for 'war'
+2026-06-20 16:02:24,868 - INFO - Collected 3 reels for war
+2026-06-20 16:02:24,871 - INFO - 📤 Saving 6 reels to Google Drive...
+2026-06-20 16:02:25,274 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 16:02:27,874 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 16:02:27,874 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-20 16:02:27,875 - INFO - Daily collection complete: 6 total reels
+2026-06-20 16:02:27,876 - INFO - Daily collection completed: 6 reels
+2026-06-20 16:02:27,877 - INFO -   american: 3 reels
+2026-06-20 16:02:27,878 - INFO -     - https://www.instagram.com/reel/DZwGoFTCl4T/
+2026-06-20 16:02:27,878 - INFO -     - https://www.instagram.com/reel/DZvH374JVv2/
+2026-06-20 16:02:27,879 - INFO -     - https://www.instagram.com/reel/DZNZxDglVgd/
+2026-06-20 16:02:27,880 - INFO -   war: 3 reels
+2026-06-20 16:02:27,880 - INFO -     - https://www.instagram.com/reel/DZuLFTCO01C/
+2026-06-20 16:02:27,881 - INFO -     - https://www.instagram.com/reel/DWNLg-0DZ11/
+2026-06-20 16:02:27,882 - INFO -     - https://www.instagram.com/reel/DWB7SLfDHpv/
+2026-06-20 16:02:27,883 - INFO - Job "daily_collection_job (trigger: cron[hour='16', minute='2'], next run at: 2026-06-21 16:02:00 EAT)" executed successfully
+2026-06-20 16:05:56,906 - INFO - Scheduler stopped
+2026-06-20 16:05:57,086 - INFO - Scheduler has been shut down
+2026-06-20 16:06:04,577 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 16:06:04,577 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 16:06:08,054 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 16:06:10,319 - INFO - Browser initialized
+2026-06-20 16:06:10,319 - INFO - Universal Reels Finder initialized
+2026-06-20 16:06:10,359 - INFO - Loaded 2 historical collections
+2026-06-20 16:06:10,363 - INFO - Today's collection already exists: 9 reels
+2026-06-20 16:06:10,854 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 16:06:10,858 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 16:06:10,858 - INFO - Scheduler started
+2026-06-20 16:06:10,858 - INFO - Scheduler started - daily collection at 16:02
+2026-06-20 16:06:29,734 - INFO - Scheduler stopped
+2026-06-20 16:06:29,798 - INFO - Scheduler has been shut down
+2026-06-20 16:06:40,464 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 16:06:40,470 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 16:06:43,300 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 16:06:44,483 - INFO - Browser initialized
+2026-06-20 16:06:44,483 - INFO - Universal Reels Finder initialized
+2026-06-20 16:06:44,489 - INFO - Loaded 5 used topics from history
+2026-06-20 16:06:44,489 - INFO - Loaded 2 historical collections
+2026-06-20 16:06:44,492 - INFO - Today's collection already exists: 9 reels
+2026-06-20 16:06:44,824 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 16:06:44,824 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 16:06:44,824 - INFO - Scheduler started
+2026-06-20 16:06:44,827 - INFO - Scheduler started - daily collection at 16:07
+2026-06-20 16:07:00,006 - INFO - Running job "daily_collection_job (trigger: cron[hour='16', minute='7'], next run at: 2026-06-21 16:07:00 EAT)" (scheduled at 2026-06-20 16:07:00+03:00)
+2026-06-20 16:07:00,009 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 16:07:00,012 - INFO - Starting daily reel collection...
+2026-06-20 16:07:00,015 - INFO - 📋 Selected 2 topics for today: ['ninjas', 'gangstars']
+2026-06-20 16:07:00,015 - INFO -    Topics remaining: 2 unused out of 6
+2026-06-20 16:07:00,015 - INFO - Collecting reels for: ninjas
+2026-06-20 16:07:00,018 - INFO - Searching for: ninjas
+2026-06-20 16:07:14,497 - INFO - Found 28 potential reel links
+2026-06-20 16:07:14,513 - INFO - Extracted 10 reels for 'ninjas'
+2026-06-20 16:07:15,531 - INFO - Collected 3 reels for ninjas
+2026-06-20 16:07:15,531 - INFO - Collecting reels for: gangstars
+2026-06-20 16:07:15,531 - INFO - Searching for: gangstars
+2026-06-20 16:07:22,585 - INFO - Found 29 potential reel links
+2026-06-20 16:07:22,600 - INFO - Extracted 10 reels for 'gangstars'
+2026-06-20 16:07:23,613 - INFO - Collected 3 reels for gangstars
+2026-06-20 16:07:23,617 - INFO - 📤 Saving 6 reels to Google Drive...
+2026-06-20 16:07:24,216 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 16:07:26,471 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 16:07:26,487 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-20 16:07:26,487 - INFO - Daily collection complete: 6 total reels from 2 topics
+2026-06-20 16:07:26,487 - INFO - Daily collection completed: 6 reels
+2026-06-20 16:07:26,487 - INFO -   ninjas: 3 reels
+2026-06-20 16:07:26,487 - INFO -     - https://www.instagram.com/reel/DW96C7mCDx7/
+2026-06-20 16:07:26,487 - INFO -     - https://www.instagram.com/reel/DZtLQKOJng3/
+2026-06-20 16:07:26,487 - INFO -     - https://www.instagram.com/reel/DQ4oxzAjGuP/
+2026-06-20 16:07:26,487 - INFO -   gangstars: 3 reels
+2026-06-20 16:07:26,487 - INFO -     - https://www.instagram.com/reel/DXc7tv1DQp3/
+2026-06-20 16:07:26,502 - INFO -     - https://www.instagram.com/reel/DXZZ25ijbLY/
+2026-06-20 16:07:26,502 - INFO -     - https://www.instagram.com/reel/DW8bPjGAPq1/
+2026-06-20 16:07:26,502 - INFO - Job "daily_collection_job (trigger: cron[hour='16', minute='7'], next run at: 2026-06-21 16:07:00 EAT)" executed successfully
+2026-06-20 16:07:34,366 - INFO - Scheduler stopped
+2026-06-20 16:07:34,372 - INFO - Scheduler has been shut down

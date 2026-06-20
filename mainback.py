@@ -56,8 +56,8 @@ app.add_middleware(
 # ============================================
 REELS_PER_TOPIC = 3              # Number of reels per topic
 TOPICS_PER_DAY = 2               # Number of topics to collect daily
-SCHEDULE_HOUR = 16               # 3:30 PM = 15:30
-SCHEDULE_MINUTE = 7
+SCHEDULE_HOUR = 15               # 3:30 PM = 15:30
+SCHEDULE_MINUTE = 20
 # ============================================
 
 # Google Drive Configuration
@@ -86,30 +86,6 @@ def safe_int(value: Any) -> int:
         return int(float(value))
     except (ValueError, TypeError):
         return 0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class GoogleDriveManager:
@@ -250,7 +226,7 @@ class GoogleDriveManager:
             return None
     
     async def save_shared_data(self, data: Dict) -> bool:
-        """Save shared data to Google Drive using BytesIO (no temp files)"""
+        """Save shared data to Google Drive"""
         if not self.service:
             logger.error("No Drive service available")
             return False
@@ -260,53 +236,50 @@ class GoogleDriveManager:
             return False
         
         try:
-            # Check if file exists
             query = f"'{self.folder_id}' in parents and name='{SHARED_FILE_NAME}' and trashed=false"
             results = self.service.files().list(q=query, fields="files(id)").execute()
             files = results.get('files', [])
             
-            # Create JSON content
+            import tempfile
             file_content = json.dumps(data, indent=2, ensure_ascii=False)
             
-            # Use BytesIO instead of temporary file
-            import io
-            from googleapiclient.http import MediaIoBaseUpload
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as temp_file:
+                temp_file.write(file_content)
+                temp_path = temp_file.name
             
-            # Create a BytesIO object
-            file_stream = io.BytesIO(file_content.encode('utf-8'))
-            
-            # Create media upload
-            media = MediaIoBaseUpload(
-                file_stream,
-                mimetype='application/json',
-                resumable=True
-            )
-            
-            if files:
-                file_id = files[0]['id']
-                logger.info(f"📤 Updating: {SHARED_FILE_NAME}")
-                self.service.files().update(
-                    fileId=file_id,
-                    media_body=media
-                ).execute()
-                logger.info(f"✅ Updated shared file: {SHARED_FILE_NAME}")
-            else:
-                logger.info(f"📤 Creating: {SHARED_FILE_NAME}")
-                file_metadata = {
-                    'name': SHARED_FILE_NAME,
-                    'parents': [self.folder_id]
-                }
-                self.service.files().create(
-                    body=file_metadata,
-                    media_body=media
-                ).execute()
-                logger.info(f"✅ Created shared file: {SHARED_FILE_NAME}")
-            
-            # Close the stream
-            file_stream.close()
-            
-            # Return True on success
-            return True
+            try:
+                media = MediaFileUpload(
+                    temp_path,
+                    mimetype='application/json',
+                    resumable=True
+                )
+                
+                if files:
+                    file_id = files[0]['id']
+                    logger.info(f"📤 Updating: {SHARED_FILE_NAME}")
+                    self.service.files().update(
+                        fileId=file_id,
+                        media_body=media
+                    ).execute()
+                    logger.info(f"✅ Updated shared file: {SHARED_FILE_NAME}")
+                else:
+                    logger.info(f"📤 Creating: {SHARED_FILE_NAME}")
+                    file_metadata = {
+                        'name': SHARED_FILE_NAME,
+                        'parents': [self.folder_id]
+                    }
+                    self.service.files().create(
+                        body=file_metadata,
+                        media_body=media
+                    ).execute()
+                    logger.info(f"✅ Created shared file: {SHARED_FILE_NAME}")
+                
+                return True
+                
+            finally:
+                if os.path.exists(temp_path):
+                    os.unlink(temp_path)
+                    logger.debug(f"🗑️ Removed temp file: {temp_path}")
             
         except Exception as e:
             logger.error(f"Save to Drive error: {e}")
@@ -361,32 +334,6 @@ class GoogleDriveManager:
         except Exception as e:
             logger.error(f"Load from Drive error: {e}")
             return None
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @dataclass
@@ -739,6 +686,10 @@ class UniversalReelsFinder:
 
 
 
+
+
+
+
 class DailyReelCollector:
     def __init__(self, scraper: UniversalReelsFinder, drive_manager: GoogleDriveManager):
         self.scraper = scraper
@@ -750,10 +701,7 @@ class DailyReelCollector:
         self.current_collection: Optional[DailyCollection] = None
         self.collection_file = "daily_reels.json"
         self.topics_file = "topics_config.json"
-        self.used_topics_tracker = "used_topics.json"
-        self.used_topics: Set[str] = set()
         self._load_topics()
-        self._load_used_topics()
         
     def _load_topics(self):
         if os.path.exists(self.topics_file):
@@ -780,42 +728,6 @@ class DailyReelCollector:
             self.topics = DEFAULT_TOPICS.copy() if DEFAULT_TOPICS else []
             self._save_topics()
     
-    def _load_used_topics(self):
-        """Load the list of topics that have been used before"""
-        self.used_topics = set()
-        if os.path.exists(self.used_topics_tracker):
-            try:
-                with open(self.used_topics_tracker, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    self.used_topics = set(data.get("used_topics", []))
-                logger.info(f"Loaded {len(self.used_topics)} used topics from history")
-            except Exception as e:
-                logger.error(f"Error loading used topics: {e}")
-                self._build_used_topics_from_history()
-        else:
-            # Initialize from collection history if exists
-            self._build_used_topics_from_history()
-    
-    def _build_used_topics_from_history(self):
-        """Build used topics set from collection history"""
-        self.used_topics = set()
-        for collection in self.collection_history:
-            for topic in collection.get("topics", {}).keys():
-                self.used_topics.add(topic)
-        self._save_used_topics()
-    
-    def _save_used_topics(self):
-        """Save used topics to disk"""
-        try:
-            with open(self.used_topics_tracker, 'w', encoding='utf-8') as f:
-                json.dump({
-                    "used_topics": list(self.used_topics),
-                    "total_used": len(self.used_topics),
-                    "last_updated": datetime.now().isoformat()
-                }, f, indent=2)
-        except Exception as e:
-            logger.error(f"Error saving used topics: {e}")
-    
     def _save_topics(self):
         try:
             with open(self.topics_file, 'w', encoding='utf-8') as f:
@@ -836,9 +748,6 @@ class DailyReelCollector:
         
         self.topics = clean_topics
         self._save_topics()
-        # Reset used topics when topics change
-        self.used_topics.clear()
-        self._save_used_topics()
         return True
     
     def add_topic(self, topic: str):
@@ -849,7 +758,6 @@ class DailyReelCollector:
             return False
         self.topics.append(topic)
         self._save_topics()
-        # New topic is not used yet, so don't add to used_topics
         return True
     
     def remove_topic(self, topic: str):
@@ -858,62 +766,19 @@ class DailyReelCollector:
             return False
         self.topics.remove(topic)
         self._save_topics()
-        # Remove from used topics if present
-        if topic in self.used_topics:
-            self.used_topics.remove(topic)
-            self._save_used_topics()
         return True
     
     def _select_daily_topics(self) -> List[str]:
-        """Select random topics for today - no repeats from previous days"""
-        available_topics = [t for t in self.topics if t and t.strip()]
-        
-        if not available_topics:
-            logger.warning("No topics available!")
-            return []
-        
-        # If we have fewer topics than topics_per_day, use all available
-        if len(available_topics) <= self.topics_per_day:
-            logger.info(f"Using all {len(available_topics)} available topics: {available_topics}")
-            # Mark all as used
-            for topic in available_topics:
-                self.used_topics.add(topic)
-            self._save_used_topics()
-            return available_topics
-        
-        # Get topics that haven't been used yet
-        unused_topics = [t for t in available_topics if t not in self.used_topics]
-        
-        # If all topics have been used, reset (start fresh)
-        if len(unused_topics) < self.topics_per_day:
-            logger.info(f"🔄 All {len(available_topics)} topics have been used. Resetting for fresh rotation.")
-            self.used_topics.clear()
-            self._save_used_topics()
-            unused_topics = available_topics.copy()
-        
-        # If we still don't have enough, use what we have
-        if len(unused_topics) <= self.topics_per_day:
-            logger.info(f"Using remaining {len(unused_topics)} unused topics: {unused_topics}")
-            for topic in unused_topics:
-                self.used_topics.add(topic)
-            self._save_used_topics()
-            return unused_topics
+        """Select random topics for today's collection"""
+        if len(self.topics) <= self.topics_per_day:
+            return self.topics.copy()
         
         # Use random seed based on date for consistency
         today_seed = datetime.now().strftime("%Y-%m-%d")
         random.seed(today_seed)
         
-        selected = random.sample(unused_topics, self.topics_per_day)
-        
-        # Mark selected topics as used
-        for topic in selected:
-            self.used_topics.add(topic)
-        self._save_used_topics()
-        
-        remaining = len([t for t in available_topics if t not in self.used_topics])
-        logger.info(f"📋 Selected {len(selected)} topics for today: {selected}")
-        logger.info(f"   Topics remaining: {remaining} unused out of {len(available_topics)}")
-        
+        selected = random.sample(self.topics, self.topics_per_day)
+        logger.info(f"📋 Selected topics for today: {selected}")
         return selected
     
     async def generate_daily_reels(self) -> DailyCollection:
@@ -921,21 +786,6 @@ class DailyReelCollector:
         
         # Select topics for today
         daily_topics = self._select_daily_topics()
-        
-        if not daily_topics:
-            logger.warning("No topics selected for today!")
-            # Fallback: try to use first topic if available
-            if self.topics:
-                daily_topics = [self.topics[0]]
-                logger.info(f"Fallback to first topic: {daily_topics}")
-            else:
-                logger.error("No topics available!")
-                return DailyCollection(
-                    date=datetime.now().strftime("%Y-%m-%d"),
-                    topics={},
-                    total_count=0,
-                    generated_at=datetime.now().isoformat()
-                )
         
         topic_reels = {}
         total_count = 0
@@ -990,7 +840,7 @@ class DailyReelCollector:
         # Save to Google Drive
         await self._save_to_drive()
         
-        logger.info(f"Daily collection complete: {total_count} total reels from {len(daily_topics)} topics")
+        logger.info(f"Daily collection complete: {total_count} total reels")
         return self.current_collection
     
     def _is_relevant(self, reel: ReelData, topic: str) -> bool:
@@ -1034,44 +884,20 @@ class DailyReelCollector:
             json.dump(data, f, indent=2, ensure_ascii=False)
     
     async def _save_to_drive(self):
-        """Save data to Google Drive - handles both current collection and emergency topics"""
-        try:
-            # Get today's collection
-            today = datetime.now().strftime("%Y-%m-%d")
-            collection = self.get_today_collection()
-            
-            if not collection:
-                # If no collection exists, use current_collection if available
-                if self.current_collection:
-                    collection = self.current_collection
-                else:
-                    logger.warning("No collection to save to Drive")
-                    return False
-            
-            # Build data for Drive
-            data = {
-                "date": collection.date,
-                "total_count": collection.total_count,
-                "topics": {topic: [reel.to_dict() for reel in reels] for topic, reels in collection.topics.items()},
-                "generated_at": collection.generated_at,
-                "total_urls": collection.total_count,
-                "source": "reel_generator",
-                "last_updated": datetime.now().isoformat()
-            }
-            
-            logger.info(f"📤 Saving {collection.total_count} reels to Google Drive...")
-            success = await self.drive_manager.save_shared_data(data)
-            
-            if success:
-                logger.info(f"✅ Successfully saved to Drive: {SHARED_FILE_NAME}")
-            else:
-                logger.error(f"❌ Failed to save to Drive")
-            
-            return success
-            
-        except Exception as e:
-            logger.error(f"Error saving to Drive: {e}")
-            return False
+        if not self.current_collection:
+            return
+        
+        data = {
+            "date": self.current_collection.date,
+            "total_count": self.current_collection.total_count,
+            "topics": {topic: [reel.to_dict() for reel in reels] for topic, reels in self.current_collection.topics.items()},
+            "generated_at": self.current_collection.generated_at,
+            "total_urls": self.current_collection.total_count,
+            "source": "reel_generator",
+            "last_updated": datetime.now().isoformat()
+        }
+        
+        await self.drive_manager.save_shared_data(data)
     
     def load_collection(self):
         if os.path.exists(self.collection_file):
@@ -1080,8 +906,6 @@ class DailyReelCollector:
                     data = json.load(f)
                 self.collection_history = data.get("history", [])
                 logger.info(f"Loaded {len(self.collection_history)} historical collections")
-                # Rebuild used topics from history
-                self._build_used_topics_from_history()
             except Exception as e:
                 logger.error(f"Error loading collection: {e}")
     
@@ -1118,27 +942,6 @@ class DailyReelCollector:
         for reels in collection.topics.values():
             all_urls.extend([reel.url for reel in reels])
         return all_urls
-    
-    def reset_used_topics(self):
-        """Manually reset the used topics tracker"""
-        self.used_topics.clear()
-        self._save_used_topics()
-        logger.info("🔄 Used topics tracker has been reset")
-        return True
-    
-    def get_topic_stats(self) -> Dict:
-        """Get statistics about topic usage"""
-        available_topics = [t for t in self.topics if t and t.strip()]
-        unused_count = len([t for t in available_topics if t not in self.used_topics])
-        
-        return {
-            "total_topics": len(available_topics),
-            "used_topics": len(self.used_topics),
-            "unused_topics": unused_count,
-            "topics_remaining": unused_count,
-            "used_list": list(self.used_topics),
-            "available_list": available_topics
-        }
 
 
 async def daily_collection_job():
@@ -1164,6 +967,13 @@ async def daily_collection_job():
         
     except Exception as e:
         logger.error(f"Daily collection job failed: {e}")
+
+
+
+
+
+
+
 
 
 
@@ -1429,17 +1239,6 @@ HTML_TEMPLATE = """
             <button class="btn btn-secondary" onclick="refreshData()">🔄 Refresh</button>
             <button class="btn btn-danger" onclick="clearHistory()">🗑️ Clear History</button>
         </div>
-        <div class="section">
-    <h2>🚨 Emergency Topic (Instant Generation)</h2>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-        <input type="text" id="emergencyTopicInput" placeholder="Enter emergency topic..." 
-               style="flex:1; min-width:200px; padding:12px 16px; background:#0a0a0a; border:2px solid #dc2743; border-radius:8px; color:#fff; font-size:14px;">
-        <button class="btn" style="background:#dc2743; color:white; font-weight:bold;" onclick="generateEmergency()">
-            🚨 Generate Now
-        </button>
-        <div id="emergencyStatus" class="status-msg"></div>
-    </div>
-</div>
     </div>
     
     <div id="resultsSection" class="section">
@@ -1641,55 +1440,6 @@ HTML_TEMPLATE = """
                 showStatus('❌ Error: ' + error.message, 'error');
             }
         }
-        
-        
-        
-        
-        
-async function generateEmergency() {
-    const input = document.getElementById('emergencyTopicInput');
-    const topic = input.value.trim().toLowerCase();
-    
-    if (!topic) {
-        showEmergencyStatus('Please enter a topic name', 'error');
-        return;
-    }
-    
-    showEmergencyStatus(`🚨 Generating emergency reels for "${topic}"...`, 'info');
-    
-    try {
-        const response = await fetch('/api/emergency', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ topic: topic })
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            showEmergencyStatus(`✅ Generated ${data.count} reels for "${data.topic}"!`, 'success');
-            input.value = '';
-            setTimeout(() => { loadTopics(); loadResults(); }, 2000);
-        } else {
-            showEmergencyStatus('❌ ' + (data.detail || data.message || 'Unknown error'), 'error');
-        }
-    } catch (error) {
-        showEmergencyStatus('❌ Error: ' + error.message, 'error');
-    }
-}
-
-function showEmergencyStatus(message, type = 'info') {
-    const el = document.getElementById('emergencyStatus');
-    el.className = 'status-msg ' + type;
-    el.textContent = message;
-    el.style.display = 'block';
-    setTimeout(() => { el.style.display = 'none'; }, 8000);
-}
-        
-        
-        
-        
-        
         
         async function resetTopics() {
             if (!confirm('Reset to default topics? (mafia, gangstars, murphy, war, ninjas)')) return;
@@ -1977,110 +1727,50 @@ async def health_check():
 
 
 
-@app.post("/api/emergency")
-async def generate_emergency_topic(data: dict):
-    """Generate reels immediately for a specific topic (emergency/priority)"""
-    global collector, scraper
-    
-    if not collector or not scraper:
-        raise HTTPException(status_code=503, detail="Collector or scraper not initialized")
-    
-    topic = data.get("topic", "").strip().lower()
-    if not topic:
-        raise HTTPException(status_code=400, detail="Topic name required")
-    
-    try:
-        # Ensure browser is initialized
-        if not scraper.page:
-            await scraper.initialize()
-        
-        logger.info(f"🚨 EMERGENCY GENERATION for topic: {topic}")
-        
-        # Generate reels for this specific topic
-        variations = [
-            topic,
-            f"#{topic}",
-            f"{topic} daily",
-            f"{topic} trending"
-        ]
-        
-        all_reels = []
-        seen_shortcodes = set()
-        
-        for variation in variations[:3]:
-            if len(all_reels) >= REELS_PER_TOPIC * 2:
-                break
-                
-            try:
-                reels = await scraper.search(variation, max_results=20)
-                
-                for reel in reels:
-                    if reel.shortcode not in seen_shortcodes:
-                        seen_shortcodes.add(reel.shortcode)
-                        if collector._is_relevant(reel, topic):
-                            all_reels.append(reel)
-            except Exception as e:
-                logger.error(f"Error searching {variation}: {e}")
-                continue
-            
-            await asyncio.sleep(1)
-        
-        selected_reels = collector._select_unique_reels(all_reels, REELS_PER_TOPIC)
-        
-        today = datetime.now().strftime("%Y-%m-%d")
-        
-        # Check if we already have a collection for today
-        existing_collection = collector.get_today_collection()
-        
-        if existing_collection:
-            # Merge with existing today's collection
-            existing_collection.topics[topic] = selected_reels
-            existing_collection.total_count = sum(len(reels) for reels in existing_collection.topics.values())
-            collector.current_collection = existing_collection
-            
-            # Update history
-            for i, collection in enumerate(collector.collection_history):
-                if collection.get("date") == today:
-                    collector.collection_history[i] = existing_collection.to_dict()
-                    break
-        else:
-            # Create new collection
-            emergency_collection = DailyCollection(
-                date=today,
-                topics={topic: selected_reels},
-                total_count=len(selected_reels),
-                generated_at=datetime.now().isoformat()
-            )
-            collector.current_collection = emergency_collection
-            collector.collection_history.append(emergency_collection.to_dict())
-        
-        # Save to local file
-        collector._save_collection()
-        
-        # Save to Google Drive - THIS IS THE KEY FIX
-        drive_success = await collector._save_to_drive()
-        
-        if drive_success:
-            logger.info(f"✅ Emergency collection saved to Google Drive")
-        else:
-            logger.warning(f"⚠️ Failed to save emergency collection to Google Drive")
-        
-        logger.info(f"✅ Emergency generation complete: {len(selected_reels)} reels for '{topic}'")
-        
-        return {
-            "success": True,
-            "topic": topic,
-            "count": len(selected_reels),
-            "reels": [reel.to_dict() for reel in selected_reels],
-            "drive_saved": drive_success,
-            "message": f"Generated {len(selected_reels)} reels for emergency topic: {topic}"
-        }
-        
-    except Exception as e:
-        logger.error(f"Emergency generation failed: {e}")
-        raise HTTPException(status_code=500, detail=f"Generation failed: {str(e)}")
 
 
+
+
+
+
+
+
+
+
+# ======================== Main ========================
+@app.on_event("startup")
+async def startup_event():
+    global scraper, collector, scheduler, drive_service, drive_folder_id
+    
+    # Initialize Google Drive
+    drive_manager = GoogleDriveManager()
+    
+    scraper = UniversalReelsFinder(headless=True)
+    await scraper.initialize()
+    logger.info("Universal Reels Finder initialized")
+    
+    collector = DailyReelCollector(scraper, drive_manager)
+    collector.load_collection()
+    
+    today_collection = collector.get_today_collection()
+    if not today_collection:
+        logger.info("No collection for today, generating now...")
+        await daily_collection_job()
+    else:
+        logger.info(f"Today's collection already exists: {today_collection.total_count} reels")
+    
+    from apscheduler.schedulers.background import BackgroundScheduler
+    from apscheduler.triggers.cron import CronTrigger
+    
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(
+        func=daily_collection_job,
+        trigger=CronTrigger(hour=SCHEDULE_HOUR, minute=SCHEDULE_MINUTE),
+        id="daily_reel_collection",
+        replace_existing=True
+    )
+    scheduler.start()
+    logger.info(f"Scheduler started - daily collection at {SCHEDULE_HOUR:02d}:{SCHEDULE_MINUTE:02d}")
 
 
 

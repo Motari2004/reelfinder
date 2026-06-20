@@ -57,7 +57,7 @@ app.add_middleware(
 REELS_PER_TOPIC = 3              # Number of reels per topic
 TOPICS_PER_DAY = 2               # Number of topics to collect daily
 SCHEDULE_HOUR = 16               # 3:30 PM = 15:30
-SCHEDULE_MINUTE = 19
+SCHEDULE_MINUTE = 10
 # ============================================
 
 # Google Drive Configuration
@@ -2088,6 +2088,25 @@ async def generate_emergency_topic(data: dict):
 
 
 
+@app.post("/api/trigger-collection")
+async def trigger_collection(background_tasks: BackgroundTasks, api_key: Optional[str] = None):
+    """
+    Trigger the daily collection manually or via cron job.
+    Protected by API key for security.
+    """
+    # Optional: Add API key protection
+    expected_key = os.environ.get('TRIGGER_API_KEY', '')
+    if expected_key and api_key != expected_key:
+        raise HTTPException(status_code=401, detail="Invalid API key")
+    
+    background_tasks.add_task(daily_collection_job)
+    
+    return {
+        "success": True,
+        "message": "Collection triggered successfully",
+        "timestamp": datetime.now().isoformat()
+    }
+
 
 
 
@@ -2103,19 +2122,6 @@ async def generate_emergency_topic(data: dict):
 
 
 # ======================== Main ========================
-def daily_collection_job_sync():
-    """Sync wrapper for the async daily collection job - FIX FOR RENDER"""
-    try:
-        # Create a new event loop for this thread
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        try:
-            loop.run_until_complete(daily_collection_job())
-        finally:
-            loop.close()
-    except Exception as e:
-        logger.error(f"Daily collection job failed in sync wrapper: {e}")
-
 @app.on_event("startup")
 async def startup_event():
     global scraper, collector, scheduler, drive_service, drive_folder_id
@@ -2137,25 +2143,19 @@ async def startup_event():
     else:
         logger.info(f"Today's collection already exists: {today_collection.total_count} reels")
     
-    # FIX: Use BackgroundScheduler instead of AsyncIOScheduler for Render
-    from apscheduler.schedulers.background import BackgroundScheduler
+    from apscheduler.schedulers.asyncio import AsyncIOScheduler
     from apscheduler.triggers.cron import CronTrigger
+    import asyncio
     
-    scheduler = BackgroundScheduler()
+    scheduler = AsyncIOScheduler()
     scheduler.add_job(
-        func=daily_collection_job_sync,  # FIX: Use sync wrapper
+        func=daily_collection_job,
         trigger=CronTrigger(hour=SCHEDULE_HOUR, minute=SCHEDULE_MINUTE),
         id="daily_reel_collection",
         replace_existing=True
     )
     scheduler.start()
-    
-    # Log the next run time
-    next_run = scheduler.get_job('daily_reel_collection').next_run_time
-    if next_run:
-        logger.info(f"Scheduler started - next run at {next_run}")
-    else:
-        logger.info(f"Scheduler started - daily collection at {SCHEDULE_HOUR:02d}:{SCHEDULE_MINUTE:02d}")
+    logger.info(f"Scheduler started - daily collection at {SCHEDULE_HOUR:02d}:{SCHEDULE_MINUTE:02d}")
 
 @app.on_event("shutdown")
 async def shutdown_event():

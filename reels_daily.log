@@ -1898,3 +1898,41 @@ Exception: Connection closed while reading from the driver
 2026-06-20 16:07:26,502 - INFO - Job "daily_collection_job (trigger: cron[hour='16', minute='7'], next run at: 2026-06-21 16:07:00 EAT)" executed successfully
 2026-06-20 16:07:34,366 - INFO - Scheduler stopped
 2026-06-20 16:07:34,372 - INFO - Scheduler has been shut down
+2026-06-20 16:17:04,589 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 16:17:04,598 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 16:17:07,025 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 16:17:08,974 - INFO - Browser initialized
+2026-06-20 16:17:08,975 - INFO - Universal Reels Finder initialized
+2026-06-20 16:17:08,997 - INFO - Loaded 7 used topics from history
+2026-06-20 16:17:08,998 - INFO - Loaded 3 historical collections
+2026-06-20 16:17:09,000 - INFO - Today's collection already exists: 9 reels
+2026-06-20 16:17:09,430 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 16:17:09,434 - INFO - Added job "daily_collection_job_sync" to job store "default"
+2026-06-20 16:17:09,435 - INFO - Scheduler started
+2026-06-20 16:17:09,440 - INFO - Scheduler started - next run at 2026-06-20 16:19:00+03:00
+2026-06-20 16:19:00,010 - INFO - Running job "daily_collection_job_sync (trigger: cron[hour='16', minute='19'], next run at: 2026-06-20 16:19:00 EAT)" (scheduled at 2026-06-20 16:19:00+03:00)
+2026-06-20 16:19:00,012 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 16:19:00,013 - INFO - Starting daily reel collection...
+2026-06-20 16:19:00,015 - INFO - Using remaining 2 unused topics: ['mafia', 'murphy']
+2026-06-20 16:19:00,018 - INFO - Collecting reels for: mafia
+2026-06-20 16:19:00,018 - INFO - Searching for: mafia
+2026-06-20 16:24:36,238 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 16:24:36,251 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 16:24:39,436 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 16:24:41,086 - INFO - Browser initialized
+2026-06-20 16:24:41,087 - INFO - Universal Reels Finder initialized
+2026-06-20 16:24:41,104 - INFO - Loaded 9 used topics from history
+2026-06-20 16:24:41,105 - INFO - Loaded 3 historical collections
+2026-06-20 16:24:41,107 - INFO - Today's collection already exists: 9 reels
+2026-06-20 16:24:41,471 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 16:24:41,474 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 16:24:41,474 - INFO - Scheduler started
+2026-06-20 16:24:41,476 - INFO - Scheduler started - daily collection at 16:10
+2026-06-20 16:25:24,025 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 16:25:24,027 - INFO - Starting daily reel collection...
+2026-06-20 16:25:24,028 - INFO - Using remaining 2 unused topics: ['mafia', 'murphy']
+2026-06-20 16:25:24,032 - INFO - Collecting reels for: mafia
+2026-06-20 16:25:24,032 - INFO - Searching for: mafia
+2026-06-20 16:25:35,873 - ERROR - Search error: Mouse.wheel: Target page, context or browser has been closed
+2026-06-20 16:25:36,187 - INFO - Scheduler stopped
+2026-06-20 16:25:36,307 - INFO - Scheduler has been shut down

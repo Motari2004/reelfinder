@@ -1936,3 +1936,448 @@ Exception: Connection closed while reading from the driver
 2026-06-20 16:25:35,873 - ERROR - Search error: Mouse.wheel: Target page, context or browser has been closed
 2026-06-20 16:25:36,187 - INFO - Scheduler stopped
 2026-06-20 16:25:36,307 - INFO - Scheduler has been shut down
+2026-06-20 17:37:00,172 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-20 17:37:00,184 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-20 17:37:03,055 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-20 17:37:04,866 - INFO - Browser initialized
+2026-06-20 17:37:04,866 - INFO - Universal Reels Finder initialized
+2026-06-20 17:37:04,892 - INFO - Loaded 9 used topics from history
+2026-06-20 17:37:04,895 - INFO - Loaded 3 historical collections
+2026-06-20 17:37:04,897 - INFO - Today's collection already exists: 9 reels
+2026-06-20 17:37:05,335 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-20 17:37:05,338 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-20 17:37:05,339 - INFO - Scheduler started
+2026-06-20 17:37:05,340 - INFO - Scheduler started - daily collection at 16:10
+2026-06-20 17:37:27,244 - INFO - Saved 5 topics
+2026-06-20 17:37:29,209 - INFO - Saved 4 topics
+2026-06-20 17:37:31,168 - INFO - Saved 3 topics
+2026-06-20 17:37:33,512 - INFO - Saved 2 topics
+2026-06-20 17:37:35,828 - INFO - Saved 1 topics
+2026-06-20 17:37:39,291 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 17:37:39,292 - INFO - Starting daily reel collection...
+2026-06-20 17:37:39,295 - INFO - Using all 1 available topics: ['american']
+2026-06-20 17:37:39,297 - INFO - Collecting reels for: american
+2026-06-20 17:37:39,298 - INFO - Searching for: american
+2026-06-20 17:37:57,761 - INFO - Found 29 potential reel links
+2026-06-20 17:37:57,770 - INFO - Extracted 10 reels for 'american'
+2026-06-20 17:37:58,767 - INFO - Collected 3 reels for american
+2026-06-20 17:37:58,769 - INFO - 📤 Saving 3 reels to Google Drive...
+2026-06-20 17:37:59,579 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 17:38:02,778 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 17:38:02,779 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-20 17:38:02,781 - INFO - Daily collection complete: 3 total reels from 1 topics
+2026-06-20 17:38:02,782 - INFO - Daily collection completed: 3 reels
+2026-06-20 17:38:02,785 - INFO -   american: 3 reels
+2026-06-20 17:38:02,788 - INFO -     - https://www.instagram.com/reel/DZwGoFTCl4T/
+2026-06-20 17:38:02,790 - INFO -     - https://www.instagram.com/reel/DZvH374JVv2/
+2026-06-20 17:38:02,792 - INFO -     - https://www.instagram.com/reel/DZNZxDglVgd/
+2026-06-20 17:51:32,710 - INFO - Saved 0 topics
+2026-06-20 17:51:40,662 - INFO - Saved 1 topics
+2026-06-20 17:51:42,170 - INFO - Running daily collection job at 3:30 PM...
+2026-06-20 17:51:42,172 - INFO - Starting daily reel collection...
+2026-06-20 17:51:42,173 - INFO - Using all 1 available topics: ['blackpanther']
+2026-06-20 17:51:42,176 - INFO - Collecting reels for: blackpanther
+2026-06-20 17:51:42,177 - INFO - Searching for: blackpanther
+2026-06-20 17:51:49,685 - INFO - Found 30 potential reel links
+2026-06-20 17:51:49,694 - INFO - Extracted 10 reels for 'blackpanther'
+2026-06-20 17:51:50,719 - INFO - Searching for: blackpanther
+2026-06-20 17:51:57,798 - INFO - Found 30 potential reel links
+2026-06-20 17:51:57,800 - INFO - Extracted 10 reels for '#blackpanther'
+2026-06-20 17:51:58,789 - INFO - Searching for: blackpanther daily
+2026-06-20 17:52:05,900 - INFO - Found 27 potential reel links
+2026-06-20 17:52:05,901 - INFO - Extracted 10 reels for 'blackpanther daily'
+2026-06-20 17:52:06,885 - INFO - Collected 3 reels for blackpanther
+2026-06-20 17:52:06,891 - INFO - 📤 Saving 3 reels to Google Drive...
+2026-06-20 17:52:07,883 - INFO - 📤 Updating: shared_reels.json
+2026-06-20 17:52:10,321 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-20 17:52:10,322 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-20 17:52:10,322 - INFO - Daily collection complete: 3 total reels from 1 topics
+2026-06-20 17:52:10,323 - INFO - Daily collection completed: 3 reels
+2026-06-20 17:52:10,323 - INFO -   blackpanther: 3 reels
+2026-06-20 17:52:10,324 - INFO -     - https://www.instagram.com/reel/DZsrJ2ZPe-2/
+2026-06-20 17:52:10,324 - INFO -     - https://www.instagram.com/reel/DVeyD7mCXsp/
+2026-06-20 17:52:10,325 - INFO -     - https://www.instagram.com/reel/DZSunWShHJ3/
+2026-06-22 12:11:29,485 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-22 12:11:29,491 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-22 12:11:33,934 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-22 12:11:49,129 - INFO - Browser initialized
+2026-06-22 12:11:49,129 - INFO - Universal Reels Finder initialized
+2026-06-22 12:11:49,179 - INFO - Loaded 4 used topics from history
+2026-06-22 12:11:49,213 - INFO - Loaded 2 historical collections
+2026-06-22 12:11:49,219 - INFO - No collection for today, generating now...
+2026-06-22 12:11:49,223 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 12:11:49,225 - INFO - Starting daily reel collection...
+2026-06-22 12:11:49,228 - INFO - Using all 1 available topics: ['blackpanther']
+2026-06-22 12:11:49,232 - INFO - Collecting reels for: blackpanther
+2026-06-22 12:11:49,234 - INFO - Searching for: blackpanther
+2026-06-22 12:12:09,526 - ERROR - Search error: Mouse.wheel: Connection closed while reading from the driver
+2026-06-22 12:12:10,537 - INFO - Searching for: blackpanther
+2026-06-22 12:12:10,539 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-22 12:12:11,562 - INFO - Searching for: blackpanther daily
+2026-06-22 12:12:11,564 - ERROR - Search error: Page.goto: Connection closed while reading from the driver
+2026-06-22 12:12:12,568 - INFO - Collected 0 reels for blackpanther
+2026-06-22 12:12:12,570 - INFO - 📤 Saving 0 reels to Google Drive...
+2026-06-22 12:12:13,220 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 12:12:16,225 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 12:12:16,226 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 12:12:16,226 - INFO - Daily collection complete: 0 total reels from 1 topics
+2026-06-22 12:12:16,226 - INFO - Daily collection completed: 0 reels
+2026-06-22 12:12:16,227 - INFO -   blackpanther: 0 reels
+2026-06-22 12:12:16,468 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 12:12:16,471 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-22 12:12:16,471 - INFO - Scheduler started
+2026-06-22 12:12:16,472 - INFO - Scheduler started - daily collection at 16:10
+2026-06-22 12:12:16,476 - INFO - Scheduler stopped
+2026-06-22 12:12:16,477 - INFO - Scheduler has been shut down
+2026-06-22 12:12:22,593 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-22 12:12:22,596 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-22 12:12:24,899 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-22 12:12:25,738 - INFO - Browser initialized
+2026-06-22 12:12:25,739 - INFO - Universal Reels Finder initialized
+2026-06-22 12:12:25,750 - INFO - Loaded 2 used topics from history
+2026-06-22 12:12:25,764 - INFO - Loaded 3 historical collections
+2026-06-22 12:12:25,765 - INFO - Today's collection already exists: 0 reels
+2026-06-22 12:12:25,999 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 12:12:26,000 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-22 12:12:26,000 - INFO - Scheduler started
+2026-06-22 12:12:26,002 - INFO - Scheduler started - daily collection at 16:10
+2026-06-22 12:12:34,362 - INFO - Saved 0 topics
+2026-06-22 12:12:36,341 - INFO - Saved 5 topics
+2026-06-22 12:12:44,310 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 12:12:44,310 - INFO - Starting daily reel collection...
+2026-06-22 12:12:44,312 - INFO - 📋 Selected 1 topics for today: ['gangstars']
+2026-06-22 12:12:44,312 - INFO -    Topics remaining: 4 unused out of 5
+2026-06-22 12:12:44,312 - INFO - Collecting reels for: gangstars
+2026-06-22 12:12:44,313 - INFO - Searching for: gangstars
+2026-06-22 12:13:06,517 - INFO - Found 29 potential reel links
+2026-06-22 12:13:06,523 - INFO - Extracted 10 reels for 'gangstars'
+2026-06-22 12:13:07,514 - INFO - Collected 1 reels for gangstars
+2026-06-22 12:13:07,515 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 12:13:08,152 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 12:13:11,333 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 12:13:11,334 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 12:13:11,335 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 12:13:11,335 - INFO - Daily collection completed: 1 reels
+2026-06-22 12:13:11,335 - INFO -   gangstars: 1 reels
+2026-06-22 12:13:11,335 - INFO -     - https://www.instagram.com/reel/DXc7tv1DQp3/
+2026-06-22 12:34:45,578 - INFO - Scheduler stopped
+2026-06-22 12:34:45,581 - INFO - Scheduler has been shut down
+2026-06-22 12:40:01,212 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-22 12:40:01,216 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-22 12:40:03,369 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-22 12:40:05,154 - INFO - Browser initialized
+2026-06-22 12:40:05,154 - INFO - Universal Reels Finder initialized
+2026-06-22 12:40:05,180 - INFO - Loaded 1 used topics from history
+2026-06-22 12:40:05,243 - INFO - Loaded 4 historical collections
+2026-06-22 12:40:05,244 - INFO - Today's collection already exists: 0 reels
+2026-06-22 12:40:05,441 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 12:40:05,443 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-22 12:40:05,444 - INFO - Scheduler started
+2026-06-22 12:40:05,444 - INFO - Scheduler started - daily collection at 16:10
+2026-06-22 12:40:09,006 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 12:40:09,007 - INFO - Starting daily reel collection...
+2026-06-22 12:40:09,010 - INFO - 📋 Selected 1 topics for today: ['murphy']
+2026-06-22 12:40:09,010 - INFO -    Topics remaining: 3 unused out of 5
+2026-06-22 12:40:09,011 - INFO - Collecting reels for: murphy
+2026-06-22 12:40:09,012 - INFO - Searching for: murphy
+2026-06-22 12:40:24,068 - INFO - Found 30 potential reel links
+2026-06-22 12:40:24,077 - INFO - Extracted 10 reels for 'murphy'
+2026-06-22 12:40:25,099 - INFO - Collected 1 reels for murphy
+2026-06-22 12:40:25,100 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 12:40:25,677 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 12:40:28,546 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 12:40:28,546 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 12:40:28,546 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 12:40:28,546 - INFO - Daily collection completed: 1 reels
+2026-06-22 12:40:28,547 - INFO -   murphy: 1 reels
+2026-06-22 12:40:28,547 - INFO -     - https://www.instagram.com/reel/DWbk9qakY93/
+2026-06-22 12:51:40,295 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 12:51:40,297 - INFO - Starting daily reel collection...
+2026-06-22 12:51:40,307 - INFO - 📋 Selected 1 topics for today: ['mafia']
+2026-06-22 12:51:40,307 - INFO -    Topics remaining: 2 unused out of 5
+2026-06-22 12:51:40,308 - INFO - Collecting reels for: mafia
+2026-06-22 12:51:40,309 - INFO - Searching for: mafia
+2026-06-22 12:51:47,799 - INFO - Found 30 potential reel links
+2026-06-22 12:51:47,804 - INFO - Extracted 10 reels for 'mafia'
+2026-06-22 12:51:48,832 - INFO - Collected 1 reels for mafia
+2026-06-22 12:51:48,841 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 12:51:49,646 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 12:51:52,456 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 12:51:52,456 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 12:51:52,457 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 12:51:52,457 - INFO - Daily collection completed: 1 reels
+2026-06-22 12:51:52,458 - INFO -   mafia: 1 reels
+2026-06-22 12:51:52,458 - INFO -     - https://www.instagram.com/reel/DPDbsGAjRhk/
+2026-06-22 12:55:42,440 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 12:55:42,442 - INFO - Starting daily reel collection...
+2026-06-22 12:55:42,448 - INFO - 📋 Selected 1 topics for today: ['war']
+2026-06-22 12:55:42,449 - INFO -    Topics remaining: 1 unused out of 5
+2026-06-22 12:55:42,449 - INFO - Collecting reels for: war
+2026-06-22 12:55:42,451 - INFO - Searching for: war
+2026-06-22 12:55:49,559 - INFO - Found 30 potential reel links
+2026-06-22 12:55:49,564 - INFO - Extracted 10 reels for 'war'
+2026-06-22 12:55:50,557 - INFO - Collected 1 reels for war
+2026-06-22 12:55:50,563 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 12:55:51,831 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 12:55:54,526 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 12:55:54,527 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 12:55:54,527 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 12:55:54,528 - INFO - Daily collection completed: 1 reels
+2026-06-22 12:55:54,529 - INFO -   war: 1 reels
+2026-06-22 12:55:54,529 - INFO -     - https://www.instagram.com/reel/DZ0EhihhN5S/
+2026-06-22 13:07:45,708 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 13:07:45,709 - INFO - Starting daily reel collection...
+2026-06-22 13:07:45,710 - INFO - Using remaining 1 unused topics: ['ninjas']
+2026-06-22 13:07:45,712 - INFO - Collecting reels for: ninjas
+2026-06-22 13:07:45,712 - INFO - Searching for: ninjas
+2026-06-22 13:07:52,771 - INFO - Found 28 potential reel links
+2026-06-22 13:07:52,776 - INFO - Extracted 10 reels for 'ninjas'
+2026-06-22 13:07:53,799 - INFO - Collected 1 reels for ninjas
+2026-06-22 13:07:53,805 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 13:07:54,745 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 13:07:57,407 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 13:07:57,407 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 13:07:57,408 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 13:07:57,408 - INFO - Daily collection completed: 1 reels
+2026-06-22 13:07:57,409 - INFO -   ninjas: 1 reels
+2026-06-22 13:07:57,409 - INFO -     - https://www.instagram.com/reel/DQ4oxzAjGuP/
+2026-06-22 13:13:28,959 - INFO - Scheduler stopped
+2026-06-22 13:13:28,968 - INFO - Scheduler has been shut down
+2026-06-22 13:13:29,295 - INFO - Browser closed
+2026-06-22 13:13:29,295 - INFO - Scraper closed
+2026-06-22 13:18:16,082 - INFO - ✅ Drive authenticated via drive_token.pickle
+2026-06-22 13:18:16,085 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-06-22 13:18:18,504 - INFO - ✅ Found folder: Reel_Finder_Data
+2026-06-22 13:18:19,398 - INFO - Browser initialized
+2026-06-22 13:18:19,399 - INFO - Universal Reels Finder initialized
+2026-06-22 13:18:19,413 - INFO - Loaded 7 used topics from history
+2026-06-22 13:18:19,440 - INFO - Loaded 8 historical collections
+2026-06-22 13:18:19,441 - INFO - Today's collection already exists: 0 reels
+2026-06-22 13:18:19,658 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 13:18:19,661 - INFO - Added job "daily_collection_job" to job store "default"
+2026-06-22 13:18:19,661 - INFO - Scheduler started
+2026-06-22 13:18:19,662 - INFO - Scheduler started - daily collection at 16:10
+2026-06-22 13:19:57,630 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 13:19:57,631 - INFO - Starting daily reel collection...
+2026-06-22 13:19:57,631 - INFO - 🔄 All 5 topics have been used. Resetting for fresh rotation.
+2026-06-22 13:19:57,635 - INFO - 📋 Selected 1 topics for today: ['gangstars']
+2026-06-22 13:19:57,635 - INFO -    Topics remaining: 4 unused out of 5
+2026-06-22 13:19:57,636 - INFO - Collecting reels for: gangstars
+2026-06-22 13:19:57,636 - INFO - Searching for: gangstars
+2026-06-22 13:20:15,798 - INFO - Found 29 potential reel links
+2026-06-22 13:20:15,805 - INFO - Extracted 10 reels for 'gangstars'
+2026-06-22 13:20:16,828 - INFO - Collected 1 reels for gangstars
+2026-06-22 13:20:16,829 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 13:20:17,390 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 13:20:20,038 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 13:20:20,038 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 13:20:20,038 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 13:20:20,039 - INFO - Daily collection completed: 1 reels
+2026-06-22 13:20:20,039 - INFO -   gangstars: 1 reels
+2026-06-22 13:20:20,039 - INFO -     - https://www.instagram.com/reel/DW7Bg0Vj0DG/
+2026-06-22 13:37:22,475 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 13:37:22,483 - INFO - Starting daily reel collection...
+2026-06-22 13:37:22,494 - INFO - 📋 Selected 1 topics for today: ['murphy']
+2026-06-22 13:37:22,495 - INFO -    Topics remaining: 3 unused out of 5
+2026-06-22 13:37:22,495 - INFO - Collecting reels for: murphy
+2026-06-22 13:37:22,496 - INFO - Searching for: murphy
+2026-06-22 13:37:29,813 - INFO - Found 30 potential reel links
+2026-06-22 13:37:29,822 - INFO - Extracted 10 reels for 'murphy'
+2026-06-22 13:37:30,846 - INFO - Collected 1 reels for murphy
+2026-06-22 13:37:30,878 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 13:37:31,941 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 13:37:34,216 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 13:37:34,216 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 13:37:34,217 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 13:37:34,217 - INFO - Daily collection completed: 1 reels
+2026-06-22 13:37:34,217 - INFO -   murphy: 1 reels
+2026-06-22 13:37:34,217 - INFO -     - https://www.instagram.com/reel/DWbk9qakY93/
+2026-06-22 13:40:50,511 - INFO - 🚨 EMERGENCY GENERATION for topic: army
+2026-06-22 13:40:50,511 - INFO - Searching for: army
+2026-06-22 13:40:57,645 - INFO - Found 30 potential reel links
+2026-06-22 13:40:57,648 - INFO - Extracted 10 reels for 'army'
+2026-06-22 13:40:58,666 - INFO - 📤 Saving 2 reels to Google Drive...
+2026-06-22 13:41:00,962 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 13:41:03,783 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 13:41:03,783 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 13:41:03,784 - INFO - ✅ Emergency collection saved to Google Drive
+2026-06-22 13:41:03,784 - INFO - ✅ Emergency generation complete: 1 reels for 'army'
+2026-06-22 13:43:42,897 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 13:43:42,898 - INFO - Starting daily reel collection...
+2026-06-22 13:43:42,899 - INFO - 📋 Selected 1 topics for today: ['mafia']
+2026-06-22 13:43:42,899 - INFO -    Topics remaining: 2 unused out of 5
+2026-06-22 13:43:42,899 - INFO - Collecting reels for: mafia
+2026-06-22 13:43:42,900 - INFO - Searching for: mafia
+2026-06-22 13:43:50,020 - INFO - Found 30 potential reel links
+2026-06-22 13:43:50,024 - INFO - Extracted 10 reels for 'mafia'
+2026-06-22 13:43:51,028 - INFO - Collected 1 reels for mafia
+2026-06-22 13:43:51,030 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 13:43:52,250 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 13:43:54,885 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 13:43:54,885 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 13:43:54,886 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 13:43:54,887 - INFO - Daily collection completed: 1 reels
+2026-06-22 13:43:54,888 - INFO -   mafia: 1 reels
+2026-06-22 13:43:54,888 - INFO -     - https://www.instagram.com/reel/DPDbsGAjRhk/
+2026-06-22 13:46:52,980 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 13:46:52,982 - INFO - Starting daily reel collection...
+2026-06-22 13:46:52,983 - INFO - 📋 Selected 1 topics for today: ['war']
+2026-06-22 13:46:52,983 - INFO -    Topics remaining: 1 unused out of 5
+2026-06-22 13:46:52,983 - INFO - Collecting reels for: war
+2026-06-22 13:46:52,984 - INFO - Searching for: war
+2026-06-22 13:47:00,052 - INFO - Found 30 potential reel links
+2026-06-22 13:47:00,057 - INFO - Extracted 10 reels for 'war'
+2026-06-22 13:47:01,068 - INFO - Collected 1 reels for war
+2026-06-22 13:47:01,069 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 13:47:01,080 - ERROR - Save to Drive error: EOF occurred in violation of protocol (_ssl.c:2406)
+2026-06-22 13:47:01,081 - ERROR - ❌ Failed to save to Drive
+2026-06-22 13:47:01,081 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 13:47:01,082 - INFO - Daily collection completed: 1 reels
+2026-06-22 13:47:01,082 - INFO -   war: 1 reels
+2026-06-22 13:47:01,083 - INFO -     - https://www.instagram.com/reel/DZ0EhihhN5S/
+2026-06-22 13:47:33,810 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 13:47:33,811 - INFO - Starting daily reel collection...
+2026-06-22 13:47:33,812 - INFO - Using remaining 1 unused topics: ['ninjas']
+2026-06-22 13:47:33,813 - INFO - Collecting reels for: ninjas
+2026-06-22 13:47:33,814 - INFO - Searching for: ninjas
+2026-06-22 13:47:40,899 - INFO - Found 29 potential reel links
+2026-06-22 13:47:40,903 - INFO - Extracted 10 reels for 'ninjas'
+2026-06-22 13:47:41,888 - INFO - Collected 1 reels for ninjas
+2026-06-22 13:47:41,889 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 13:47:42,832 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 13:47:45,034 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 13:47:45,034 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 13:47:45,036 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 13:47:45,036 - INFO - Daily collection completed: 1 reels
+2026-06-22 13:47:45,036 - INFO -   ninjas: 1 reels
+2026-06-22 13:47:45,037 - INFO -     - https://www.instagram.com/reel/DQ4oxzAjGuP/
+2026-06-22 13:54:54,453 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 13:54:54,454 - INFO - Starting daily reel collection...
+2026-06-22 13:54:54,456 - INFO - 🔄 All 5 topics have been used. Resetting for fresh rotation.
+2026-06-22 13:54:54,457 - INFO - 📋 Selected 1 topics for today: ['gangstars']
+2026-06-22 13:54:54,458 - INFO -    Topics remaining: 4 unused out of 5
+2026-06-22 13:54:54,459 - INFO - Collecting reels for: gangstars
+2026-06-22 13:54:54,459 - INFO - Searching for: gangstars
+2026-06-22 13:55:01,507 - INFO - Found 29 potential reel links
+2026-06-22 13:55:01,510 - INFO - Extracted 10 reels for 'gangstars'
+2026-06-22 13:55:02,532 - INFO - Collected 1 reels for gangstars
+2026-06-22 13:55:02,536 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 13:55:03,555 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 13:55:06,637 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 13:55:06,638 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 13:55:06,639 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 13:55:06,639 - INFO - Daily collection completed: 1 reels
+2026-06-22 13:55:06,639 - INFO -   gangstars: 1 reels
+2026-06-22 13:55:06,640 - INFO -     - https://www.instagram.com/reel/DW8bPjGAPq1/
+2026-06-22 14:02:51,839 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 14:02:51,847 - INFO - Starting daily reel collection...
+2026-06-22 14:02:51,874 - INFO - 📋 Selected 1 topics for today: ['murphy']
+2026-06-22 14:02:51,875 - INFO -    Topics remaining: 3 unused out of 5
+2026-06-22 14:02:51,876 - INFO - Collecting reels for: murphy
+2026-06-22 14:02:51,878 - INFO - Searching for: murphy
+2026-06-22 14:02:59,184 - INFO - Found 30 potential reel links
+2026-06-22 14:02:59,190 - INFO - Extracted 10 reels for 'murphy'
+2026-06-22 14:03:00,204 - INFO - Collected 1 reels for murphy
+2026-06-22 14:03:00,206 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 14:03:04,267 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 14:03:06,878 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 14:03:06,879 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 14:03:06,880 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 14:03:06,881 - INFO - Daily collection completed: 1 reels
+2026-06-22 14:03:06,881 - INFO -   murphy: 1 reels
+2026-06-22 14:03:06,882 - INFO -     - https://www.instagram.com/reel/DWbk9qakY93/
+2026-06-22 14:04:24,720 - INFO - Saved 4 topics
+2026-06-22 14:04:26,446 - INFO - Saved 3 topics
+2026-06-22 14:04:28,095 - INFO - Saved 2 topics
+2026-06-22 14:04:30,255 - INFO - Saved 1 topics
+2026-06-22 14:04:31,933 - INFO - Saved 0 topics
+2026-06-22 14:04:36,264 - INFO - Saved 1 topics
+2026-06-22 14:04:37,983 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 14:04:37,984 - INFO - Starting daily reel collection...
+2026-06-22 14:04:37,985 - INFO - Using all 1 available topics: ['programming']
+2026-06-22 14:04:37,986 - INFO - Collecting reels for: programming
+2026-06-22 14:04:37,986 - INFO - Searching for: programming
+2026-06-22 14:04:45,414 - INFO - Found 30 potential reel links
+2026-06-22 14:04:45,416 - INFO - Extracted 10 reels for 'programming'
+2026-06-22 14:04:46,416 - INFO - Collected 1 reels for programming
+2026-06-22 14:04:46,418 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 14:04:46,939 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 14:04:49,632 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 14:04:49,632 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 14:04:49,633 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 14:04:49,634 - INFO - Daily collection completed: 1 reels
+2026-06-22 14:04:49,634 - INFO -   programming: 1 reels
+2026-06-22 14:04:49,634 - INFO -     - https://www.instagram.com/reel/DZy9trDzlV3/
+2026-06-22 14:11:34,797 - INFO - Saved 0 topics
+2026-06-22 14:11:38,592 - INFO - Saved 1 topics
+2026-06-22 14:11:39,742 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 14:11:39,744 - INFO - Starting daily reel collection...
+2026-06-22 14:11:39,745 - INFO - Using all 1 available topics: ['programmer']
+2026-06-22 14:11:39,745 - INFO - Collecting reels for: programmer
+2026-06-22 14:11:39,746 - INFO - Searching for: programmer
+2026-06-22 14:11:46,826 - INFO - Found 30 potential reel links
+2026-06-22 14:11:46,829 - INFO - Extracted 10 reels for 'programmer'
+2026-06-22 14:11:47,823 - INFO - Collected 1 reels for programmer
+2026-06-22 14:11:47,825 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 14:11:48,894 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 14:11:52,041 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 14:11:52,041 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 14:11:52,041 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 14:11:52,041 - INFO - Daily collection completed: 1 reels
+2026-06-22 14:11:52,042 - INFO -   programmer: 1 reels
+2026-06-22 14:11:52,042 - INFO -     - https://www.instagram.com/reel/C-sX_3ZMT-5/
+2026-06-22 14:18:47,703 - INFO - Saved 0 topics
+2026-06-22 14:18:50,613 - INFO - Saved 1 topics
+2026-06-22 14:18:51,908 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 14:18:51,910 - INFO - Starting daily reel collection...
+2026-06-22 14:18:51,911 - INFO - Using all 1 available topics: ['navy']
+2026-06-22 14:18:51,912 - INFO - Collecting reels for: navy
+2026-06-22 14:18:51,912 - INFO - Searching for: navy
+2026-06-22 14:18:59,013 - INFO - Found 28 potential reel links
+2026-06-22 14:18:59,016 - INFO - Extracted 10 reels for 'navy'
+2026-06-22 14:19:00,022 - INFO - Collected 1 reels for navy
+2026-06-22 14:19:00,025 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 14:19:00,059 - ERROR - Save to Drive error: EOF occurred in violation of protocol (_ssl.c:2406)
+2026-06-22 14:19:00,060 - ERROR - ❌ Failed to save to Drive
+2026-06-22 14:19:00,060 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 14:19:00,060 - INFO - Daily collection completed: 1 reels
+2026-06-22 14:19:00,061 - INFO -   navy: 1 reels
+2026-06-22 14:19:00,061 - INFO -     - https://www.instagram.com/reel/DZ2LdgNCEkz/
+2026-06-22 14:19:11,280 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 14:19:11,282 - INFO - Starting daily reel collection...
+2026-06-22 14:19:11,283 - INFO - Using all 1 available topics: ['navy']
+2026-06-22 14:19:11,284 - INFO - Collecting reels for: navy
+2026-06-22 14:19:11,284 - INFO - Searching for: navy
+2026-06-22 14:19:18,380 - INFO - Found 28 potential reel links
+2026-06-22 14:19:18,383 - INFO - Extracted 10 reels for 'navy'
+2026-06-22 14:19:19,408 - INFO - Collected 1 reels for navy
+2026-06-22 14:19:19,409 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 14:19:21,186 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 14:19:25,060 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 14:19:25,061 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 14:19:25,061 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 14:19:25,061 - INFO - Daily collection completed: 1 reels
+2026-06-22 14:19:25,061 - INFO -   navy: 1 reels
+2026-06-22 14:19:25,062 - INFO -     - https://www.instagram.com/reel/DZ2LdgNCEkz/
+2026-06-22 14:26:18,906 - INFO - Saved 0 topics
+2026-06-22 14:26:22,363 - INFO - Saved 1 topics
+2026-06-22 14:26:23,251 - INFO - Running daily collection job at 3:30 PM...
+2026-06-22 14:26:23,252 - INFO - Starting daily reel collection...
+2026-06-22 14:26:23,253 - INFO - Using all 1 available topics: ['food']
+2026-06-22 14:26:23,256 - INFO - Collecting reels for: food
+2026-06-22 14:26:23,256 - INFO - Searching for: food
+2026-06-22 14:26:30,342 - INFO - Found 29 potential reel links
+2026-06-22 14:26:30,345 - INFO - Extracted 10 reels for 'food'
+2026-06-22 14:26:31,358 - INFO - Collected 1 reels for food
+2026-06-22 14:26:31,360 - INFO - 📤 Saving 1 reels to Google Drive...
+2026-06-22 14:26:32,429 - INFO - 📤 Updating: shared_reels.json
+2026-06-22 14:26:35,782 - INFO - ✅ Updated shared file: shared_reels.json
+2026-06-22 14:26:35,783 - INFO - ✅ Successfully saved to Drive: shared_reels.json
+2026-06-22 14:26:35,784 - INFO - Daily collection complete: 1 total reels from 1 topics
+2026-06-22 14:26:35,785 - INFO - Daily collection completed: 1 reels
+2026-06-22 14:26:35,785 - INFO -   food: 1 reels
+2026-06-22 14:26:35,785 - INFO -     - https://www.instagram.com/reel/DNm6NrEhUim/
+2026-06-22 14:32:30,692 - INFO - Scheduler stopped
+2026-06-22 14:32:30,701 - INFO - Scheduler has been shut down
+2026-06-22 14:32:30,796 - INFO - Browser closed
+2026-06-22 14:32:30,796 - INFO - Scraper closed

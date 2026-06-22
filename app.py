@@ -54,8 +54,8 @@ app.add_middleware(
 # ============================================
 # CONFIGURATION
 # ============================================
-REELS_PER_TOPIC = 3              # Number of reels per topic
-TOPICS_PER_DAY = 2               # Number of topics to collect daily
+REELS_PER_TOPIC = 1              # Number of reels per topic
+TOPICS_PER_DAY = 1               # Number of topics to collect daily
 SCHEDULE_HOUR = 16               # 3:30 PM = 15:30
 SCHEDULE_MINUTE = 10
 # ============================================
@@ -2105,7 +2105,7 @@ async def trigger_collection(background_tasks: BackgroundTasks, api_key: Optiona
         "success": True,
         "message": "Collection triggered successfully",
         "timestamp": datetime.now().isoformat()
-    }
+    }  
 
 
 
